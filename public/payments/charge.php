@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-\Stripe\Stripe::setApiKey(App::env('STRIPE_SECRET')); // live key: sk_live_geYNVtPyLmOGk40cGLg6MDGb
+\Stripe\Stripe::setApiKey(App::env('STRIPE_SECRET'));
 
 // Token is created using Checkout or Elements!
 // Get the payment token ID submitted by the form:
