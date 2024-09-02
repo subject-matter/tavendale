@@ -1,0 +1,109 @@
+.related-articles {
+
+  &__title {
+    @apply mb-6;
+
+    h2 {
+      @apply flex items-center m-0;
+    }
+
+    .btn {
+      @apply hidden;
+    }
+
+  }
+
+  &__blurb {
+    @apply ml-2 w-8 h-8 rounded-full bg-primary inline-flex items-center justify-center;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__article {
+    @apply pr-6;
+    width: 288px;
+
+    &__inner {
+      @apply bg-grey1 block px-6 py-7;
+      @extend .transition;
+
+      &:hover {
+        @apply bg-primary;
+      }
+    }
+  }
+
+  &__text {
+    ul {
+      @apply flex flex-wrap items-center mb-4 font-headings text-base;
+
+      li {
+        @apply mr-1;
+        &:first-child {
+          @apply mr-2;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    @apply relative pb-18;
+  }
+
+  &__arrows {
+    @apply flex flex-row-reverse justify-center absolute bottom-0 left-0 w-full;
+  }
+
+  &__cta {
+    @apply pt-4 flex justify-center;
+  }
+
+
+  @screen md {
+
+    &__title {
+      @apply flex justify-between mb-14;
+
+      .btn {
+        @apply inline-flex;
+      }
+    }
+
+    &__inner {
+      @apply pb-0 pl-26;
+      width: calc(100vw - (100vw - 1236px) / 2);
+    }
+
+    &__arrows {
+      @apply top-0 bottom-auto left-0 w-16 flex-col;
+
+      svg {
+        @apply w-full h-auto;
+      }
+    }
+
+    &__article {
+      width: 654px;
+
+      &__inner {
+        @apply flex;
+      }
+    }
+
+    &__text {
+      @apply flex-grow;
+    }
+
+    &__img {
+      @apply flex-shrink-0 ml-6 bg-cover bg-no-repeat bg-center;
+      width: 214px;
+      height: 214px;
+    }
+
+    &__cta {
+      @apply hidden;
+    }
+
+  }
+
+}

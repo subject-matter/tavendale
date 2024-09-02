@@ -1,0 +1,6 @@
+{#-- Inline Javascript --#}
+
+{#-- Javascript --#}
+{% set siteURL = alias('@siteUrl') %}
+{% do view.registerJsFile(siteURL ~ "/dist/js/app.min.js") %}
+{# Cache bust example: {% do view.registerJsFile(siteUrl ~ rev("dist/js/app.min.js")) %} #}

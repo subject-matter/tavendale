@@ -1,0 +1,35 @@
+columnSuffix: uafgiupp
+contentColumnType: string
+fieldGroup: 119b767b-7327-4978-8a4b-d81bcecb92b3 # Blocks
+handle: positioning
+instructions: ''
+name: Positioning
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Reverse
+        -
+          - value
+          - reverse
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,65 @@
+childBlocks: null
+field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
+fieldLayouts:
+  6622ea1d-6948-46ed-9ec1-c93230578841:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc45b907-cf21-4be7-8773-8dbe9e1bafcf # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1bc243aa-ed48-4317-85a6-96f6dc7aa9a5 # Secondary Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Spacing
+        sortOrder: 2
+group: null
+handle: imagesContentParallax
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Images & Content (Parallax)'
+topLevel: true

@@ -1,0 +1,19 @@
+columnSuffix: wvehglmx
+contentColumnType: text
+fieldGroup: 9ccf8330-1271-4701-bc01-9a443ccc1d86 # People
+handle: alternateContactPosition
+instructions: ''
+name: 'Alternate Contact Position'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

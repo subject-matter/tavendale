@@ -1,0 +1,52 @@
+childBlocks: null
+field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
+fieldLayouts:
+  719ff3e2-9584-4219-8490-8cf22266c2dd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e0c4cdfd-1db3-498a-bd62-bc220e8a03ad # Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+group: null
+handle: pathway
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Pathway
+topLevel: false

@@ -1,0 +1,40 @@
+{% set primaryImage = {
+    mode: 'crop',
+    width: 657,
+    height: 504,
+    quality: 100,
+    position: 'center-center'
+} %}
+{% set secondaryImage = {
+    mode: 'crop',
+    width: 313,
+    height: 244,
+    quality: 100,
+    position: 'center-center'
+} %}
+
+<div class="parallax-image-content pt-md {{ bottomSpacing }} neo-block">
+    <div class="parallax-image-content__pattern"></div>
+    <div class="container">
+        <div class="parallax-image-content__image">
+            <div class="parallax-image-content__inner">
+                <div class="parallax-image-content__primary" data-parallax-primary>
+                    {% if block.primaryImage.one() %}
+                        <div class="parallax-image-content__primary-img"
+                             style="background-image: url('{{ block.primaryImage.one().getUrl(primaryImage) }}')"></div>
+                    {% endif %}
+                </div>
+                <div class="parallax-image-content__secondary" data-parallax-secondary>
+                    {% if block.secondaryImage.one() %}
+                        <div class="parallax-image-content__secondary-img"
+                             style="background-image: url('{{ block.secondaryImage.one().getUrl(secondaryImage) }}')"></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="parallax-image-content__text">
+            <h3>{{ block.sectionTitle }}</h3>
+            {{ block.sectionBody }}
+        </div>
+    </div>
+</div>

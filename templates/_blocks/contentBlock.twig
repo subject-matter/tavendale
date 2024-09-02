@@ -1,0 +1,44 @@
+<div class="content-block neo-block {{ bottomSpacing }}">
+    <div class="container-">
+        <div class="content-block__title">
+            <h2>{{ block.sectionTitle }}</h2>
+        </div>
+        {% if block.sectionExcerpt %}
+            <div class="content-block__excerpt">
+                {{ block.sectionExcerpt }}
+            </div>
+        {% endif %}
+        <div class="content-block__text">
+            {{ block.sectionBody }}
+        </div>
+
+        {% if block.children|length %}
+            <div class="content-block__links">
+                <ul>
+                    {% for link in block.children.all() %}
+                        {% if link.sectioncta.getUrl() %}
+                            <li>
+                                <a href="{{ link.sectioncta.getUrl() }}">
+                                    <span>
+                                        {{ link.sectioncta.getCustomText() }}
+                                    </span>
+                                    <span class="arrow">
+                                        {% include "_svg/arrowRight" %}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if block.sectioncta.getUrl() %}
+            <div class="content-block__action">
+                <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--yellow">
+                    {{ block.sectioncta.getCustomText() }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>

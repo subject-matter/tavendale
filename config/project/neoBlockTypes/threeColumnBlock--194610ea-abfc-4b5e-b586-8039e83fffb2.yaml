@@ -1,0 +1,39 @@
+childBlocks:
+  - column
+field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
+fieldLayouts:
+  7dcf23a4-273f-4772-a887-4ffb9cd56e71:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Spacing
+        sortOrder: 2
+group: null
+handle: threeColumnBlock
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Three Column Block'
+topLevel: true

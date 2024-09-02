@@ -1,0 +1,89 @@
+
+.people {
+  @apply overflow-hidden;
+
+  &__title {
+
+    h2 {
+      @apply flex;
+    }
+
+  }
+
+  &__blurb {
+    @apply ml-2 w-8 h-8 rounded-full bg-primary inline-flex items-center justify-center;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__inner {
+    @apply pb-24 relative;
+  }
+
+  &__person {
+    @apply mr-12;
+    width: 200px;
+  }
+
+  &__img {
+    @apply block rounded-full bg-cover bg-no-repeat bg-center mb-7;
+    width: 200px;
+    height: 200px;
+  }
+
+  &__details {
+    @apply text-small;
+
+    h4 {
+      @apply mb-2;
+    }
+
+    h5 {
+      @apply mb-2;
+    }
+
+    ul {
+      @apply text-base;
+    }
+
+    li {
+      @apply flex mb-2;
+    }
+
+    li a {
+      @apply inline-block pl-4 break-all;
+
+      &:hover {
+        @apply underline;
+      }
+    }
+
+    li a.email {
+      font-size:small;
+    }
+  }
+
+  &__action {
+    @apply pt-3;
+  }
+
+  &__nav {
+    @apply flex flex-row-reverse justify-center absolute bottom-0 left-0 w-full;
+  }
+
+  @screen md {
+    &__inner {
+      @apply pb-0 pl-26 relative;
+      width: calc(100vw - (100vw - 1236px) / 2);
+    }
+
+    &__nav {
+      @apply w-16 absolute top-0 left-0 flex-col justify-start;
+
+      svg {
+        @apply w-16 h-16;
+      }
+    }
+  }
+
+}

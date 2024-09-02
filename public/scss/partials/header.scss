@@ -1,0 +1,96 @@
+.header {
+  @apply bg-white py-5 absolute top-0 left-0 w-full z-50;
+
+  &--fixed {
+    @apply fixed;
+    transform: translateY(-120%);
+    @extend .transition;
+  }
+
+  &--dark {
+    @apply bg-black;
+
+    .header__logo .text {
+        fill: white;
+    }
+
+    .header__mobile-actions {
+      path {
+        fill: white;
+      }
+    }
+  }
+
+  .container-fluid {
+    @apply flex justify-between items-center;
+  }
+
+  &__logo {
+    @apply m-0;
+
+    svg {
+      width: 194px;
+      height: 49px;
+    }
+  }
+
+  &__mobile-actions {
+
+    ul {
+      @apply flex;
+    }
+
+    li {
+      @apply mr-6;
+
+      &:last-child {
+        @apply mr-0;
+      }
+    }
+
+    a {
+      @apply flex w-6 h-6 justify-center items-center;
+    }
+
+    .close {
+      @apply hidden;
+    }
+
+    .header--active-nav & {
+
+      .close {
+        @apply block;
+      }
+
+      .open {
+        @apply hidden;
+      }
+
+    }
+
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  @screen lg {
+
+    &__mobile-actions {
+      @apply hidden;
+    }
+
+    &__nav {
+      @apply block top-auto max-w-none h-auto w-auto;
+    }
+
+  }
+}
+
+
+[data-scrolldir="up"] .header {
+
+  &--fixed {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,192 @@
+
+    <IfModule mod_headers.c>
+    	Header always edit Set-Cookie (.*) "$1; SameSite=strict"
+    	Header set Strict-Transport-Security "max-age=10886400; includeSubDomains; preload"
+    	Header set X-XSS-Protection "1; mode=block"
+    	Header always set X-Frame-Options "SAMEORIGIN"
+    	Header always set Referrer-Policy "same-origin"
+    	Header set X-Content-Type-Options nosniff
+    </IfModule>
+
+    <IfModule mod_rewrite.c>
+    	RewriteEngine On
+
+        RewriteCond %{HTTP_HOST} ^payments\.tp\.co\.nz$ [NC]
+        RewriteRule ^(.*) https://www.tp.co.nz/payments [L,R]
+
+    	# To redirect all users to HTTPS uncomment the following.
+    	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    	# Redirects all www to non-www
+    #	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    #	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    	# Redirects all non-www to www
+       RewriteCond %{HTTP_HOST} !^www. [NC]
+       RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+        RewriteRule ^contact/?$ /contact-us [R=301,NE,L]
+        RewriteRule ^news/30/9/2021/2021-resident-visa-am-i-eligible/?$ /news/2021-resident-visa [R=301,NE,L]
+        RewriteRule ^news/27/10/2021/covid-19-rent-relief-for-commercial-tenants/?$ /news/covid-19-rent-relief-for-commercial-tenants [R=301,NE,L]
+        RewriteRule ^news/1/11/2021/implementation-of-the-end-of-life-choice-act/?$ /news/end-of-life-act [R=301,NE,L]
+        RewriteRule ^news/15/9/2021/more-oversight-less-overseer-nbspchanges-to-nutrient-management-on-the-horizon/?$ /news/more-overseeing-less-overseer [R=301,NE,L]
+        RewriteRule ^news/16/2/2021/trusts-act-2019-key-features/?$ /news/trusts-acts-2019-key-features [R=301,NE,L]
+        RewriteRule ^news/31/8/2021/your-guide-to-relationship-property/?$ /news/your-guide-to-relationship-property [R=301,NE,L]
+        RewriteRule ^agribusiness/?$ /our-expertise/agribusiness [R=301,NE,L]
+        RewriteRule ^commercial/?$ /our-expertise/commercial [R=301,NE,L]
+        RewriteRule ^employment/?$ /our-expertise/employment [R=301,NE,L]
+        RewriteRule ^immigration/?$ /our-expertise/immigration [R=301,NE,L]
+        RewriteRule ^community/?$ /about-us [R=301,NE,L]
+        RewriteRule ^disputes/?$ /our-expertise [R=301,NE,L]
+        RewriteRule ^immigrationchinese/?$ /our-expertise [R=301,NE,L]
+        RewriteRule ^news/1/9/2017/if-you-cant-fix-an-health-and-safety-issue-you-now-need-to-isolate-it-until-you-can/?$ /news [R=301,NE,L]
+        RewriteRule ^news/10/5/2017/land-water/?$ /news [R=301,NE,L]
+        RewriteRule ^news/10/5/2017/put-a-lid-on-it-enforcing-your-quad-bike-safety-policy/?$ /news [R=301,NE,L]
+        RewriteRule ^news/10/7/2020/new-changes-for-temporary-work-visa-holders-in-new-zealand/?$ /news [R=301,NE,L]
+        RewriteRule ^news/14/5/2018/mpi-orders-open-to-challenge/?$ /news [R=301,NE,L]
+        RewriteRule ^news/18/5/2018/excluding-liability-in-tort-construction-contracts/?$ /news [R=301,NE,L]
+        RewriteRule ^news/18/9/2018/you-us-amlcft/?$ /news [R=301,NE,L]
+        RewriteRule ^news/19/4/2017/health-and-safety-in-schools-1/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2/12/2020/proud-to-be-a-delivery-partner-for-wild-n-art-and-pop-up-penguins/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2014/3/26/post-graduate-agri-tech-scholarship-announced/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2014/3/26/specialists-in-resource-management-law-appointed/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2014/6/30/leading-specialist-law-firm-returns-to-the-cbd/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2014/8/8/key-issues-discussed-at-industry-event/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2014/9/25/tavendale-and-partners-cooney-silva-evatt/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2016/11/22/earthquake-damage-on-rural-properties-some-useful-things-to-know/?$ /news [R=301,NE,L]
+        RewriteRule ^news/2017/1/27/minimum-wage-is-on-the-rise/?$ /news [R=301,NE,L]
+        RewriteRule ^news/21/7/2017/limitation-period-for-canterbury-earthquake-damage-claims/?$ /news [R=301,NE,L]
+        RewriteRule ^news/22/2/2018/labour-inspectors-targeting-farmers-in-2018/?$ /news [R=301,NE,L]
+        RewriteRule ^news/22/5/2017/ingredients-vision/?$ /news [R=301,NE,L]
+        RewriteRule ^news/23/5/2017/a-little-knowledge-can-carry-a-wealth-of-legal-responsibility/?$ /news [R=301,NE,L]
+        RewriteRule ^news/25/7/2017/navigating-the-sustainability-road/?$ /news [R=301,NE,L]
+        RewriteRule ^news/26/11/2021/covid-19-legal-changes-set-to-affect-all-businesses/?$ /news [R=301,NE,L]
+        RewriteRule ^news/30/3/2020/covid-19-alert-level-4-guide-for-landlords-and-tenants/?$ /news [R=301,NE,L]
+        RewriteRule ^news/31/1/2019/new-zealand-national-show-jumping-and-hunter-championships/?$ /news [R=301,NE,L]
+        RewriteRule ^news/5/6/2019/mycoplasma-bovis-affected-farmers-seek-legal-help-as-eradication-tops-2275m/?$ /news [R=301,NE,L]
+        RewriteRule ^news/6/6/2017/stadium-decision-appealed/?$ /news [R=301,NE,L]
+        RewriteRule ^news/6/6/2019/dont-underestimate-the-power-of-covenants-over-land/?$ /news [R=301,NE,L]
+        RewriteRule ^news/7/3/2019/introducing-the-tavendale-and-partners-godzone-team/?$ /news [R=301,NE,L]
+        RewriteRule ^news/9/4/2020/covid-19-employment-law-update-what-you-need-to-know/?$ /news [R=301,NE,L]
+        RewriteRule ^news/9/5/2017/if-succession-planning-were-a-cake/?$ /news [R=301,NE,L]
+        RewriteRule ^news/9/6/2020/new-beneficiary-disclosure-obligations/?$ /news [R=301,NE,L]
+        RewriteRule ^overseasinvestment/?$ /our-expertise [R=301,NE,L]
+        RewriteRule ^personal/?$ /our-expertise/personal-law [R=301,NE,L]
+        RewriteRule ^privacypolicy/?$ /our-privacy-policy [R=301,NE,L]
+        RewriteRule ^resourcemanagement/?$ /our-expertise/resource-management [R=301,NE,L]
+        RewriteRule ^team/?$ /our-people [R=301,NE,L]
+        RewriteRule ^termsofengagement/?$ /terms-of-engagement [R=301,NE,L]
+        RewriteRule ^tptrustmanagement/?$ /our-expertise/trusts [R=301,NE,L]
+
+
+    	# Send would-be 404 requests to Craft
+    	RewriteCond %{REQUEST_FILENAME} !-f
+    	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    	RewriteRule (.+) index.php?p=$1 [QSA,L]
+
+    </IfModule>
+
+
+    ### CACHE START ###
+    <IfModule mod_gzip.c>
+    	mod_gzip_on Yes
+    	mod_gzip_dechunk Yes
+    	mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+    	mod_gzip_item_include handler ^cgi-script$
+    	mod_gzip_item_include mime ^text/.*
+    	mod_gzip_item_include mime ^application/x-javascript.*
+    	mod_gzip_item_exclude mime ^image/.*
+    	mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+    </IfModule>
+
+    <IfModule mod_deflate.c>
+    	# Compress HTML, CSS, JavaScript, Text, XML and fonts
+    	AddOutputFilterByType DEFLATE application/javascript
+    	AddOutputFilterByType DEFLATE application/json
+    	AddOutputFilterByType DEFLATE application/schema+json
+    	AddOutputFilterByType DEFLATE application/rss+xml
+    	AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    	AddOutputFilterByType DEFLATE application/x-font
+    	AddOutputFilterByType DEFLATE application/x-font-opentype
+    	AddOutputFilterByType DEFLATE application/x-font-otf
+    	AddOutputFilterByType DEFLATE application/x-font-truetype
+    	AddOutputFilterByType DEFLATE application/x-font-ttf
+    	AddOutputFilterByType DEFLATE application/x-javascript
+    	AddOutputFilterByType DEFLATE application/xhtml+xml
+    	AddOutputFilterByType DEFLATE application/xml
+    	AddOutputFilterByType DEFLATE font/opentype
+    	AddOutputFilterByType DEFLATE font/otf
+    	AddOutputFilterByType DEFLATE font/ttf
+    	AddOutputFilterByType DEFLATE image/svg+xml
+    	AddOutputFilterByType DEFLATE image/x-icon
+    	AddOutputFilterByType DEFLATE text/css
+    	AddOutputFilterByType DEFLATE text/html
+    	AddOutputFilterByType DEFLATE text/javascript
+    	AddOutputFilterByType DEFLATE text/plain
+    	AddOutputFilterByType DEFLATE text/xml
+
+    	# Remove browser bugs (only needed for really old browsers)
+    	BrowserMatch ^Mozilla/4 gzip-only-text/html
+    	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    	Header append Vary User-Agent
+    </IfModule>
+
+    <IfModule mod_expires.c>
+    	ExpiresActive On
+
+    	ExpiresByType text/html "access plus 1 hour"
+
+    	# images/flash/audio/video/fonts 1 MONTH ###
+    	ExpiresByType image/x-icon "access plus 1 month"
+    	ExpiresByType image/jpeg "access plus 1 month"
+    	ExpiresByType image/png "access plus 1 month"
+    	ExpiresByType image/gif "access plus 1 month"
+    	ExpiresByType image/svg+xml "access plus 1 month"
+    	ExpiresByType image/ico "access plus 8 day"
+    	ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    	ExpiresByType video/mp4 "access plus 1 month"
+    	ExpiresByType video/quicktime "access plus 1 month"
+    	ExpiresByType video/x-f4v "access plus 1 month"
+    	ExpiresByType audio/mpeg "access plus 1 month"
+    	ExpiresByType audio/x-aac "access plus 1 month"
+    	ExpiresByType audio/mp4 "access plus 1 month"
+    	ExpiresByType font/ttf "access plus 1 month"
+    	ExpiresByType font/woff "access plus 1 month"
+    	ExpiresByType font/woff2 "access plus 1 month"
+
+    	# css/js 1 WEEK ###
+    	ExpiresByType text/css "access plus 8 day"
+    	ExpiresByType text/javascript "access plus 8 day"
+    	ExpiresByType application/javascript "access plus 8 day"
+    	ExpiresByType application/x-javascript "access plus 8 day"
+    </IfModule>
+
+    <IfModule mod_headers.c>
+    	Header set Connection keep-alive
+    	Header unset ETag
+    	RequestHeader unset If-Modified-Since
+    	RequestHeader unset If-None-Match
+    	FileETag None
+
+    	<filesMatch ".(ico|jpe?g|png|gif|swf|flv|mp4|mov|f4v|mp3|aac|m4a)$">
+    		Header set Cache-Control "max-age=2592000, public"
+    	</filesMatch>
+    	<filesMatch ".(css)$">
+    		Header set Cache-Control "max-age=691200, public"
+    	</filesMatch>
+    	<filesMatch ".(js)$">
+    		Header set Cache-Control "max-age=691200, public"
+    	</filesMatch>
+    	<filesMatch ".(woff2?|eot|ttf|otf|svg)$">
+    		Header set Cache-Control "max-age=2592000, public"
+    	</filesMatch>
+
+    	<FilesMatch ".(eot|otf|svg|ttf|woff2?)$">
+    		Header set Access-Control-Allow-Origin "*"
+    	</FilesMatch>
+    </IfModule>
+    ### CACHE END ###

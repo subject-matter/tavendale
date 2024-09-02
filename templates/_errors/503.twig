@@ -1,0 +1,32 @@
+{% extends "_layouts/layout.twig" %}
+
+{% block template %}
+
+    <div class="hero hero--generic sb-med">
+        <div class="container">
+            <div class="hero__content">
+                <h1>
+                    {{ 'Website Unavailabe'|t }}
+                </h1>
+            </div>
+        </div>
+        <div class="hero__pattern"></div>
+    </div>
+
+    <div class="content-block neo-block sb-med">
+        <div class="container-">
+            <div class="content-block__excerpt">
+                <p>
+                    {{ 'Our website is currently unavailable, please check back soon.'|t }}
+                </p>
+            </div>
+
+            <div class="content-block__action">
+                <a href="{{alias('@siteUrl')}}" class="btn btn--solid btn--yellow">
+                    {{ 'Visit the Home Page'|t }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

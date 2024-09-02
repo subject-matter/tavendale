@@ -1,0 +1,38 @@
+{% set environment = craft.app.config.env %}
+{% set isHome = false %}
+{% if entry is defined %}
+    {% if entry.type == 'homePage' %}
+        {% set isHome = true %}
+    {% endif %}
+{% endif %}
+{% header "Link: <#{siteUrl}>; rel=dns-prefetch;,<#{siteUrl}>; rel=preconnect; crossorigin;" %}
+<!doctype html>
+<html class="no-js" lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    {% include "_partials/head.twig" %}
+    {% block head %}{% endblock %}
+</head>
+    <body class="{% if entry is defined %}{{ entry.type }}{% endif %}">
+
+        {# Google Tag Manager #}
+        {# <script> will be inject into head and <nosript> will be left here) #}
+        {% include "_partials/googleAnalytics.twig" %}
+
+        {% if isHome %}
+            <div class="black-fadein js-fadein"></div>
+        {% endif %}
+        {% include "_partials/header.twig" %}
+        <div id="app" class="app">
+            {% if environment in ['dev'] %}
+                <Breakpoints></Breakpoints>
+            {% endif %}
+            <main id="page-content">
+                {% include "_partials/hero.twig" %}
+                {% block template %}{% endblock %}
+            </main>
+            {% include "_partials/footer.twig" %}
+{#            {% include "_partials/mobileNavigation.twig" %}#}
+        </div>
+        {% include "_partials/scripts.twig" %}
+    </body>
+</html>

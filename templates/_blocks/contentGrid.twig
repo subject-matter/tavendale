@@ -1,0 +1,14 @@
+<div class="content-grid neo-block {{ bottomSpacing }}">
+    <div class="container">
+        <div class="content-grid__inner">
+            {% for child in block.children.all() %}
+                <div class="content-grid__cell">
+                    <h4>{{ child.sectionTitle }}</h4>
+                    <div class="content-grid__content">
+                        {{ child.sectionExcerpt }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

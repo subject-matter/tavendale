@@ -1,0 +1,60 @@
+{% set animations = false %}
+{% set primaryImage = {
+    mode: 'fill',
+    width: 624,
+    height: 449,
+    quality: 100,
+    position: 'center-center'
+} %}
+{% set secondImage = {
+    mode: 'fill',
+    width: 572,
+    height: 740,
+    quality: 100,
+    position: 'center-center'
+} %}
+{% if block.animationPrimaryText %}
+    {% set animations = true %}
+{% endif %}
+<div class="two-col-images neo-block{% if animations %} two-col-images--with-animation{% endif %} {{ bottomSpacing }}">
+    {% if animations %}
+        <div class="two-col-images__animation" data-animation1>
+            {% if block.animationPrimaryText %}
+                <div class="two-col-images__animation__first">{{ block.animationPrimaryText }}</div>
+            {% endif %}
+            {% if block.animationSecondaryText %}
+                <div class="two-col-images__animation__plus">
+                    {% include "_svg/plus" %}
+                </div>
+                <div class="two-col-images__animation__second">{{ block.animationSecondaryText }}</div>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="two-col-images__row two-col-images__row--{{ block.positioning }}">
+            <div class="two-col-images__second-img">
+                {% if block.secondaryImage.one() %}
+                    <img src="{{ block.secondaryImage.one().getUrl(secondImage) }}" />
+                {% endif %}
+            </div>
+            <div class="two-col-images__primary">
+                {% if block.primaryImage.one() %}
+                    <div class="two-col-images__primary-img">
+                        <img src="{{ block.primaryImage.one().getUrl(primaryImage) }}" />
+                    </div>
+                {% endif %}
+                {% if block.sectionTitle %}
+                    <h2>{{ block.sectionTitle }}</h2>
+                {% endif %}
+                {{ block.sectionBody }}
+                {% if block.sectioncta.getUrl() %}
+                    <div class="two-col-images__cta">
+                        <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--yellow">
+                            {{ block.sectioncta.getCustomText() }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+{% extends "_layouts/layout.twig" %}
+{% set ourPeoplePage = craft.entries.section('ourPeople').one() %}
+{% set team = entry.team.one() %}
+{% set otherMembers = null %}
+{% if team %}
+    {% set otherMembers = craft.entries({
+        section : 'people',
+        relatedTo: team
+    }).id('and, not ' ~ entry.id)  %}
+{% endif %}
+{% set otherPrimaryImage = {
+    mode: 'crop',
+    width: 300,
+    height: 300,
+    quality: 75,
+    position: 'center-center'
+} %}
+
+{% block template %}
+
+    <div class="person-page">
+        <div class="container person-page__grid mb-md">
+            <div class="person-page__sidebar">
+                <div class="person-page__sidebar-box">
+                    <h3>Contact {{ entry.title }}</h3>
+                    <ul>
+                        {% if entry.phone %}
+                            <li>T: <a href="tel:{{ entry.phone }}">{{ entry.phone }}</a></li>
+                        {% endif %}
+                        {% if entry.email %}
+                            <li>E: <a href="mailto:{{ entry.email }}">{{ entry.email }}</a></li>
+                        {% endif %}
+                    </ul>
+                    {% if entry.linkedin %}
+                        <p class="person-page__linkedin">
+                            <a href="{{ entry.linkedin }}" target="_blank">
+                                Connect on LinkedIn {% include "_svg/linkedin" %}
+                            </a>
+                        </p>
+                    {% endif %}
+
+                    {% if entry.alternateContactName
+                        or entry.alternateContactPhone
+                        or entry.alternateContactPosition
+                        or entry.alternateContactEmail %}
+                    <div class="person-page__alternate">
+                        <p>or contact:</p>
+                        <ul>
+                            {% if entry.alternateContactName %}
+                                <li>{{ entry.alternateContactName }}</li>
+                            {% endif %}
+                            {% if entry.alternateContactPosition %}
+                                <li>{{ entry.alternateContactPosition }}</li>
+                            {% endif %}
+                            {% if entry.alternateContactPhone %}
+                                <li>T: <a href="tel:{{ entry.alternateContactPhone }}">{{ entry.alternateContactPhone }}</a></li>
+                            {% endif %}
+                            {% if entry.alternateContactEmail %}
+                                <li>E: <a href="mailto:{{ entry.alternateContactEmail }}" target="_blank" >{{ entry.alternateContactEmail }}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                </div>
+                {% if entry.qualifications %}
+                    <div class="person-page__sidebar-box">
+                        <h3>Qualifications</h3>
+                        <p>
+                            {{ entry.qualifications|nl2br }}
+                        </p>
+                    </div>
+                {% endif %}
+                {% if entry.expertiseSelection|length %}
+                    <div class="person-page__sidebar-box person-page__sidebar-box--last">
+                        <h3>Expertise</h3>
+                        <ul>
+                            {% for expertise in entry.expertiseSelection.all() %}
+                                <li>
+                                    {{ expertise.expertise.one() ? expertise.expertise.one().title : "" }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="person-page__sidebar-bg"></div>
+            </div>
+            <div class="person-page__main">
+                {% if entry.sectionExcerpt %}
+                    <div class="person-page__excerpt">
+                        {{ entry.sectionExcerpt }}
+                    </div>
+                {% endif %}
+                <div class="person-page__text">
+                    {{ entry.sectionBody }}
+                </div>
+
+                {% if entry.sectionQuote %}
+                    <div class="person-page__quote">
+                        <p>{{ entry.sectionQuote }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if otherMembers|length %}
+
+            <div class="people mb-md" data-people>
+                <div class="container">
+                    <div class="people__title">
+                        <h2>
+                            More of {{ entry.title }}'s team
+                            <span class="people__blurb">{{ otherMembers|length }}</span>
+                        </h2>
+                    </div>
+                    <div class="people__inner">
+                        <div class="people__nav">
+                            <a href="#" data-people-next>
+                                {% include "_svg/chervonRight" %}
+                            </a>
+                            <a href="#" data-people-prev>
+                                {% include "_svg/chervonLeft" %}
+                            </a>
+                        </div>
+                        <div class="people__slider" data-people-slider>
+                            {% for person in otherMembers.all() %}
+                            <div class="flex flex-col justify-between min-h-full" >
+                                <div class="people__person">
+                                    <div class="people__img"
+                                         {% if person.primaryImage.one() %}style="background-image: url('{{ person.primaryImage.one().getUrl(otherPrimaryImage) }}')" {% endif %}
+                                    >
+                                    </div>
+                                    <div class="people__details">
+                                        <h4>{{ person.title }}</h4>
+                                        <h5>{{ person.position }}</h5>
+                                        {% if person.phone or person.email %}
+                                            <ul>
+                                                {% if person.phone %}
+                                                    <li>
+                                                        T: <a href="tel:{{ person.phone }}">{{ person.phone }}</a>
+                                                    </li>
+                                                {% endif %}
+                                                {% if person.email %}
+                                                    <li>
+                                                        E: <a class="email" href="mail:{{ person.email }}">{{ person.email }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                                <div class="people__action">
+                                    <a href="{{ person.getUrl() }}" class="btn btn--solid btn--grey">
+                                        {% include "_svg/person" %}
+                                        View profile
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+       
+
+    </div>
+
+    {% include "_partials/blocks" %}
+
+    {% include "_partials/blocks" with {entry: ourPeoplePage} %}
+
+{% endblock %}

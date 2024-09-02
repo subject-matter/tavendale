@@ -1,0 +1,102 @@
+.testimonial {
+  @apply relative;
+
+  .container {
+    @apply relative z-20;
+  }
+
+  &__pattern {
+    @apply absolute bg-center bg-repeat w-full left-0 top-0;
+    background-image: url('../../img/pattern.svg');
+    height: 242px;
+  }
+
+  &__inner {
+    @apply bg-grey2 px-5 py-8;
+  }
+
+  &__img-holder {
+    @apply relative mb-6;
+    width: 200px;
+
+    svg {
+      @apply absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__img {
+    @apply block rounded-full bg-cover bg-no-repeat bg-center overflow-hidden;
+    width: 200px;
+    height: 200px;
+  }
+
+  &__text {
+
+    h3 {
+      @apply mb-8;
+    }
+  }
+
+  &__content {
+    @apply mb-8;
+    font-size: 20px;
+    line-height: 1.48;
+    p {
+      @apply inline;
+    }
+  }
+
+  &__personal {
+    @extend .h5;
+  }
+
+
+  @screen md {
+
+    &__inner {
+      @apply flex flex-row-reverse items-center py-12 px-13;
+    }
+
+    &__img-holder {
+      @apply mb-0 flex-shrink-0 ml-14;
+      width: 43%;
+      max-width: 480px;
+
+      svg {
+        @apply top-6 right-8;
+      }
+    }
+
+    &__img {
+      @apply w-full h-auto;
+
+      &:after {
+        @apply block;
+        content: " ";
+        padding-top: 100%;
+      }
+    }
+
+    &__content {
+      font-size: 28px;
+    }
+
+    &__pattern {
+      @apply h-full;
+      width: calc(100vw - 250px);
+    }
+
+  }
+
+  @screen lgxx {
+
+    &__pattern {
+      @apply h-full;
+      width: calc(1236px + ((100vw - 1236px) / 2) - 250px);
+    }
+
+  }
+
+}

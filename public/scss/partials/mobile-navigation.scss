@@ -1,0 +1,72 @@
+@screen pc {
+
+  .nav {
+    @apply w-full px-6 py-10 block fixed bg-white right-0 z-10 overflow-x-hidden overflow-y-scroll;
+    @extend .transition;
+    top: 89px;
+    max-width: 400px;
+    height: calc(100vh);
+    transform: translateX(110%);
+    .header--active-nav & {
+      transform: translateX(0);
+    }
+
+    &__anchor {
+      @apply flex px-3 py-5 border-b border-black justify-between relative;
+      @extend .transition;
+      font-size: 20px;
+      line-height: 1;
+
+      &.active,
+      &:hover {
+        @apply bg-primary;
+      }
+    }
+
+    &__subnav-arrow {
+      @apply w-11 flex items-center absolute right-6 justify-center cursor-pointer;
+      height: 61px;
+      transform: translateY(-100%);
+    }
+
+    &__subnav {
+      @apply absolute top-0 left-0 px-6 py-10 bg-white z-20 h-full;
+      overflow-y: scroll;
+      @extend .transition;
+      transform: translateX(110%);
+
+      .nav__li--subnav-active > & {
+
+        transform: translateX(0);
+
+      }
+    }
+
+    &__contact {
+      @apply px-3 py-5 flex justify-center;
+    }
+
+    &__subnav-image {
+      @apply mb-6;
+
+      &:before {
+        @apply block bg-cover bg-no-repeat bg-center;
+        content: " ";
+        padding-top: 75%;
+      }
+    }
+
+    &__subnav-blurb {
+      @apply py-5;
+      font-size: 20px;
+      line-height: 1.48;
+    }
+
+    &__subnav-link {
+      a {
+        @apply underline;
+      }
+    }
+
+  }
+}

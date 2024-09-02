@@ -1,0 +1,76 @@
+.tabs {
+
+  &__nav {
+    ul {
+      @apply flex;
+    }
+
+    li {
+      @apply flex;
+      flex: 1;
+    }
+
+    a {
+      @apply block p-5 mb-0 w-full text-center;
+
+      &.active {
+        @apply bg-grey2;
+      }
+    }
+  }
+
+  &__tab {
+    @apply hidden bg-grey2 p-4;
+
+    &.active {
+      @apply block;
+    }
+
+    &__img-holder {
+      @apply mb-8;
+    }
+
+    &__img {
+      @apply bg-center bg-cover bg-no-repeat;
+
+      &:before {
+        @apply block;
+        content: " ";
+        padding-top: 56.667%;
+      }
+    }
+
+    ul {
+      @apply mb-6;
+
+      li {
+        @apply border-b border-black py-3;
+      }
+    }
+  }
+
+  @screen md {
+    &__nav {
+      ul {
+        @apply w-10/12 mx-auto;
+      }
+    }
+
+    &__tab {
+      @apply p-12;
+
+      &__inner {
+        @apply -mx-8 flex;
+      }
+    }
+
+    &__tab__img-holder {
+      @apply w-1/2 px-8;
+    }
+
+    &__tab__body {
+      @apply w-1/2 px-8;
+    }
+  }
+
+}

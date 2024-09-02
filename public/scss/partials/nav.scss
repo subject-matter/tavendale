@@ -1,0 +1,148 @@
+@screen lg {
+
+  .nav {
+
+    .header--dark & {
+      a.nav__anchor--level-1 {
+        @apply text-white;
+
+        &:hover {
+          @apply border-primary;
+        }
+
+        &.active {
+          @apply border-white;
+        }
+      }
+    }
+
+    > ul {
+      @apply flex items-center;
+    }
+
+    &__li {
+      @apply ml-6;
+
+      &:first-child {
+        @apply ml-0;
+      }
+
+      > .nav__anchor {
+        @apply block py-1 border-b-2 border-transparent;
+
+        &.active {
+          @apply border-black;
+        }
+
+        &:hover{
+          @apply border-primary;
+        }
+      }
+    }
+
+    &__subnav-arrow {
+      @apply hidden;
+    }
+
+    li:hover {
+      .nav__subnav {
+        @apply visible opacity-100 z-auto;
+      }
+    }
+
+    &__subnav {
+      @apply flex w-full invisible absolute right-0 opacity-0;
+      width: 70vw;
+      //height: calc(100vh - 60px);
+      padding-top: 25px;
+      z-index: -50;
+      @extend .transition;
+
+      &--inner {
+        @apply bg-grey1 w-full overflow-y-scroll;
+        padding: 45px 60px;
+      }
+
+      &__back {
+        @apply hidden;
+      }
+
+      &__arrow {
+        @apply hidden;
+      }
+    }
+
+
+    &__subnav-list {
+      @apply -mx-5 mb-7 flex-wrap;
+
+      > li {
+        @apply w-1/2 ml-0 px-5 mb-2;
+
+        a.nav__anchor {
+          @apply font-headings inline-block py-0 text-lead-lg;
+        }
+      }
+    }
+
+    &__subnav-blurb {
+      @apply -mx-5 flex flex-wrap;
+    }
+
+    &__subnav-img-holder {
+      @apply w-1/2 px-5;
+    }
+
+    &__subnav-image {
+      @apply w-full bg-cover bg-center bg-no-repeat;
+
+      &:before {
+        @apply block;
+        content: " ";
+        padding-top: 75%;
+      }
+    }
+
+    &__subnav-text {
+      @apply w-1/2 px-5 text-grey4 font-headings;
+
+      display:flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      p {
+        @apply text-lead-lg;
+      }
+    }
+
+    &__subnav-link a {
+      @apply text-black;
+      font-size: 20px;
+
+      &:hover {
+        @apply underline;
+      }
+    }
+
+  }
+
+}
+
+
+@screen lgx {
+
+  .nav {
+
+    &__li {
+      @apply ml-14;
+    }
+
+    &__subnav {
+      &--inner {
+        padding: 95px 112px;
+      }
+    }
+
+  }
+
+}

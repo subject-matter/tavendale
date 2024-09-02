@@ -1,0 +1,62 @@
+fieldLayouts:
+  3b025fc3-3103-4d5f-ab04-e02e5ac3a10c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5c00c8db-d5d5-423e-88ad-929a70b96513 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Fields
+        sortOrder: 1
+handle: mainNavigation
+instructions: ''
+maxNodes: ''
+name: Main
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  b435198f-89d2-4c06-b0e1-e3d2dc874d2c: null # Tavendale & Partners
+sortOrder: 1
+structure:
+  maxLevels: null
+  uid: e6761295-537f-48e6-94af-256a0ef4fcca

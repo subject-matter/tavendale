@@ -1,0 +1,44 @@
+{% set locations = craft.entries({
+    section : 'location'
+}).all() %}
+{% set imgSize = {
+    mode: 'fill',
+    width: 622,
+    height: 300,
+    quality: 100,
+    position: 'center-center'
+} %}
+<div class="locations neo-block {{ bottomSpacing }}">
+    <div class="container">
+        <div class="locations__title">
+            <h3 class="h2">{{ block.sectionTitle }}</h3>
+        </div>
+        <div class="locations__grid">
+            {% for location in locations %}
+                <div class="locations__item">
+                    {% if location.primaryImage.one() %}
+                        <div class="locations__item__image"
+                            style="background-image: url({{ location.primaryImage.one().getUrl(imgSize) }})"
+                        ></div>
+                    {% endif %}
+                    <h4>{{ location.title }}</h4>
+                    {% if location.address %}
+                        <address>{{ location.address|nl2br }}</address>
+                    {% endif %}
+                    {% if location.phone %}
+                        <p class="locations__item__phone">
+                            <a href="tel:{{ location.phone }}">{{ location.phone }}</a>
+                        </p>
+                    {% endif %}
+                    {% if location.sectioncta.getUrl() %}
+                        <p class="locations__item__link">
+                            <a href="{{ location.sectioncta.getUrl() }}">
+                                {{ location.sectioncta.getCustomText() }}
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+handle: termsPrivacy
+instructions: ''
+maxNodes: ''
+name: 'Terms & Privacy'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  b435198f-89d2-4c06-b0e1-e3d2dc874d2c: null # Tavendale & Partners
+sortOrder: 3
+structure:
+  maxLevels: null
+  uid: 436b9a4f-f375-4403-841e-1bf43f255b12

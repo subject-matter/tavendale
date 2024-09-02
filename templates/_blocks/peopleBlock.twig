@@ -1,0 +1,67 @@
+{% set primaryImage = {
+    mode: 'crop',
+    width: 300,
+    height: 300,
+    quality: 100,
+    position: 'center-center'
+} %}
+
+
+<div class="people neo-block {{ bottomSpacing }}" data-people>
+    <div class="container">
+        <div class="people__title">
+            <h2>
+                {{ block.sectionTitle }}
+                <span class="people__blurb">{{ block.people|length }}</span>
+            </h2>
+        </div>
+        <div class="people__inner">
+            <div class="people__nav">
+                <a href="#" data-people-next>
+                    {% include "_svg/chervonRight" %}
+                </a>
+                <a href="#" data-people-prev>
+                    {% include "_svg/chervonLeft" %}
+                </a>
+            </div>
+            <div class="people__slider" data-people-slider>
+                {% for person in block.people.all() %}
+                    <div class="flex flex-col justify-between min-h-full" >
+                        <div class="people__person">
+                            <div class="people__img"
+                                 {% if person.primaryImage.one() %}style="background-image: url('{{ person.primaryImage.one().getUrl(primaryImage) }}')" {% endif %}
+                            >
+                            </div>
+                            <div class="people__details">
+                                <h4>{{ person.title }}</h4>
+                                <h5>{{ person.position }}</h5>
+                                {% if person.phone or person.email %}
+                                    <ul>
+                                        {% if person.phone %}
+                                            <li>
+                                                T: <a href="tel:{{ person.phone }}">{{ person.phone }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if person.email %}
+                                            <li>
+                                                E: <a class="email" target="_blank" href="mail:{{ person.email }}">{{ person.email }}</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                        <div class="people__action">
+                            <a href="{{ person.getUrl() }}" class="btn btn--solid btn--grey">
+                                {% include "_svg/person" %}
+                                View profile
+                            </a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

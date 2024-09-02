@@ -1,0 +1,428 @@
+@keyframes mobileTicker {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  5% {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+
+  10% {
+    opacity: 0.4;
+    transform: translateY(100%);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mobileTickerLast {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  5% {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+
+  10% {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes mdTicker {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  5% {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+
+  10% {
+    opacity: 0.4;
+    transform: translateY(100%);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes mdTickerLast {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  5% {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+
+  10% {
+    opacity: 0.4;
+    transform: translateY(100%);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  @apply relative w-full overflow-hidden;
+
+  &--home {
+    @apply  text-white flex items-center;
+    height: calc(100vh - 89px);
+    min-height: 580px;
+
+    .container-fluid {
+      @apply w-full;
+    }
+
+    h1 {
+      @apply text-big lowercase;
+      font-size: 80px;
+      min-width: 288px;
+    }
+  }
+
+  &--image {
+    @apply pt-9;
+
+    .container {
+      @apply relative z-10 overflow-hidden;
+    }
+
+    .hero__content {
+      @apply absolute bottom-5 pl-12 text-white z-20;
+    }
+
+    .hero__image {
+      @apply relative left-6 bg-cover bg-center bg-no-repeat;
+
+      &:before {
+        @apply block;
+        content: " ";
+        padding-top: 66.5%;
+      }
+    }
+
+    .hero__pattern {
+      @apply absolute w-full h-full top-0 left-0 bg-center bg-repeat;
+      background-image: url('../../img/pattern.svg');
+    }
+  }
+
+  &--generic {
+    @apply py-5;
+
+    .container {
+      @apply relative z-10;
+    }
+
+    .hero__pattern {
+      @apply absolute w-16 h-full top-0 right-0;
+      background-image: url('../../img/pattern.svg');
+    }
+  }
+
+  &--person {
+
+    .container {
+      @apply relative z-10;
+    }
+
+    .hero__pattern {
+      @apply absolute w-16 h-full top-0 right-0;
+      background-image: url('../../img/pattern.svg');
+    }
+  }
+
+  &__person-img-holder {
+    @apply block mb-6;
+  }
+
+  &__person-img {
+    @apply block rounded-full bg-cover bg-no-repeat bg-center;
+    width: 220px;
+    height: 220px;
+
+    &:after {
+      @apply block;
+      content: ' ';
+      padding-top: 100%;
+    }
+
+  }
+
+  &__person-details {
+    @apply font-headings;
+
+    h4 {
+      @apply mb-0;
+    }
+
+  }
+
+  &__animator {
+    @apply flex justify-center;
+  }
+
+  &__sticky {
+    @apply flex items-center;
+  }
+
+  &__plus {
+    @apply inline ml-4 relative;
+    top: 5px;
+
+    svg {
+      @apply w-10 h-10;
+    }
+  }
+
+  &__ticker {
+    @apply relative -top-2;
+    height: 88px;
+  }
+
+  &__word {
+    @apply absolute opacity-0;
+    animation-fill-mode: forwards;
+
+    &:nth-child(3n+1) {
+      animation-duration: 3s;
+      animation-name: mobileTicker;
+    }
+
+    &:nth-child(3n+2) {
+      animation-delay: 2200ms;
+      animation-duration: 3s;
+      animation-name: mobileTicker;
+    }
+
+    &:nth-child(3n+3) {
+      animation-delay: 4400ms;
+      animation-duration: 3s;
+      animation-name: mobileTicker;
+    }
+
+    &:nth-child(3n+4) {
+      animation-delay: 6600ms;
+      animation-duration: 3s;
+      animation-name: mobileTickerLast;
+    }
+  }
+
+  &__chervon {
+    @apply absolute left-1/2 bottom-10;
+    transform: translateX(-50%);
+  }
+
+  @screen md {
+
+    &--home {
+      h1 {
+        @apply flex;
+        min-width: 490px;
+      }
+    }
+
+    &__ticker {
+      @apply top-auto;
+    }
+
+    &__plus {
+      @apply mr-4;
+    }
+
+    &__animator {
+      @apply justify-start;
+    }
+
+    // mdTicker
+    &__word {
+      @apply absolute opacity-0;
+      animation-fill-mode: forwards;
+
+      &:nth-child(3n+1) {
+        animation-duration: 3s;
+        animation-name: mdTicker;
+      }
+
+      &:nth-child(3n+2) {
+        animation-delay: 2.2s;
+        animation-duration: 3s;
+        animation-name: mdTicker;
+      }
+
+      &:nth-child(3n+3) {
+        animation-delay: 4.4s;
+        animation-duration: 3s;
+        animation-name: mdTicker;
+      }
+
+      &:nth-child(3n+4) {
+        animation-delay: 6.6s;
+        animation-duration: 3s;
+        animation-name: mdTickerLast;
+      }
+    }
+
+    &--image {
+      @apply pt-9;
+
+      .container {
+        @apply overflow-visible;
+      }
+
+      .hero__image {
+        @apply relative left-6 bg-cover bg-center bg-no-repeat;
+        height: 500px;
+        width: calc(100vw - (100vw - 1236px) / 2);
+
+        &:before {
+          @apply hidden;
+        }
+      }
+
+      .hero__pattern {
+        @apply top-auto bottom-0;
+        height: 260px;
+      }
+    }
+
+    &--generic {
+      @apply py-10;
+
+      .hero__pattern {
+        @apply w-1/3;
+        max-width: 600px;
+      }
+    }
+
+    &--person {
+      .container {
+        @apply flex flex-row-reverse justify-between items-center;
+      }
+    }
+
+  }
+
+
+  @screen lg {
+
+    &--home {
+      h1 {
+        font-size: 166px;
+      }
+    }
+
+    &__plus {
+      svg {
+        @apply h-auto relative top-2;
+        width: 83px;
+      }
+    }
+
+    &--person {
+      .hero__pattern {
+        width: calc(230px + ((100vw - 1236px) / 2));
+      }
+    }
+
+    &__animator {
+      @apply relative;
+      top: -40px;
+    }
+
+    &__person-img-holder {
+      @apply flex-shrink-0;
+      height: 460px;
+    }
+
+    &__person-img {;
+      width: 460px;
+      height: 460px;
+    }
+
+    &__person-details {
+      h1 {
+        font-size: 80px;
+        line-height: 1;
+      }
+
+      h4 {
+        @apply -mt-1;
+        font-size: 40px;
+      }
+
+      p {
+        @apply mb-0 -mt-1;
+        font-size: 24px;
+      }
+    }
+
+  }
+
+}
+

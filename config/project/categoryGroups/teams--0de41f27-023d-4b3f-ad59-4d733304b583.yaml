@@ -1,0 +1,41 @@
+defaultPlacement: end
+fieldLayouts:
+  5ba79f0f-7140-4574-8729-94d86df135d8:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: teams
+name: Teams
+siteSettings:
+  b435198f-89d2-4c06-b0e1-e3d2dc874d2c: # Tavendale & Partners
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 182bc257-fe01-4c3b-a9bd-3ebdbccf2a6d

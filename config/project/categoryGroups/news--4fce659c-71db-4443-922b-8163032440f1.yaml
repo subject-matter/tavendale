@@ -1,0 +1,41 @@
+defaultPlacement: end
+fieldLayouts:
+  0b5de61f-fb10-4932-a017-f33dd914c0b1:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: news
+name: News
+siteSettings:
+  b435198f-89d2-4c06-b0e1-e3d2dc874d2c: # Tavendale & Partners
+    hasUrls: true
+    template: _singles/news
+    uriFormat: 'news/{slug}'
+structure:
+  maxLevels: 1
+  uid: ebeee0b6-9026-4289-8fc8-596c9bd86c7a

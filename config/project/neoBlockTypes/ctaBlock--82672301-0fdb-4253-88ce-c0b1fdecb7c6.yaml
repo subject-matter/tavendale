@@ -1,0 +1,74 @@
+childBlocks: null
+field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
+fieldLayouts:
+  be68699c-6e2a-4b7d-85a3-18bd6a63816c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2ec68185-9783-4e5d-a1eb-70dc93f81993 # Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eeb92060-c786-42a9-bcfe-714a0bb08357 # Animation Primary Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 12c77a35-7a1b-4ae4-8ddb-d9b81eda22f7 # Animation Secondary Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Spacing
+        sortOrder: 2
+group: null
+handle: ctaBlock
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: CTA
+topLevel: true

@@ -1,0 +1,36 @@
+{% set primaryImage = {
+    mode: 'crop',
+    width: 400,
+    height: 300,
+    quality: 100,
+    position: 'center-center'
+} %}
+
+<div class="three-cols neo-block {{ bottomSpacing }}">
+    <div class="container">
+        <div class="three-cols__title">
+            <h2>{{ block.sectionTitle }}</h2>
+        </div>
+        <div class="three-cols__grid">
+            {% for child in block.children.all() %}
+                <div class="three-cols__item">
+                    <div class="three-cols__img"
+                        {% if child.primaryImage.one() %}style="background-image: url({{ child.primaryImage.one().getUrl(primaryImage) }})"{% endif %}
+                        >
+                    </div>
+                    <h4>{{ child.sectionTitle }}</h4>
+                    <p>
+                        {{ child.sectionPlainText|nl2br }}
+                    </p>
+                    {% if child.sectioncta.getUrl() %}
+                        <p class="three-cols__link">
+                            <a href="{{ child.sectioncta.getUrl() }}">
+                                {{ child.sectioncta.getCustomText() }}
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+handle: footer
+instructions: ''
+maxNodes: ''
+name: Footer
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  b435198f-89d2-4c06-b0e1-e3d2dc874d2c: null # Tavendale & Partners
+sortOrder: 2
+structure:
+  maxLevels: null
+  uid: 619df112-aaac-40cb-beca-63aa15abca33

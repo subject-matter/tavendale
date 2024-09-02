@@ -1,0 +1,10 @@
+@tailwind utilities;
+
+// Developer tool
+.breakpoints::before {
+	content: "phone - ";
+	@screen sm {  content: "phablet - small - "; }
+	@screen md {  content: "tablet - medium - "; }
+	@screen lg {  content: "desktop - large - "; }
+	@screen xl {  content: "desktop - xlarge - "; }
+}

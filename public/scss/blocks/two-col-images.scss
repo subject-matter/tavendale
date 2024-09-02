@@ -1,0 +1,103 @@
+.two-col-images {
+  @apply relative;
+
+  .container {
+    @apply relative z-10;
+  }
+
+  &__animation {
+    @apply px-6 mb-4 flex flex-wrap items-center text-big font-headings;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 3px;
+
+    &__first {
+      @apply w-full;
+    }
+
+    &__plus {
+      @apply mr-3;
+      svg {
+        @apply h-auto;
+        width: 30px;
+      }
+    }
+  }
+
+  &__second-img {
+    @apply hidden;
+  }
+
+  &__primary-img {
+    @apply mb-12;
+
+    img {
+      @apply w-full;
+    }
+  }
+
+  &__primary {
+    h2 {
+      @apply mb-2;
+      line-height: 1;
+    }
+
+    p {
+      @apply mb-2;
+    }
+  }
+
+  &__cta {
+    @apply pt-6;
+  }
+
+  @screen md {
+
+    &--with-animation {
+      padding-top: 160px;
+    }
+
+    &__row {
+      @apply -mx-5 flex;
+
+      &--reverse {
+        @apply flex-row-reverse;
+      }
+    }
+
+    &__primary {
+      @apply px-5 w-1/2;
+    }
+
+    &__second-img {
+      @apply block px-5 w-1/2;
+    }
+
+    &__animation {
+      @apply flex flex-nowrap absolute top-0 px-0;
+
+      &__first {
+        @apply w-auto;
+      }
+    }
+  }
+
+  @screen lg {
+
+    &--with-animation {
+      padding-top: 350px;
+    }
+
+    &__animation {
+      font-size: 166px;
+
+      &__plus {
+        svg {
+          width: 83px;
+        }
+      }
+    }
+
+  }
+
+}

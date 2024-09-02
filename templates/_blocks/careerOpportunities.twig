@@ -1,0 +1,37 @@
+{% set today = now|atom %}
+{#{% set jobs = craft.entries({#}
+{#    section: 'job',#}
+{#    order : 'expiryDate asc',#}
+{#    expiryDate : '>=' ~ today#}
+{#}) %}#}
+{% set jobs = craft.entries({
+    section: 'job',
+    orderBy : 'expiryDate asc'
+}) %}
+<div class="careers {{ bottomSpacing }} neo-block">
+    <div class="container- sb-med">
+        <div class="careers__intro">
+            <h2>{{ block.sectionTitle }}</h2>
+            {{ block.sectionExcerpt }}
+        </div>
+    </div>
+    <div class="container">
+        <div class="careers__grid">
+            {% for job in jobs.all() %}
+                <div class="careers__item">
+                    <a href="{{ job.getUrl() }}" class="careers__item__inner">
+                        <div class="careers__item__text">
+                            <h4>{{ job.title }}</h4>
+                            {% if job.location.one() %}
+                                <p>{{ job.location.one().title }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="careers__item__arrow">
+                            {% include "_svg/arrowRight" %}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

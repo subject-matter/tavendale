@@ -1,0 +1,46 @@
+// App
+// Includes styles that are likely to be changed/compiled often
+
+/* purgecss start ignore */
+@import "lib/transitions";
+
+@import "partials/layout";
+@import "partials/typography";
+@import "partials/fadein";
+@import "partials/btn";
+@import "partials/header";
+@import "partials/nav";
+@import "partials/mobile-navigation";
+@import "partials/pagination";
+@import "partials/footer";
+
+
+@import "pages/people";
+@import "pages/person";
+@import "pages/news-page";
+
+
+@import "blocks/hero";
+@import "blocks/parallax-image-content";
+@import "blocks/pathways";
+@import "blocks/two-col-images";
+@import "blocks/testimonial";
+@import "blocks/locations";
+@import "blocks/three-cols";
+@import "blocks/related-articles";
+@import "blocks/cta";
+@import "blocks/content-block";
+@import "blocks/people-block";
+@import "blocks/image-content";
+@import "blocks/content-grid";
+@import "blocks/careers";
+@import "blocks/tabs";
+@import "blocks/social";
+@import "blocks/instagram";
+@import "blocks/form";
+
+
+
+
+
+/* purgecss end ignore */

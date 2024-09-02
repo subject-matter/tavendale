@@ -1,0 +1,46 @@
+{% set primaryImage = {
+    mode: 'crop',
+    width: 300,
+    height: 300,
+    quality: 100,
+    position: 'center-center'
+} %}
+
+<div class="instagram neo-block {{ bottomSpacing }}">
+    <div class="container">
+        <div class="instagram__row">
+            {% for post in block.children.all() %}
+{#                {% if loop.index <= 8 %}#}
+                    <div class="instagram__item">
+                        {% if post.primaryImage.one() %}
+                            {% if post.sectioncta.getUrl() %}
+                                <a href="{{ post.sectioncta.getUrl() }}"
+                                   class="instagram__item__inner"
+                                   style="background-image: url({{ post.primaryImage.one().getUrl(primaryImage) }})"
+                                ></a>
+                            {% else %}
+                                <div
+                                   class="instagram__item__inner"
+                                   style="background-image: url({{ post.primaryImage.one().getUrl(primaryImage) }})"
+                                ></div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+{#                {% endif %}#}
+                {%  if loop.index == 3 %}
+{#                    <div class="instagram__item">#}
+{#                        <div class="instagram__item__inner">#}
+{#                            <div class="instagram__item__content">#}
+{#                                <div>#}
+{#                                    <h3>{{ block.sectionTitle }}</h3>#}
+{#                                    <h4>{{ block.hashTag }}</h4>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="instagram__item"></div>#}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+field: 6c60f362-9ffc-4acd-80e9-92cd16c65c3d # Expertise
+fieldLayouts:
+  1a183218-2d45-4b34-9fe5-6e0550ab85bb:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ef283f60-47b8-4030-8e96-d6e6d4c77443 # Expertise
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  ef283f60-47b8-4030-8e96-d6e6d4c77443: # Expertise
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: expertise
+    instructions: ''
+    name: Expertise
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:758bf1dc-17fb-4a7a-901d-75cbdcfcc21f' # Expertise
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+handle: categories
+name: Categories
+sortOrder: 1

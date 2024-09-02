@@ -1,0 +1,124 @@
+.form {
+
+  @apply relative;
+
+  &__title {
+    @apply mb-8;
+    h2 {
+      @apply mb-0;
+    }
+  }
+
+  .this-field-has-errors {
+    border-color: #FF0000;
+  }
+
+  div.field {
+    @apply mb-6;
+
+    label {
+      @apply block mb-3;
+    }
+
+    input, select {
+      @apply m-0;
+    }
+
+    .error.text-error {
+      @apply block font-headings text-errors mb-0;
+      background: #FF0000;
+      color: white;
+      font-size: 16px;
+      padding: 8px 20px;
+    }
+  }
+
+  .ff-form-success {
+    padding: 10px 20px;
+    background: #BCF5D3;
+    margin-bottom: 1.5rem;
+    border: 1px solid #68AF85;
+
+    p {
+      @apply mb-0;
+    }
+  }
+
+  .ff-form-errors.text-error,
+  .ff-form-errors {
+    @apply font-headings text-errors mb-6;
+
+    p {
+      @apply m-0;
+    }
+  }
+
+  &__fields {
+    @apply -mx-2 flex flex-wrap;
+
+    .field {
+      @apply w-full px-2 mb-4;
+    }
+
+    .form-label {
+      @apply block;
+      font-size: 18px;
+    }
+
+    .field--checkbox {
+      @apply flex justify-end flex-row-reverse flex-wrap items-center;
+
+      input {
+        @apply mr-3 mt-0;
+      }
+    }
+
+    .field--radio_group {
+      .form-label {
+        @apply mb-4;
+      }
+
+      label {
+
+        @apply flex mb-4;
+
+        input {
+          @apply mr-3;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    @apply px-2;
+  }
+
+  @screen md {
+
+    &__inner {
+      width: 60%;
+      max-width: 740px;
+    }
+
+    &__pattern {
+      @apply block absolute top-0 right-0 h-full;
+      width: 35%;
+
+      &__inner {
+        @apply absolute top-0 left-0 right-0 bottom-0;
+        background-image: url('../../img/pattern.svg');
+      }
+    }
+  }
+
+  @screen lg {
+    &__pattern {
+      width: 40%;
+      padding-left: 100px;
+
+      &__inner {
+        left: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{% extends "_layouts/layout.twig" %}
+{% set newsCategories = craft.categories.group('news') %}
+{% set featuredNews = null %}
+{% set newsList = craft.entries().section('newsPage') %}
+{% if entry is not defined %}
+    {% set entry = craft.entries({section: 'newInsights'}).one() %}
+{% endif %}
+
+{% if category is not defined %}
+    {% set featuredNews = newsList.one() %}
+    {% set newsList = newsList.id('and, not ' ~ featuredNews.id) %}
+{% else %}
+    {% set newsList = newsList.relatedTo(category) %}
+{% endif %}
+{% paginate newsList.limit(6) as pageInfo, pageEntries %}
+
+
+{% block template %}
+
+    <div class="news-page">
+        {% if featuredNews and pageInfo.currentPage == 1 %}
+            <div class="news-page__featured">
+                <div class="container">
+                    <div class="news-page__featured__img-holder">
+                        <div class="news-page__featured__img"
+                            {% if featuredNews.primaryImage.one() %}
+                                style="background-image: url('{{ featuredNews.primaryImage.one().getUrl() }}');"
+                            {% endif %}
+                        ></div>
+                    </div>
+                    <div class="news-page__featured__content">
+                        {% if featuredNews.newsCategories|length %}
+                            <div class="news-page__item__categories">
+                                <ul>
+                                    <li>
+                                        {% include "_svg/tag" %}
+                                    </li>
+                                    {% for category in featuredNews.newsCategories.all() %}
+                                        <li>
+                                            {{ category.title }}{% if not loop.last %},{% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                        <h3>{{ featuredNews.title }}</h3>
+                        {% if featuredNews.sectionPlainText %}
+                            <div class="news-page__item__summary">
+                                <p>{{ featuredNews.sectionPlainText }}</p>
+                            </div>
+                        {% endif %}
+                        <div class="news-page__featured__cta">
+                            <a href="{{ featuredNews.getUrl() }}" class="btn btn--solid btn--yellow">
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="news-page__search">
+            <div class="container">
+                <form action="">
+                    <div class="field">
+                        <label>Filter by topic</label>
+                        <div class="inner">
+                            <select class="category js-news-category" name="category">
+                                <option value="{{ entry.getUrl() }}">Select</option>
+                                {% for newsCategory in newsCategories.all() %}
+                                    <option value="{{ newsCategory.url }}"
+                                            {% if category is defined and newsCategory.slug == category.slug %} selected="selected"{% endif %}>
+                                        {{ newsCategory.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container mb-med">
+            <div class="news-page__list">
+                {% for page in pageEntries %}
+                    <div class="news-page__item">
+                        <a href="{{ page.getUrl }}" class="news-page__item__inner">
+                            <div class="news-page__item__image"
+                                {% if page.primaryImage.one() %}
+                                    style="background-image: url('{{ page.primaryImage.one().getUrl() }}');"
+                                {% endif %}
+                            ></div>
+
+                            {% if page.newsCategories|length %}
+                                <div class="news-page__item__categories">
+                                    <ul>
+                                        <li>
+                                            {% include "_svg/tag" %}
+                                        </li>
+                                        {% for category in page.newsCategories.all() %}
+                                            <li>
+                                                {{ category.title }}{% if not loop.last %},{% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                            <h3>{{ page.title }}</h3>
+                            {% if page.sectionPlainText %}
+                                <div class="news-page__item__summary">
+                                    <p>{{ page.sectionPlainText }}</p>
+                                </div>
+                            {% endif %}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="news-page__pagination">
+                {% include "_partials/pagination" %}
+            </div>
+        </div>
+
+    </div>
+    {% include "_partials/blocks" %}
+{% endblock %}

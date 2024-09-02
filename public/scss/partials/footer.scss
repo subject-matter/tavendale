@@ -1,0 +1,160 @@
+.footer {
+  @apply bg-black text-white py-8 text-small;
+
+  &__logo {
+    @apply mb-6;
+
+    svg {
+      @apply w-18 h-auto;
+    }
+  }
+
+  &__social {
+    @apply flex -mx-2 pt-6;
+
+    li {
+      @apply px-2;
+    }
+
+    svg {
+      @apply w-7 h-7;
+    }
+
+    a:hover svg path {
+      fill: theme('colors.primary');
+    }
+  }
+
+  &__nav {
+    @apply font-bold font-headings;
+
+    li {
+      @apply mb-6;
+    }
+
+    a {
+      @extend .transition;
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+
+  &__location {
+    @apply mb-6;
+
+    &__title {
+      @apply mb-6 font-headings;
+    }
+
+    address {
+      @apply not-italic;
+    }
+
+    &__item {
+
+      &__phone {
+        @apply mb-0;
+      }
+
+      &__link {
+        @apply mb-0;
+      }
+
+    }
+
+    .locations__item__phone a:hover {
+      @apply underline;
+    }
+  }
+
+  &__bottom {
+    li {
+      @apply mb-4;
+    }
+
+    a:hover {
+      @apply underline;
+    }
+  }
+
+
+  @screen md {
+
+    @apply pt-20 pb-10;
+
+    .container {
+      @apply flex flex-wrap;
+    }
+
+    &__main {
+      @apply w-full flex -mx-5 mb-16;
+    }
+
+    &__logo {
+      @apply px-5 w-1/2;
+
+      svg {
+        @apply w-auto h-auto;
+      }
+    }
+
+    &__nav {
+      @apply px-5 w-1/2;
+    }
+
+    &__locations {
+      @apply w-full flex -mx-5;
+    }
+
+    &__location {
+      @apply px-5 w-1/2;
+
+      &__title {
+        @apply mb-6;
+      }
+    }
+
+    &__bottom {
+      @apply w-full flex justify-between;
+
+      ul {
+        @apply flex -mx-3;
+
+        li {
+          @apply relative px-3 mb-0;
+        }
+      }
+
+      &__right {
+        li:first-child {
+          &:after {
+            @apply block bg-white absolute right-0;
+            content: " ";
+            width: 1px;
+            height: 18px;
+            top: 3px;
+          }
+        }
+      }
+    }
+
+  }
+
+  @screen lg {
+
+    &__main {
+      @apply w-1/2;
+    }
+
+    &__nav {
+      @apply w-1/2;
+    }
+
+    &__locations {
+      @apply w-1/2;
+    }
+
+  }
+
+}

@@ -1,0 +1,294 @@
+dateModified: 1707256189
+elementSources:
+  craft\elements\Asset:
+    -
+      key: 'folder:4cf5cf90-c4fa-47ff-b44c-4fb03634c6d6'
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - uploader
+        - link
+      type: native
+    -
+      key: 'folder:d92aafb0-ec7e-413a-af5c-f02e886a5aef'
+      type: native
+    -
+      heading: 'PDF documents'
+      type: heading
+email:
+  fromEmail: $SYSTEM_EMAIL_ADDRESS
+  fromName: 'Tavendale & Partners'
+  replyToEmail: null
+  template: null
+  transportSettings:
+    encryptionMethod: ssl
+    host: $EMAIL_HOST_NAME
+    password: $EMAIL_PASSWORD
+    port: $EMAIL_PORT
+    timeout: '10'
+    useAuthentication: '1'
+    username: $EMAIL_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  assets:
+    hasUrls: true
+    name: Assets
+    settings:
+      path: '@assetBasePath'
+    type: craft\fs\Local
+    url: '@assetBaseUrl'
+meta:
+  __names__:
+    0a6af469-dd25-481b-bfb3-c53b9ce0f56d: 'Two Columned Image Content' # Two Columned Image Content
+    0dcd8ff3-f4f9-4f5f-ac1c-f8a7269b34ab: Column # Column
+    0ddd5b97-0401-4214-a39a-ce6bae945996: 'Public Schema' # Public Schema
+    0de41f27-023d-4b3f-ad59-4d733304b583: Teams # Teams
+    1a2d71d7-fd59-491f-955b-a6c2aacbd64e: 'Two Column Block' # Two Column Block
+    1a6175db-796e-40fe-8912-5712ece9b34a: Assets # Assets
+    1bc243aa-ed48-4317-85a6-96f6dc7aa9a5: 'Secondary Image' # Secondary Image
+    1c6912d4-2124-4ec1-84fa-b650eefa60d0: Pathways # Pathways
+    1daac8ae-48ce-4136-8e38-11d6885fdf55: People # People
+    1deb9945-3522-4d09-be51-2a18c2bc86e4: LinkedIn # LinkedIn
+    2dcc4b80-8460-4f24-88fd-ac342ca9253a: 'Related Insights' # Related Insights
+    2ec68185-9783-4e5d-a1eb-70dc93f81993: Background # Background
+    3adfb7c9-edf7-474e-8668-599fa90c61f4: Form # Form
+    3c793dc4-948a-4306-bf33-6cb58d402128: Testimonial # Testimonial
+    3e2ca1eb-5666-49a9-9337-3996db17444b: Title # Title
+    3fca6d08-57a9-4c24-a05c-32aba81d3ace: 'Home Page' # Home Page
+    4b788c09-7b62-4cc4-8d88-2fcd86623685: Testimonial # Testimonial
+    4f8408f8-b7f1-4edc-a7cd-3a772b4f227e: 'Alternate Contact Name' # Alternate Contact Name
+    4fce659c-71db-4443-922b-8163032440f1: News # News
+    5c00c8db-d5d5-423e-88ad-929a70b96513: Content # Content
+    5c20a627-5111-454c-af25-51dd24681d70: Title # Title
+    6a460a7f-14f9-43d7-ad48-b0f8cc3c912e: 'Accordion item' # Accordion item
+    6c60f362-9ffc-4acd-80e9-92cd16c65c3d: Expertise # Expertise
+    6e3cb37f-af90-47f2-8e82-7b4ab852e8be: 'Accordion block' # Accordion block
+    6ef74d87-bf43-4cb6-9901-6e15a1efad4b: 'Tavendale & Partners' # Tavendale & Partners
+    8bb3e7d2-ee0f-4d05-9e13-7757071a83af: 'Terms & Privacy' # Terms & Privacy
+    8c404b2f-ffe2-4bb4-9ef7-2625c4347e7c: 'New & Insights' # New & Insights
+    9ccf8330-1271-4701-bc01-9a443ccc1d86: People # People
+    9cd35503-4f7f-4be7-9f26-edc29b3dd328: 'Full Name' # Full Name
+    12c77a35-7a1b-4ae4-8ddb-d9b81eda22f7: 'Animation Secondary Text' # Animation Secondary Text
+    014acf7a-d72f-4190-85dd-56c80bcddef8: Form # Form
+    18fbd67e-81d2-4243-9f16-11bbea0a7054: 'Image & Content' # Image & Content
+    19caf484-d37d-41ee-9ba1-3df8602d2385: 'Google Tag Manager ID' # Google Tag Manager ID
+    24a9d467-45cc-41d2-9604-b68b1ec723c0: 'People Block' # People Block
+    27b5678c-b473-4f7e-9855-7774b6e3b2d7: Instagram # Instagram
+    029f6448-d362-46dc-995c-b2ad500de130: Testimonial # Testimonial
+    33e21064-b628-40c7-b468-ea1796d59834: Blocks # Blocks
+    36d62407-4728-4eb2-860e-72f4543bec24: Default # Default
+    043dff96-faf7-47d4-a319-43ad57ccfec5: 'Hash Tag' # Hash Tag
+    43f83879-ac4a-4542-a2e3-0586cbff0bf7: Default # Default
+    54dacd2f-49d1-42ca-90ac-1f6bd3b0b90f: Default # Default
+    54e8019e-8701-43a9-92d1-92715c5750f0: Image # Image
+    58c93d6c-fb19-41d3-af7b-303681c35b56: Location # Location
+    086b27f6-e773-46a0-ae81-15604629abde: 'Tabs ' # Tabs 
+    87e8b875-aeb9-4fc8-b5ad-f1bf550e17b5: Hero # Hero
+    119b767b-7327-4978-8a4b-d81bcecb92b3: Blocks # Blocks
+    226f9dea-d7b2-4b73-902b-3be595c3bab0: Default # Default
+    275d482e-b9d7-48b5-8b87-b8d5776cc58e: Expertise # Expertise
+    758bf1dc-17fb-4a7a-901d-75cbdcfcc21f: Expertise # Expertise
+    853acb84-7077-4eb4-8476-531eb77890db: 'Alternate Contact Phone' # Alternate Contact Phone
+    0891f2e9-a6b2-44a9-9bb6-1dbca6961913: Address # Address
+    1623d538-e579-4a44-93c6-8b8eedde1620: 'Alternate Contact Email' # Alternate Contact Email
+    2525cad6-9d89-4309-b149-63c8104ac469: Site # Site
+    2685e453-34b5-4ed3-8d3d-2234911a7644: Link # Link
+    3966e936-5078-4f74-bb7c-023826801de0: Positioning # Positioning
+    4095fa84-00a3-4d80-af89-4b51ebedf570: 'CTA Link' # CTA Link
+    6474b8ac-54f6-4691-a3cd-9303a50a5ef2: Default # Default
+    08280bf8-d99b-4390-af50-ddda60259b18: Main # Main
+    063917aa-0ac7-42be-85b3-ab29d6fc6494: Position # Position
+    73974e20-4ecc-4d4b-8bd6-5c173a53e245: 'Home Page' # Home Page
+    194610ea-abfc-4b5e-b586-8039e83fffb2: 'Three Column Block' # Three Column Block
+    477046a3-12f5-4a73-82c4-d7e4fc8f9958: 'Bottom Spacing' # Bottom Spacing
+    479865f5-a696-401e-a2d5-59e13cfc028d: Quote # Quote
+    02478477-f7ca-4a5a-811a-bfe36d39612c: 'Alternate Contact Position' # Alternate Contact Position
+    82672301-0fdb-4253-88ce-c0b1fdecb7c6: CTA # CTA
+    a3c8bb83-4adf-4835-82db-a806831d245d: Image # Image
+    ab26a4c3-81fb-46b6-be61-d6abbf8fddba: 'Content Grid' # Content Grid
+    ad3c872a-8334-4a4a-b942-667cb670f605: Email # Email
+    ade10ecb-6f5f-4957-b4a9-5f9030f16a84: Locations # Locations
+    aebeca5b-5196-44a5-b8fb-d551dbb79d3c: Phone # Phone
+    b1c58047-0135-4f25-9c8f-337f7c72fa38: 'Expiry Date' # Expiry Date
+    b4c0f8da-526c-431b-8cd3-87efc0dc78e0: Team # Team
+    b63792c2-cd6a-47ad-a826-0c3f069ee190: Footer # Footer
+    b435198f-89d2-4c06-b0e1-e3d2dc874d2c: 'Tavendale & Partners' # Tavendale & Partners
+    bb2402c2-9c50-4496-a6a4-4c99b44baad5: 'Our People' # Our People
+    bc45b907-cf21-4be7-8773-8dbe9e1bafcf: Body # Body
+    bdb75bbe-5e35-4832-9243-828dfddcedff: Contacts # Contacts
+    bdda9a00-f9cc-41c0-bf21-44a4cfa8927d: 'News Page' # News Page
+    c2f54b5f-94a3-406e-a144-e4e8a906ff48: Tab # Tab
+    c5f09236-bd06-4f83-9ae4-a0c7282738e8: 'Instagram Image' # Instagram Image
+    c7f976f9-1ec4-4c02-84e8-ef8682c9a899: 'Career Opportunities' # Career Opportunities
+    c11bd9e2-ede3-4f83-be2f-b5d13c1a29a4: 'Images & Content (Parallax)' # Images & Content (Parallax)
+    c16acdf8-387c-4608-b6e1-605bab579170: Pathway # Pathway
+    c43092c0-9b16-4bf6-bff0-134991c0e7ce: Location # Location
+    ceade18c-c671-4307-b187-b6edd80406a0: Cell # Cell
+    d08de0ce-8894-4da9-b638-744b355d1c19: 'New & Insights' # New & Insights
+    d5b69621-2294-47c1-9ae3-e8a646872a0c: Content # Content
+    d45f62ae-f76c-4094-a1de-8698246926fa: Job # Job
+    d81682b5-9246-4268-8cda-45428b5c2eb3: People # People
+    ddc03f1b-ce2f-4e1e-9470-492bb69f785a: Excerpt # Excerpt
+    e0c4cdfd-1db3-498a-bd62-bc220e8a03ad: Size # Size
+    e42ba52d-251b-4466-bb31-2b73c1c7bc4b: Jobs # Jobs
+    e185f77d-0122-4574-9d97-3f9e0dba1dc5: Common # Common
+    e86890fe-2eb2-4c65-a61f-6ed600052d1c: Qualifications # Qualifications
+    ea9c7508-bc70-44dd-a8bd-ef3e4f99da63: 'Get Directions Link' # Get Directions Link
+    eeb92060-c786-42a9-bcfe-714a0bb08357: 'Animation Primary Text' # Animation Primary Text
+    ef283f60-47b8-4030-8e96-d6e6d4c77443: Expertise # Expertise
+    f0284bfa-f2a7-415b-8fdb-2468f1800870: Categories # Categories
+    f1ae59cb-543b-4ab0-aa09-2318b2763299: Instagram # Instagram
+    f6e6a7c4-f069-472b-928f-39a0a9ddfd5b: 'Our People' # Our People
+    f49d22cb-f773-44c2-8dcc-a40195e49b40: Page # Page
+    f83ca24c-2b75-4662-bf70-e596fb2a6143: SEO # SEO
+    fbddf8cd-aec2-4c00-aea8-075e04dae8d8: 'News Categories' # News Categories
+    fdb21840-ffe8-471e-8897-2500bde4a962: Default # Default
+    ff1c7a34-8e66-4031-b05a-33ea462cfe90: Facebook # Facebook
+plugins:
+  craftagram:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.4.4
+  embeddedassets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  freeform:
+    edition: lite
+    enabled: true
+    licenseKey: DMNANYBWADWYAFI8AFUO7RNO
+    schemaVersion: 4.2.7
+    settings:
+      ajaxByDefault: true
+      alertNotificationRecipients: ''
+      allowFileTemplateEdit: true
+      autoScroll: true
+      autoScrollToErrors: true
+      badgeType: all
+      blockedEmails: null
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: null
+      blockedKeywords: null
+      blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
+      clientDigestFrequency: 1
+      clientDigestRecipients: ''
+      customErrorMessage: null
+      customHoneypotName: null
+      defaultTemplates: true
+      defaultView: dashboard
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: ''
+      displayFeed: true
+      emailTemplateDefault: files
+      emailTemplateDirectory: null
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: false
+      exportLabels: false
+      fieldDisplayOrder: name
+      fillWithGet: false
+      footerScripts: false
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: true
+      formSubmitExpiration: null
+      formTemplateDirectory: null
+      formattingTemplate: flexbox.twig
+      freeformHoneypot: true
+      freeformHoneypotEnhancement: false
+      hideBannerDemo: false
+      hideBannerOldFreeform: false
+      minimumSubmitTime: null
+      pluginName: ''
+      purgableSpamAgeInDays: null
+      purgableSubmissionAgeInDays: null
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      recaptchaBehaviour: display_error
+      recaptchaEnabled: '1'
+      recaptchaErrorMessage: 'Please verify that you are not a robot.'
+      recaptchaKey: $RECAPTCHA_SITE_KEY
+      recaptchaLazyLoad: ''
+      recaptchaMinScore: '0.5'
+      recaptchaSecret: $RECAPTCHA_SECRET_KEY
+      recaptchaSize: normal
+      recaptchaTheme: light
+      recaptchaType: v2_checkbox
+      rememberPageSubmitOrder: true
+      removeNewlines: false
+      renderFormHtmlInCpViews: true
+      salesforce_client_id: null
+      salesforce_client_secret: null
+      salesforce_password: null
+      salesforce_username: null
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: footer
+      scriptInsertType: pointers
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: false
+      showErrorsForBlockedKeywords: false
+      showTutorial: false
+      spamFolderEnabled: true
+      spamProtectionBehaviour: simulate_success
+      submissionThrottlingCount: null
+      submissionThrottlingTimeFrame: null
+      successTemplateDirectory: null
+      twigInHtml: true
+      twigInHtmlIsolatedMode: true
+      updateSearchIndexes: true
+  instagramfeed:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      dump: false
+      instagramUser: tavendale_and_partners
+      proxyKey: ''
+      subpath: ''
+      timeout: 10
+      useGuzzle: false
+      useProxy: false
+      useVolume: '1'
+      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36'
+      volume: assets
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: WLS9DBYN98HHH2G0NRDLWML5
+    schemaVersion: 2.0.7
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: CKY7DS6D9AMPSHU8RUQNG0EL
+    schemaVersion: 4.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+system:
+  edition: pro
+  live: true
+  name: 'Tavendale & Partners'
+  schemaVersion: 4.5.3.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

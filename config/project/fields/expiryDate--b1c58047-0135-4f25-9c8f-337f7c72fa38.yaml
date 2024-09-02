@@ -1,0 +1,17 @@
+columnSuffix: xmpzqdvm
+contentColumnType: datetime
+fieldGroup: e42ba52d-251b-4466-bb31-2b73c1c7bc4b # Jobs
+handle: expiryDate
+instructions: ''
+name: 'Expiry Date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+  showTimeZone: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

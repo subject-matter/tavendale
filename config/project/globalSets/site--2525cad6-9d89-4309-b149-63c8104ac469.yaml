@@ -1,0 +1,19 @@
+fieldLayouts:
+  bcc222ea-c92a-4fa4-99c8-ec529c0d2c3b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 19caf484-d37d-41ee-9ba1-3df8602d2385 # Google Tag Manager ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+handle: site
+name: Site
+sortOrder: 1

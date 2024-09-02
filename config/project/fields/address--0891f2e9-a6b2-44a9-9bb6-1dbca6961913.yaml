@@ -1,0 +1,19 @@
+columnSuffix: lztobvze
+contentColumnType: text
+fieldGroup: e185f77d-0122-4574-9d97-3f9e0dba1dc5 # Common
+handle: address
+instructions: ''
+name: Address
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

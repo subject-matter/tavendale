@@ -1,0 +1,74 @@
+{#{% set mainNavigation = craft.navigation.nodes().handle('mainNavigation').level(1).all() %}#}
+{#{% set subNavImage = {#}
+{#    mode: 'crop',#}
+{#    width: 400,#}
+{#    height: 300,#}
+{#    quality: 75,#}
+{#    position: 'center-center'#}
+{#} %}#}
+
+{#<div class="mobile-menu" data-mobile>#}
+{#    <div class="mobile-menu__inner">#}
+{#        <div class="mobile-menu__close">#}
+{#            <a href="#" class="js-close mobile-menu__close-button">#}
+{#                {% include "_svg/close" %}#}
+{#            </a>#}
+{#        </div>#}
+{#        <div class="mobile-menu__column">#}
+{#            <ul>#}
+{#                {% for link in mainNavigation %}#}
+{#                    <li>#}
+{#                        <div class="mobile-menu__link">#}
+{#                            <a href="{{ link.url }}" target="{{ link.target }}"#}
+{#                               class="mobile-menu__anchor {% if link.active %}active{% endif %}">#}
+{#                                {{ link.title }}#}
+{#                            </a>#}
+{#                            <div class="mobile-menu__arrow">#}
+{#                                {% if link.hasDescendants %}#}
+{#                                    {% include "_svg/chervonRight" %}#}
+{#                                {% endif %}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        {% if link.hasDescendants %}#}
+{#                            <div class="mobile-menu__sub-nav">#}
+{#                                <h3 class="mobile-menu__sub-title">#}
+{#                                    {% include "_svg/chervonLeft" %}#}
+{#                                    {{ link.title }}#}
+{#                                </h3>#}
+{#                                <ul>#}
+{#                                    {% for subLink in link.children.all()|sort((a, b) => a.title <=> b.title) %}#}
+{#                                        <li>#}
+{#                                            <a href="{{ subLink.url }}" target="{{ subLink.target }}"#}
+{#                                               class="mobile-menu__anchor {% if subLink.active %}active{% endif %}">#}
+{#                                                {{ subLink.title }}#}
+{#                                            </a>#}
+{#                                            <div class="mobile-menu__arrow">#}
+{#                                                {% if subLink.hasDescendants %}#}
+{#                                                    {% include "_svg/chervonRight" %}#}
+{#                                                {% endif %}#}
+{#                                            </div>#}
+{#                                        </li>#}
+{#                                    {% endfor %}#}
+{#                                </ul>#}
+
+{#                                {% if link.primaryImage.one() or link.sectionPlainText %}#}
+{#                                    <div class="mobile-menu__img-holder">#}
+{#                                        <div class="mobile-menu__img"#}
+{#                                             style="background-image: url('{{ link.primaryImage.one().getUrl(subNavImage) }}')">#}
+{#                                        </div>#}
+{#                                        <div class="mobile-menu__blurb-inner">#}
+{#                                            <div>#}
+{#                                                <p>{{ link.sectionPlainText }}</p>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                {% endif %}#}
+
+{#                            </div>#}
+{#                        {% endif %}#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}

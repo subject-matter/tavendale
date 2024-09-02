@@ -1,0 +1,36 @@
+{% set primaryImage = {
+    mode: 'crop',
+    width: 1500,
+    height: 1082,
+    quality: 100,
+    position: 'center-center'
+} %}
+
+<div class="image-content image-content--{{ block.positioning }} {{ bottomSpacing }} neo-block">
+    <div class="container">
+        <div class="image-content__img-holder">
+            {% if block.primaryImage.one() %}
+                <div class="image-content__img"
+                     style="background-image: url('{{ block.primaryImage.one().getUrl(primaryImage) }}')"></div>
+            {% endif %}
+        </div>
+        <div class="image-content__inner">
+            <div class="image-content__content">
+                <h2>{{ block.sectionTitle }}</h2>
+                {% if block.sectionExcerpt %}
+                    <div class="image-content__excerpt">
+                        {{ block.sectionExcerpt }}
+                    </div>
+                {% endif %}
+                <div class="image-content__body">
+                    {{ block.sectionBody }}
+                </div>
+                {% if block.sectioncta.getUrl() %}
+                    <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--yellow">
+                        {{ block.sectioncta.getCustomText() }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

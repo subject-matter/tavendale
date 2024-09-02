@@ -1,0 +1,72 @@
+body {
+  padding-top: 89px;
+}
+
+.app {
+  @apply relative z-10;
+}
+
+.container {
+  @apply px-6 mx-auto;
+  max-width: 1236px;
+}
+
+.container- {
+  @apply px-6 mx-auto;
+  max-width: 736px;
+}
+
+.md\:container {
+   @screen md {
+     @apply px-6;
+     max-width: 1236px;
+   }
+}
+
+.container-fluid {
+  @apply px-6;
+}
+
+.neo-block {
+  @apply w-full overflow-hidden;
+}
+
+.mb-sml {
+  @apply mb-12;
+}
+
+.mb-md {
+  @apply mb-14;
+}
+
+.mb-lg {
+  @apply mb-16;
+}
+
+.pt-sml {
+  @apply pt-12;
+}
+
+.pt-md {
+  @apply pt-14;
+}
+
+@screen md {
+  .md\:py-md {
+    @apply py-14;
+  }
+}
+
+// bottom spacings
+.sb-none {
+  @apply mb-0;
+}
+.sb-sml {
+  @apply mb-8;
+}
+.sb-med {
+  @apply mb-16;
+}
+.sb-lg {
+  @apply mb-24;
+}

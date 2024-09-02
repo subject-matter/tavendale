@@ -1,0 +1,38 @@
+.pagination {
+  @apply py-9;
+
+  ul {
+    @apply flex justify-center;
+  }
+
+  a,
+  span {
+    @apply w-10 h-10 flex justify-center items-center;
+    @extend .transition;
+
+
+    svg {
+      @apply w-10 h-10;
+    }
+  }
+
+  span {
+    path {
+      fill: theme('colors.grey3');
+    }
+  }
+
+  a.number,
+  span.number {
+    @apply border-transparent border-b-2
+  }
+
+  span.number {
+    @apply border-black;
+  }
+
+  a.number:hover {
+    @apply bg-grey2;
+  }
+
+}

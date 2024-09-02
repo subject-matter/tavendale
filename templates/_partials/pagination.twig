@@ -1,0 +1,29 @@
+{% if pageInfo.prevUrl or pageInfo.nextUrl %}
+    <div class="pagination fade" data-fade="down">
+        <ul>
+            {% if pageInfo.prevUrl %}
+                <li><a href="{{ pageInfo.prevUrl }}">{% include "_svg/chervonLeft" %}</a></li>
+            {% else %}
+                <li><span>{% include "_svg/chervonLeft" %}</span></li>
+            {% endif %}
+            {% for page, url in pageInfo.getPrevUrls(3) %}
+                <li><a href="{{ url }}" class="number">
+                    {{ page }}
+                </a></li>
+            {% endfor %}
+            <li><span class="number">
+                {{ pageInfo.currentPage }}
+            </span></li>
+            {% for page, url in pageInfo.getNextUrls(3) %}
+                <li><a href="{{ url }}" class="number">
+                    {{ page }}
+                </a></li>
+            {% endfor %}
+            {% if pageInfo.nextUrl %}
+                <li><a href="{{ pageInfo.nextUrl }}">{% include "_svg/chervonRight" %}</a></li>
+            {% else %}
+                <li><span>{% include "_svg/chervonRight" %}</span></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

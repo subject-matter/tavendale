@@ -1,0 +1,47 @@
+<div class="content-block neo-block {{ bottomSpacing }}">
+    <div class="container-">
+        <div class="content-block__title">
+            <h2>{{ block.sectionTitle }}</h2>
+        </div>
+        {% if block.sectionExcerpt %}
+            <div class="content-block__excerpt">
+                {{ block.sectionExcerpt }}
+            </div>
+        {% endif %}
+        <div class="content-block__text">
+            {{ block.sectionBody }}
+        </div>
+{# fixed overflow-hidden w-full #}
+        {% if block.children|length %}
+            <div class="content-block__accordion" accordion-list>
+                <ul>
+                    {% for accordionItem in block.children.all() %}
+                        <li class="content-block__accordion__item" accordion-item>
+                            <h3 class="content-block__accordion__title" accordion-title>
+                                <span class="pl-4">
+                                    {{ accordionItem.sectionTitle }}
+                                </span>
+                                <span class="arrow">
+                                    {% include "_svg/chervonDown" %}
+                                </span>
+                            </h3>
+                            <div class="content-block__accordion__content" accordion-content>
+                                <div class="content-block__accordion__inner pl-4" >
+                                    {{ accordionItem.sectionBody }}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if block.sectioncta.getUrl() %}
+            <div class="content-block__action">
+                <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--yellow">
+                    {{ block.sectioncta.getCustomText() }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>

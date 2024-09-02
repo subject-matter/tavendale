@@ -1,0 +1,77 @@
+{% for block in entry.blocks.all()  %}
+
+    {% set bottomSpacing = 'sb-' ~ block.sectionBottomSpacing %}
+
+    {% if block.type == 'imagesContentParallax' %}
+        {% include "_blocks/imagesContentParallax" %}
+    {% endif %}
+
+    {% if block.type == 'accordionBlock' %}
+        {% include "_blocks/accordionBlock" %}
+    {% endif %}
+
+    {% if block.type == 'pathways' %}
+        {% include "_blocks/pathways" %}
+    {% endif %}
+
+    {% if block.type == 'twoColumnedImageContent' %}
+        {% include "_blocks/twoColumnedImageContent" %}
+    {% endif %}
+
+    {% if block.type == 'testimonial' %}
+        {% include "_blocks/testimonial" %}
+    {% endif %}
+
+    {% if block.type == 'twoColumnBlock' %}
+        {% include "_blocks/twoColumnBlock" %}
+    {% endif %}
+
+    {% if block.type == 'threeColumnBlock' %}
+        {% include "_blocks/threeColumnBlock" %}
+    {% endif %}
+
+    {% if block.type == 'relatedInsights' %}
+        {% include "_blocks/relatedInsights" %}
+    {% endif %}
+
+    {% if block.type == 'ctaBlock' %}
+        {% include "_blocks/ctaBlock" %}
+    {% endif %}
+
+    {% if block.type == 'contentBlock' %}
+        {% include "_blocks/contentBlock" %}
+    {% endif %}
+
+    {% if block.type == 'peopleBlock' %}
+        {% include "_blocks/peopleBlock" %}
+    {% endif %}
+
+    {% if block.type == 'imageContent' %}
+        {% include "_blocks/imageContent" %}
+    {% endif %}
+
+    {% if block.type == 'contentGrid' %}
+        {% include "_blocks/contentGrid" %}
+    {% endif %}
+
+    {% if block.type == 'careerOpportunities' %}
+        {% include "_blocks/careerOpportunities" %}
+    {% endif %}
+
+    {% if block.type == 'tabs' %}
+        {% include "_blocks/tabs" %}
+    {% endif %}
+
+    {% if block.type == 'socialImages' %}
+        {% include "_blocks/socialImages" %}
+    {% endif %}
+
+    {% if block.type == 'form' %}
+        {% include "_blocks/form" %}
+    {% endif %}
+
+    {% if block.type == 'instagram' %}
+        {% include "_blocks/instagram" %}
+    {% endif %}
+
+{% endfor %}

@@ -1,0 +1,28 @@
+// Base
+// Includes styles that hardly change and don't require compiling as often
+
+// Tailwind imports
+@tailwind base;
+@tailwind components;
+
+// Imports
+// Include variables, base styles, grids, typography, components and other partials
+/* purgecss start ignore */
+@import "lib/fonts";
+@import "partials/layout";
+//@import "partials/pagination";
+//@import "partials/typography";
+//@import "sections/sections";
+
+/* purgecss end ignore */
+
+
+// Base styles
+html, body {
+    scroll-behavior: smooth;
+}
+
+html {
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

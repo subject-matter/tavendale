@@ -1,0 +1,145 @@
+.news-page {
+
+  &__search {
+    @apply bg-grey2 py-6 mb-9;
+
+    .field {
+      @apply mb-3;
+
+      &:last-child {
+        @apply mb-0;
+      }
+
+      label {
+        @apply font-headings block mb-2;
+        font-size: 18px;
+      }
+
+      select {
+        @apply w-full border border-black h-13;
+        max-width: 335px;
+      }
+    }
+  }
+
+  &__featured {
+    @apply mb-20;
+
+    &__img-holder {
+      @apply mb-11;
+    }
+
+    &__img {
+      @apply bg-cover bg-no-repeat bg-center;
+
+      &:after {
+        @apply block;
+        content: " ";
+        padding-top: 72%;
+      }
+
+    }
+
+  }
+
+  &__item {
+    @apply mb-6 flex;
+
+    &__inner {
+      @apply block bg-grey2 p-6 w-full;
+      @extend .transition;
+
+      &:hover {
+        @apply bg-primary;
+      }
+    }
+
+    &__image {
+      @apply bg-cover bg-no-repeat bg-center mb-6;
+
+      &:after {
+        @apply block;
+        content: " ";
+        padding-top: 60%;
+      }
+
+    }
+
+    &__categories {
+      @apply mb-1;
+
+      ul {
+        @apply flex flex-wrap items-baseline font-headings text-base;
+      }
+
+      li {
+        @apply mr-1;
+
+        &:first-child {
+          @apply mr-2;
+        }
+
+        svg {
+          @apply relative;
+          top: 2px;
+        }
+      }
+    }
+
+  }
+
+
+  @screen md {
+
+    &__search {
+      form {
+        @apply flex;
+
+        .field {
+          @apply mr-6 mb-0 flex items-center;
+
+          label {
+            @apply mb-0 mr-6;
+          }
+
+          select, input[type="text"] {
+            width: 268px;
+          }
+
+        }
+
+      }
+    }
+
+    &__list {
+      @apply flex flex-wrap -mx-3;
+    }
+
+    &__item {
+      @apply w-1/2 px-3;
+    }
+
+    &__featured {
+
+      .container {
+        @apply flex flex-row-reverse;
+      }
+
+      &__img-holder {
+        @apply w-1/2 mb-0 flex-shrink-0 pl-3;
+      }
+
+      &__img {
+        width: calc(50vw - 12px);
+      }
+
+      &__content {
+        @apply pr-24;
+      }
+
+    }
+
+  }
+
+
+}

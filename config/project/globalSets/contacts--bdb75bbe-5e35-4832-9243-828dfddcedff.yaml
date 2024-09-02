@@ -1,0 +1,46 @@
+fieldLayouts:
+  a3364746-8aca-4b0a-b2ad-22c53ba9f94b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: aebeca5b-5196-44a5-b8fb-d551dbb79d3c # Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ff1c7a34-8e66-4031-b05a-33ea462cfe90 # Facebook
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1deb9945-3522-4d09-be51-2a18c2bc86e4 # LinkedIn
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f1ae59cb-543b-4ab0-aa09-2318b2763299 # Instagram
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+handle: contacts
+name: Contacts
+sortOrder: 2

@@ -1,0 +1,32 @@
+{% set testimonial = block.testimonial.one() %}
+{% set img = testimonial.primaryImage.one() %}
+{% set imgSize = {
+    mode: 'crop',
+    width: 480,
+    height: 480,
+    quality: 100,
+    position: 'center-center'
+} %}
+{% if testimonial %}
+    <div class="testimonial neo-block {{ bottomSpacing }} pt-md md:py-md">
+        <div class="testimonial__pattern"></div>
+        <div class="container">
+            <div class="testimonial__inner">
+                <div class="testimonial__img-holder">
+                    <div class="testimonial__img"
+                        {% if img %}style="background-image: url({{ img.getUrl(imgSize) }});" {% endif %}
+                    >
+                    </div>
+                    {% include "_svg/plus" %}
+                </div>
+                <div class="testimonial__text">
+                    <h3 class="testimonial__title h2">{{ block.sectionTitle }}</h3>
+                    <div class="testimonial__content">
+                        <span>“</span>{{ testimonial.sectionBody }}<span>”</span>
+                    </div>
+                    <p class="testimonial__personal">{{ testimonial.title }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

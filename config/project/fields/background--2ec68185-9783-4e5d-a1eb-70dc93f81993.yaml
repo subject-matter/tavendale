@@ -1,0 +1,35 @@
+columnSuffix: nruquxat
+contentColumnType: string
+fieldGroup: 119b767b-7327-4978-8a4b-d81bcecb92b3 # Blocks
+handle: background
+instructions: ''
+name: Background
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Solid (Yellow)'
+        -
+          - value
+          - solid
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Dots
+        -
+          - value
+          - dots
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

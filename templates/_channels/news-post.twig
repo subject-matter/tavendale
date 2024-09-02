@@ -1,0 +1,6 @@
+{% extends "_layouts/layout.twig" %}
+{% set newsInsights = craft.entries.section('newInsights').one() %}
+{% block template %}
+    {% include "_partials/blocks" %}
+    {% include "_partials/blocks" with {entry: newsInsights} %}
+{% endblock %}

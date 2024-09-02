@@ -1,0 +1,379 @@
+/* TP Payment Page CSS */
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size: 17px;
+    line-height: 1.6em;
+    background: #f6f2ea;
+    min-height: 100vh;
+}
+
+.background {
+    float: left;
+    width: 100%;
+}
+
+.white-container {
+    display: block;
+    max-width: 1130px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 40px rgba(0,0,0,.05);
+}
+
+.form-container {
+    float: left;
+    width: 100%;
+    padding: 55px 55px 53px 55px;
+    box-sizing: border-box;
+    background: #FFF;
+    min-height: 100vh;
+}
+
+header {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header img {
+  float: left;
+}
+
+header .back-button {
+  float: right;
+  font-size: 14px;
+  font-weight: 700;
+  background: #f0f0f0;
+  padding: 8px 18px;
+  color: #000;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.return-button {
+  float: left;
+  font-size: 14px;
+  font-weight: 700;
+  background: #ebc53d;
+  padding: 8px 18px;
+  color: #000;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.button-margin {
+  margin-left: 10px;
+}
+
+header a:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+table {
+  float: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+td {
+  border: 1px solid #CCC;
+  padding: 6px 10px;
+}
+
+td.align-right {
+  text-align: right;
+}
+
+.content {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 80px 120px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.form p {
+  float: left;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+h1 {
+    font-size: 21px;
+    margin: 30px 0;
+}
+
+h2 {
+  float: left;
+  font-size: 21px;
+  margin: 0 0 10px 0;
+}
+
+.secure-icon {
+   position: absolute;
+   bottom: -15px;
+   left: 50%;
+   margin-left: -12px;
+   background: #f0f0f0;
+   padding: 5px;
+}
+
+.card-details {
+    position: relative;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding: 40px 40px 30px;
+    margin: 10px 0 20px;
+}
+
+.card-details p {
+  float: left;
+  width: 100%;
+  margin: 2px 0;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+input {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+input::placeholder {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+}
+
+input.half {
+    width: 48%;
+}
+
+input.margin {
+    margin-left: 4%;
+}
+
+.card-details input {
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 10px;
+    padding: 15px 40px;
+    background: #ebc53d;
+    color: #000;
+    border: 1px solid #bf9d24;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.under-form {
+    float: left;
+    width: 100%;
+}
+
+.under-form p {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  margin: 0;
+}
+
+.payment-icons {
+    float: right;
+    width: 200px;
+    margin-top: 10px;
+}
+
+#card-errors {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+  background: #c0392b;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  line-height: 32px;
+}
+
+.stripe-logo {
+  position: relative;
+  top: 7px;
+  display: inline-block;
+  width: 50px;
+  opacity: 0.5;
+  margin-left: 1rpx;
+}
+
+.page-divider {
+    float: left;
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    border-width: 0 0 1px;
+    margin-top: 40px;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+}
+
+footer p {
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer p a {
+    color: #ebc53d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+/* Stripe CSS */
+
+#payment_amount,
+#card_name,
+#card-number {
+  float: left;
+  width: 100%;
+  background: #FFF;
+  padding: 15px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: none;
+}
+
+#card-expiry {
+  float: left;
+  width: 48%;
+  background: #FFF;
+  padding: 15px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#card-cvc {
+  float: left;
+  width: 48%;
+  margin-left: 4%;
+  background: #FFF;
+  padding: 15px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1130px) {
+
+  .form {
+    padding: 40px 60px;
+}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .form-container {
+    padding: 30px;
+  }
+
+  header .back-button {
+    font-size: 12px;
+    float: left;
+    clear: left;
+  }
+  
+  .card-details {
+    background: #fff;
+  }
+
+  .secure-icon {
+    background: #FFF;
+  }
+
+  .form {       
+    background: #FFF;
+    padding: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    border: 1px solid #999;
+  }
+
+  .payment-icons {
+    display: block;
+    float: none;
+    margin: 10px auto 0;
+    width: 120px;
+  }
+
+  .card-details {
+    padding: 30px 20px 20px;
+  }
+
+  #payment_amount,
+  #card_name,
+  #card-number {
+    width: 100%;
+    border: 1px solid #999;
+  }
+
+  #card-expiry {
+    width: 60%;
+    border: 1px solid #999;
+  }
+
+  #card-cvc {
+    width: 38%;
+    margin-left: 2%;
+    border: 1px solid #999;
+  }
+
+}
