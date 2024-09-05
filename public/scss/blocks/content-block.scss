@@ -1,75 +1,18 @@
 .content-block {
+  margin-bottom: 180px;
 
   &__excerpt {
-    @apply mb-9 text-lead font-headings;
+    @apply text-center;
+    margin-bottom: 120px;
+
+    h4,
+    p {
+      margin-bottom: 0px;
+    }
   }
 
-  &__links {
-    @apply mb-4;
-
-    ul {
-
-    }
-
-    li {
-      @apply border-b border-black;
-    }
-
-    a {
-      @apply flex justify-between items-center py-3 px-2 font-headings;
-      @extend .transition;
-      font-size: 18px;
-
-      .arrow {
-        @apply w-6 flex-shrink-0;
-      }
-
-      &:hover {
-        @apply bg-grey2;
-      }
-    }
-
-  }
-
-  &__accordion {
-
-    &__item {
-      @apply border-b border-black;
-
-      &.active {
-        .content-block__accordion__content {
-          @apply block;
-        }
-
-        .content-block__accordion__title svg {
-          transform-origin: center;
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    &__title {
-      @apply flex justify-between items-center mb-0 py-3 pr-2 font-headings cursor-pointer;
-      @extend .transition;
-      font-size: 18px;
-
-      path {
-        fill: black;
-      }
-
-      &:hover {
-        @apply bg-grey2;
-      }
-    }
-
-    &__content {
-      @apply hidden;
-    }
-
-    &__inner {
-      @apply pt-6 border-t border-black;
-    }
-
+  .action-btn {
+    color: #c8c8c8;
   }
 
   &__text {
@@ -82,10 +25,27 @@
     }
   }
 
-  @screen lg {
-    &__excerpt {
-      @apply text-lead-lg;
+  &__item {
+    background: #f8f8f8;
+    border-radius: 5px;
+
+    p {
+      margin-bottom: 98px;
+    }
+
+    h6 {
+      margin-bottom: 30px;
+    }
+
+    @extend .transition;
+
+    &:hover {
+      @apply bg-primary;
+
+      .action-btn {
+        @apply text-default;
+        opacity: 1;
+      }
     }
   }
-
 }

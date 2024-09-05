@@ -1,4 +1,8 @@
 body {
+  padding-top: 49px;
+}
+
+body.homePage {
   padding-top: 89px;
 }
 
@@ -8,19 +12,22 @@ body {
 
 .container {
   @apply px-6 mx-auto;
-  max-width: 1236px;
+  // max-width: 1410px;
+  max-width: unset !important;
 }
 
 .container- {
   @apply px-6 mx-auto;
-  max-width: 736px;
+  // max-width: 863px;
+  max-width: unset !important;
 }
 
 .md\:container {
-   @screen md {
-     @apply px-6;
-     max-width: 1236px;
-   }
+  @screen md {
+    @apply px-6;
+    // max-width: 1400px;
+    max-width: unset !important;
+  }
 }
 
 .container-fluid {

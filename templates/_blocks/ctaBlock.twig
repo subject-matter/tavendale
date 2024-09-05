@@ -1,41 +1,24 @@
 {% set buttonClass = 'white' %}
-{% if block.background == 'dots' %}
-    {% set buttonClass = 'yellow' %}
-{% endif %}
 
-<div class="cta cta--{{ block.background }} neo-block {{ bottomSpacing }}">
-    {% if block.background == 'dots' %}
-        <div class="cta__pattern"></div>
-    {% endif %}
-    <div class="container">
-        <div class="cta__inner">
-            <div class="cta__left cta__animation">
-                {% if block.animationPrimaryText %}
-                    <div class="cta__animation__first">
-                        {{ block.animationPrimaryText }}
-                    </div>
-                {% endif %}
-                {% if block.animationSecondaryText %}
-                    <div class="cta__animation__plus">
-                        {% include "_svg/plus" %}
-                    </div>
-                    <div class="cta__animation__second">
-                        {{ block.animationSecondaryText }}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="cta__right">
-                <p class="cta__text">
-                    {{ block.sectionTitle }}
-                </p>
-                {% if block.sectioncta %}
-                    <p>
-                        <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--{{ buttonClass }}">
-                            {{ block.sectioncta.getCustomText() }}
-                        </a>
-                    </p>
-                {% endif %}
-            </div>
-        </div>
+<div class="cta neo-block {{ bottomSpacing }}">
+  <div class="container">
+    <div class="cta__inner">
+      <div class="cta__left cta__animation">
+        {% include "_svg/contactIcon" %}
+      </div>
+      <div class="cta__right">
+        <h3 class="cta__text">
+          {{ block.sectionTitle }}
+        </h3>
+        {% if block.sectioncta %}
+        <a
+          href="{{ block.sectioncta.getUrl() }}"
+          class="btn btn--solid btn--{{ buttonClass }}"
+        >
+          {{ block.sectioncta.getCustomText() }}
+        </a>
+        {% endif %}
+      </div>
     </div>
+  </div>
 </div>

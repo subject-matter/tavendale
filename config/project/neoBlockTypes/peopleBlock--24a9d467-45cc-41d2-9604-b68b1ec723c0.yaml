@@ -1,47 +1,70 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   e060ced9-f8f9-4483-a625-58f80147798d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e8339679-8f28-48ae-82ed-dbd5594fac32
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1daac8ae-48ce-4136-8e38-11d6885fdf55 # People
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7884ead3-868f-45df-9098-0fd0fab753b6
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: d76e15fb-3654-41ef-8b4e-e77b54bfc3bc
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e7d4aae3-3486-41dd-a069-48b892b7c28c
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 492f9550-f70f-456d-b71b-04985c337862
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: peopleBlock
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'People Block'
 topLevel: true

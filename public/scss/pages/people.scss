@@ -1,164 +1,50 @@
 .our-people {
-
-  &__counter {
-    @apply pb-6;
-
-    p {
-      @apply font-headings mb-0;
-      font-size: 18px;
-
-    }
-  }
-
-  &__search {
-    @apply bg-grey2 py-6 mb-9;
-
-    .field {
-      @apply mb-3;
-
-      &:last-child {
-        @apply mb-0;
-      }
-
-      label {
-        @apply font-headings block mb-2;
-        font-size: 18px;
-      }
-
-      input, select {
-        @apply w-full border border-black h-13;
-      }
-    }
-
-    .inner {
-      @apply relative;
-
-      input[type="text"] {
-        @apply pl-12;
-      }
-    }
-
-    svg {
-      @apply absolute top-1/2 left-3;
-      transform: translateY(-50%);
-    }
-  }
-
-  &__list {
-    @apply border-b border-black;
-  }
-
-  &__person {
-    @apply border-t border-black py-8 flex;
-  }
-
   &__inner {
-    @apply flex items-center;
-  }
-
-  &__img {
-    @apply rounded-full overflow-hidden bg-cover bg-no-repeat bg-center flex-shrink-0 mr-3;
-    width: 120px;
-    height: 120px;
-  }
-
-  &__desc {
-    @apply flex-grow;
-
-    h3 {
-      @apply mb-0;
-    }
-
-    h5 {
-      @apply mb-1;
-    }
-
-    ul {
-      font-size: 16px;
-    }
-
-    li {
-      @apply mb-0 flex;
-
-      &:last-child {
-        @apply mb-0;
-      }
-
-      a {
-        @apply inline-block ml-3 break-all;
-
-        &:hover {
-          @apply underline;
-        }
-      }
-    }
-  }
-
-  &__location {
-    @apply flex flex-wrap items-center mb-1 font-headings;
-
-    svg {
-      @apply mr-2;
-    }
-  }
-
-  &__action {
-    @apply pt-6;
-  }
-
-  @screen md {
-    &__search {
-      @apply mb-20;
-
-      form {
-        @apply flex;
-
-        .field {
-          @apply mr-6 mb-0 flex items-center;
-
-          label {
-            @apply mb-0 mr-6;
-          }
-
-          select, input[type="text"] {
-            width: 268px;
-          }
-
-        }
-
-      }
-    }
-
-    &__list {
-      @apply -mx-8 flex flex-wrap;
-    }
-
-    &__person {
-      @apply px-8 w-1/2 relative;
-
-      &:nth-child(2n+1):after {
-        @apply block absolute bg-black h-full right-0 top-0;
-        content: " ";
-        width: 1px;
-      }
-    }
-
-    &__inner {
-      @apply w-full;
-    }
-
-
-
+    @apply flex;
+    flex-direction: column;
   }
 
   @screen lg {
-
     &__img {
-      @apply mr-7;
-      width: 260px;
-      height: 260px;
+      height: 315px;
     }
-
   }
 
+  &__person {
+    margin-bottom: 80px;
+  }
+
+  &__img {
+    @apply overflow-hidden bg-cover bg-no-repeat bg-center flex-shrink-0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    .text-body-lg {
+      @apply font-headings;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .our-people__location {
+      margin-bottom: 0px;
+    }
+
+    .our-people__action {
+      @apply font-headings;
+      margin-top: 20px;
+    }
+  }
+
+  .js-people-search-form input {
+    width: 315px;
+  }
+
+  .js-people-filter .field {
+  }
+
+  a:hover {
+    opacity: 0.3;
+  }
 }

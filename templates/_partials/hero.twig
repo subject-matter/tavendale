@@ -1,101 +1,89 @@
-{% set personImg = {
-    mode: 'crop',
-    width: 700,
-    height: 700,
-    quality: 85,
-    position: 'center-center'
-} %}
-
 {% if isHome %}
-    <div class="hero hero--home">
-        <div class="container-fluid md:container">
-            <div class="hero__inner">
-                <div class="hero__animator">
-                    <h1>
-                        <div class="hero__sticky">
-                            Hello
-                            <div class="hero__plus">
-                                {% include "_svg/plus" %}
-                            </div>
-                        </div>
-                        <div class="hero__ticker">
-                            <div class="hero__word">
-                                Us
-                            </div>
-                            <div class="hero__word">
-                                Growth
-                            </div>
-                            <div class="hero__word">
-                                Success
-                            </div>
-                            <div class="hero__word">
-                                Us
-                            </div>
-                        </div>
-                    </h1>
-                </div>
-            </div>
-            <div class="hero__chervon">
-                <a href="#" class="js-hero-scroll">
-                    {% include "_svg/chervonDown" %}
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="hero hero--home">
+  <div class="container-fluid md:container">
+    <h3>
+      Tavendale + Partners isn’t just a leading law firm; we’re pioneering legal
+      excellence. We work with individuals, families, and businesses across
+      Aotearoa and beyond, expertly navigating challenges, uncovering
+      opportunities, and delivering success. Our deep expertise and refreshingly
+      personal approach set us apart. Promises are easy to make, but our ability
+      to deliver is what distinguishes us. Our exceptional team combines
+      knowledge and innovation, with a profound understanding of each of our
+      clients. This trust and commitment to our craft make us the perfect
+      partner.
+    </h3>
+  </div>
+</div>
 {% elseif entry.section == 'People' %}
-    <div class="hero hero--person">
-        <div class="container">
-            <div class="hero__person-img-holder">
-                {% if entry.primaryImage.one() %}
-                    <div class="hero__person-img"
-                         style="background-image: url('{{ entry.primaryImage.one().getUrl(personImg) }}')">
+<div class="hero hero--person">
+  <div class="container">
+    <div class="hero--person__title text-center">
+      <div class="flex justify-center">
+        <h1>
+          {{ entry.title }}
+        </h1>
+        {% if entry.qualifications %}
+        {{ entry.qualifications | replace({'\n': ', '}) }}
+        {% endif %}
+      </div>
+      <h6>{{ entry.position }}</h6>
+    </div>
 
-                    </div>
-                {% endif %}
-            </div>
-            <div class="hero__person-details">
-                <h1>{{ entry.title }}</h1>
-                <h4>{{ entry.position }}</h4>
-                {% if entry.team|length %}
-                    <p>
-                        {% for expertise in entry.team.all() %}
-                            {{ expertise.title }}{% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="hero__pattern"></div>
+    {#
+    <div class="hero__person-img-holder">
+      {% if entry.primaryImage.one() %}
+      <div
+        class="hero__person-img"
+        style="background-image: url('{{
+          entry.primaryImage.one().getUrl(personImg)
+        }}')"
+      ></div>
+      {% endif %}
     </div>
+    <div class="hero__person-details">
+      {% if entry.team|length %}
+      <p>
+        {% for expertise in entry.team.all() %}
+        {{ expertise.title }}{% if not loop.last %}, {% endif %} {% endfor %}
+      </p>
+      {% endif %}
+    </div>
+    #}
+  </div>
+  <div class="hero__pattern"></div>
+</div>
 {% elseif entry.heroImage and entry.heroImage.one() %}
-    <div class="hero hero--image mb-lg">
-        <div class="container">
-            <div class="hero__content">
-                <h1>
-                    {% if entry.heroTitle %}
-                        {{ entry.heroTitle }}
-                    {% else %}
-                        {{ entry.title }}
-                    {% endif %}
-                </h1>
-            </div>
-            <div class="hero__image" style="background-image: url('{{ entry.heroImage.one().getUrl() }}')"></div>
-        </div>
-        <div class="hero__pattern"></div>
+<div class="hero hero--image">
+  <div class="container">
+    <div class="hero__content">
+      <h1>
+        {% if entry.heroTitle %}
+        {{ entry.heroTitle }}
+        {% else %}
+        {{ entry.title }}
+        {% endif %}
+      </h1>
     </div>
+    <div
+      class="hero__image"
+      style="background-image: url('{{ entry.heroImage.one().getUrl() }}')"
+    ></div>
+  </div>
+  <div class="hero__pattern"></div>
+</div>
 {% elseif entry %}
-    <div class="hero hero--generic">
-        <div class="container">
-            <div class="hero__content">
-                <h1>
-                    {% if entry.heroTitle %}
-                        {{ entry.heroTitle }}
-                    {% else %}
-                        {{ entry.title }}
-                    {% endif %}
-                </h1>
-            </div>
-        </div>
-        <div class="hero__pattern"></div>
+<div class="hero hero--generic">
+  <div class="container">
+    <div class="hero__content">
+      <h1>
+        {% if entry.heroTitle %}
+        {{ entry.heroTitle }}
+        {% else %}
+        {{ entry.title }}
+        {% endif %}
+      </h1>
     </div>
+  </div>
+  <div class="hero__pattern"></div>
+</div>
 {% endif %}

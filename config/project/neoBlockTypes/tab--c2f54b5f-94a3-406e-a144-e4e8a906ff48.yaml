@@ -1,52 +1,76 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   6eb9d8ea-36ad-496f-87d3-fab8b8562cce:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f5a6682c-69a7-4e31-bc6f-79ef0dd811a5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d0df7d30-ec7c-4d54-aedc-e9b1939d8bdc
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bc45b907-cf21-4be7-8773-8dbe9e1bafcf # Body
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d8fcbc67-4c2f-49a7-8ab5-37b909171c88
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c9f8e441-9263-40fd-b0dd-12b149d5e1cd
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: cf521e27-07eb-4395-97ff-d177839c42bf
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: tab
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Tab
 topLevel: false

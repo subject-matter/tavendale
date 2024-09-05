@@ -1,32 +1,26 @@
-{% set testimonial = block.testimonial.one() %}
-{% set img = testimonial.primaryImage.one() %}
-{% set imgSize = {
-    mode: 'crop',
-    width: 480,
-    height: 480,
-    quality: 100,
-    position: 'center-center'
-} %}
-{% if testimonial %}
-    <div class="testimonial neo-block {{ bottomSpacing }} pt-md md:py-md">
-        <div class="testimonial__pattern"></div>
-        <div class="container">
-            <div class="testimonial__inner">
-                <div class="testimonial__img-holder">
-                    <div class="testimonial__img"
-                        {% if img %}style="background-image: url({{ img.getUrl(imgSize) }});" {% endif %}
-                    >
-                    </div>
-                    {% include "_svg/plus" %}
-                </div>
-                <div class="testimonial__text">
-                    <h3 class="testimonial__title h2">{{ block.sectionTitle }}</h3>
-                    <div class="testimonial__content">
-                        <span>“</span>{{ testimonial.sectionBody }}<span>”</span>
-                    </div>
-                    <p class="testimonial__personal">{{ testimonial.title }}</p>
-                </div>
-            </div>
+{% set testimonial = block.testimonial.one() %} {% set img =
+testimonial.primaryImage.one() %} {% set imgSize = { mode: 'crop', width: 480,
+height: 480, quality: 100, position: 'center-center' } %} {% if testimonial %}
+<div class="testimonial neo-block">
+  <div class="container">
+    <div class="grid grid-cols-2">
+      <div>
+        <p class="text-body-lg">Client Testimonials</p>
+      </div>
+      <div class="testimonial__inner">
+        <div class="testimonial__text">
+          <div class="testimonial__personal flex items-center">
+            <div class="block w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
+            <span class="text-body-lg">
+              {{ testimonial.title }}
+            </span>
+          </div>
+          <div class="testimonial__content text-body-lg">
+            {{ testimonial.sectionBody }}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 {% endif %}

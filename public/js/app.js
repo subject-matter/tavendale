@@ -1,4 +1,4 @@
-const Flickity = require('flickity');
+const Flickity = require("flickity");
 
 import navigation from "./components/navigation";
 import pathways from "./components/pathways";
@@ -17,21 +17,18 @@ import repositionAnimatedText from "./components/repositionAnimatedText";
 
 // Scripts to fire once dom has loaded
 document.addEventListener("DOMContentLoaded", () => {
-
-    navigation();
-    fadein();
-    accordion();
-    pathways();
-    news();
-    people();
-    forms();
-    parallaxImages();
-    tabs();
-    newsPage();
-    parallax();
-    scrollArrow();
-    peoplePage();
-    repositionAnimatedText();
-
-
+  navigation();
+  fadein();
+  accordion();
+  pathways();
+  news();
+  people();
+  forms();
+  parallaxImages();
+  tabs();
+  newsPage();
+  parallax();
+  scrollArrow();
+  peoplePage();
+  repositionAnimatedText();
 });

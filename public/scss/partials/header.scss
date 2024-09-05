@@ -1,24 +1,10 @@
 .header {
-  @apply bg-white py-5 absolute top-0 left-0 w-full z-50;
+  @apply absolute top-0 left-0 w-full z-50;
 
   &--fixed {
     @apply fixed;
     transform: translateY(-120%);
     @extend .transition;
-  }
-
-  &--dark {
-    @apply bg-black;
-
-    .header__logo .text {
-        fill: white;
-    }
-
-    .header__mobile-actions {
-      path {
-        fill: white;
-      }
-    }
   }
 
   .container-fluid {
@@ -35,7 +21,6 @@
   }
 
   &__mobile-actions {
-
     ul {
       @apply flex;
     }
@@ -57,7 +42,6 @@
     }
 
     .header--active-nav & {
-
       .close {
         @apply block;
       }
@@ -65,9 +49,7 @@
       .open {
         @apply hidden;
       }
-
     }
-
   }
 
   &__nav {
@@ -75,7 +57,6 @@
   }
 
   @screen lg {
-
     &__mobile-actions {
       @apply hidden;
     }
@@ -83,14 +64,13 @@
     &__nav {
       @apply block top-auto max-w-none h-auto w-auto;
     }
-
   }
 }
 
-
 [data-scrolldir="up"] .header {
-
   &--fixed {
+    @apply bg-white;
+
     transform: translateY(0);
   }
 }

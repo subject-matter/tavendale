@@ -29,8 +29,6 @@
   }
 
   &__primary-img {
-    @apply mb-12;
-
     img {
       @apply w-full;
     }
@@ -52,7 +50,6 @@
   }
 
   @screen md {
-
     &--with-animation {
       padding-top: 160px;
     }
@@ -83,7 +80,6 @@
   }
 
   @screen lg {
-
     &--with-animation {
       padding-top: 350px;
     }
@@ -97,7 +93,5 @@
         }
       }
     }
-
   }
-
 }

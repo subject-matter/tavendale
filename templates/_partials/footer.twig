@@ -1,88 +1,84 @@
 {% set footerNav = craft.navigation.nodes().handle('footer').level(1).all() %}
-{% set termsNav = craft.navigation.nodes().handle('termsPrivacy').level(1).all() %}
-{% set locations = craft.entries({
-    section : 'location'
-}).all() %}
+{% set termsNav = craft.navigation.nodes().handle('termsPrivacy').level(1).all()
+%} {% set locations = craft.entries({ section : 'location' }).all() %}
 <footer class="footer">
-    <div class="container">
-        <div class="footer__main">
-            <div class="footer__logo">
-                {% include "_svg/tp" %}
-                {% if contacts.facebook or contacts.linkedin or contacts.instagram %}
-                    <ul class="footer__social">
-                        {% if contacts.facebook %}
-                            <li>
-                                <a href="{{ contacts.facebook }}" target="_blank">
-                                    {% include "_svg/facebook" %}
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if contacts.linkedin %}
-                            <li>
-                                <a href="{{ contacts.linkedin }}" target="_blank">
-                                    {% include "_svg/linkedin" %}
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if contacts.instagram %}
-                            <li>
-                                <a href="{{ contacts.instagram }}" target="_blank">
-                                    {% include "_svg/instagram" %}
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {% endif %}
-            </div>
-            <div class="footer__nav">
-                <ul>
-                    {% for item in footerNav %}
-                        <li>
-                            {{ item.link }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        <div class="footer__locations">
-            {% for location in locations %}
-                <div class="footer__location">
-                    <p class="footer__location__title">
-                        {{ location.title }}
-                    </p>
-                    {% if location.address %}
-                        <address>{{ location.address|nl2br }}</address>
-                    {% endif %}
-                    {% if location.phone %}
-                        <p class="locations__item__phone">
-                            <a href="tel:{{ location.phone }}">{{ location.phone }}</a>
-                        </p>
-                    {% endif %}
-                    {% if location.getDirectionsLink.getUrl() %}
-                        <p class="locations__item__link">
-                            <a href="{{ location.getDirectionsLink.getUrl() }}">
-                                {{ location.getDirectionsLink.getCustomText() }}
-                            </a>
-                        </p>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </div>
-        <div class="footer__bottom">
-            <div class="footer__bottom__left">
-                <ul>
-                    {% for item in termsNav %}
-                        <li>
-                            {{ item.link }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="footer__bottom__right">
-                <ul>
-                    <li>&copy; 2021 Tavendale and Partners</li>
-                    <li>Website by <a href="https://platocreative.co.nz/" target="_blank">Plato Creative</a></li>
-            </div>
-        </div>
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__nav">
+        <ul>
+          {% for item in footerNav %}
+          <li>
+            {{ item.link }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
+    <div class="footer__locations">
+      {% for location in locations %}
+      <div class="footer__location">
+        <p class="footer__location__title">
+          {{ location.title }}
+        </p>
+        {% if location.address %}
+        <address>{{ location.address | nl2br }}</address>
+        {% endif %} {% if location.phone %}
+        <p class="locations__item__phone">
+          <a href="tel:{{ location.phone }}">{{ location.phone }}</a>
+        </p>
+        {% endif %} {% if location.getDirectionsLink.getUrl() %}
+        <p class="locations__item__link">
+          <a href="{{ location.getDirectionsLink.getUrl() }}">
+            {{ location.getDirectionsLink.getCustomText() }}
+          </a>
+        </p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="footer__subbottom">
+    <div class="container d-flex justify-end">
+      <div class="footer__subbottom__logo">{% include "_svg/logo" %}</div>
+      {% if contacts.facebook or contacts.linkedin or contacts.instagram %}
+      <ul class="footer__social">
+        {% if contacts.facebook %}
+        <li>
+          <a href="{{ contacts.facebook }}" target="_blank">
+            {% include "_svg/facebook" %}
+          </a>
+        </li>
+        {% endif %} {% if contacts.linkedin %}
+        <li>
+          <a href="{{ contacts.linkedin }}" target="_blank">
+            {% include "_svg/linkedin" %}
+          </a>
+        </li>
+        {% endif %} {% if contacts.instagram %}
+        <li>
+          <a href="{{ contacts.instagram }}" target="_blank">
+            {% include "_svg/instagram" %}
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom__left">
+        <ul>
+          <li>&copy; 2021 Tavendale and Partners</li>
+          {% for item in termsNav %}
+          <li>
+            {{ item.link }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>

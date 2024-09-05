@@ -1,4 +1,4 @@
-dateModified: 1707256189
+dateModified: 1725521427
 elementSources:
   craft\elements\Asset:
     -
@@ -98,6 +98,7 @@ meta:
     4095fa84-00a3-4d80-af89-4b51ebedf570: 'CTA Link' # CTA Link
     6474b8ac-54f6-4691-a3cd-9303a50a5ef2: Default # Default
     08280bf8-d99b-4390-af50-ddda60259b18: Main # Main
+    48539df8-1a5c-4798-ac79-aaa892721dac: 'CTA Link Description' # CTA Link Description
     063917aa-0ac7-42be-85b3-ab29d6fc6494: Position # Position
     73974e20-4ecc-4d4b-8bd6-5c173a53e245: 'Home Page' # Home Page
     194610ea-abfc-4b5e-b586-8039e83fffb2: 'Three Column Block' # Three Column Block

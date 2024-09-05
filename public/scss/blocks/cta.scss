@@ -1,70 +1,24 @@
 .cta {
   @apply relative text-center;
+  padding-top: 30px;
+  margin-top: 140px;
+  border-top: 1px solid #c8c8c8;
 
   .container {
     @apply relative z-20;
   }
 
-  &--solid {
-    @apply bg-primary;
-  }
-
-  &--dots {
-    .cta__inner {
-      @apply bg-white;
-    }
-
-    .cta__animation__plus path {
-      fill: theme('colors.primary');
-    }
-  }
-
-  &__pattern {
-    @apply absolute top-0 left-0 w-full h-full bg-center bg-repeat;
-    background-image: url('../../img/pattern.svg');
-  }
-
   &__inner {
-    @apply mx-auto py-13 px-5;
+    @apply mx-auto pb-7;
     max-width: 264px;
   }
 
-  &__animation {
-    @apply flex justify-center font-headings lowercase items-center mb-6;
-    font-size: 56px;
-    line-height: 1;
-
-    &__plus {
-      @apply mx-3;
-
-      svg {
-        @apply relative;
-        top: 2px;
-        width: 30px;
-        height: auto;
-      }
-
-      path {
-        fill: white;
-      }
-    }
-  }
-
   &__text {
-    @apply text-lead mb-6;
+    margin-bottom: 120px;
   }
 
   @screen md {
     @apply text-left;
-
-    &__text {
-      font-size: 24px;
-      line-height: 1.6;
-    }
-
-    &__animation {
-      @apply justify-end mb-0;
-    }
 
     &__inner {
       @apply flex;
@@ -72,11 +26,11 @@
     }
 
     &__left {
-      @apply w-1/2 px-5;
+      @apply w-1/2;
     }
 
     &__right {
-      @apply w-1/2 px-5;
+      @apply w-1/2;
 
       p:last-child {
         @apply mb-0;
@@ -85,27 +39,8 @@
   }
 
   @screen lg {
-
-    &__left {
-      @apply px-10;
-    }
-
     &__right {
-      @apply w-1/2 px-10;
+      @apply w-1/2;
     }
-
-    &__animation {
-      font-size: 106px;
-
-      &__plus {
-        @apply mx-6;
-
-        svg {
-          width: 48px;
-        }
-      }
-    }
-
   }
-
 }

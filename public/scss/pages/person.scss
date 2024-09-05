@@ -1,136 +1,22 @@
 .person-page {
-
-  &__sidebar {
-    @apply relative py-6 mb-8;
+  &__contact {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 15px;
   }
 
-  &__sidebar-bg {
-    @apply bg-grey1 -mx-6 absolute top-0 h-full;
-    width: calc(100% + 48px);
-  }
-
-  &__sidebar-box {
-    @apply border-b border-black relative z-10 pb-8 mb-8;
-
-    &--last {
-      @apply border-b-0 mb-0 pb-0;
-    }
-
-    h3 {
-      font-size: 24px;
-    }
-
-    li {
-      @apply mb-1;
-
-      a:hover {
-        @apply underline;
-      }
-    }
-
-    p {
-      &:last-child {
-        @apply mb-0;
-      }
-    }
-
-    .person-page__alternate {
-      @apply pt-6;
-    }
-  }
-
-  &__linkedin {
-    @apply flex pt-4 mb-0;
+  &__image-container {
     a {
-      @apply flex font-headings;
-
-      svg {
-        @apply ml-3 w-5 h-auto;
-      }
-
-      path {
-        fill: black;
-      }
+      bottom: 10px;
+      left: 10px;
     }
   }
 
-  &__excerpt {
-    @apply font-headings;
-    font-size: 24px;
-    line-height: 1.6;
+  &__image {
+    display: block;
+    content: " ";
+    padding-top: 100%;
+    background-size: cover;
+    border-radius: 5px;
   }
-
-  &__text {
-    font-size: 18px;
-  }
-
-  &__quote {
-    @apply px-6;
-    color: #414042;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  &__careers {
-    @apply text-center;
-    font-size: 20px;
-    line-height: 1.6;
-
-    a {
-      @apply underline;
-    }
-  }
-
-  @screen md {
-
-    &__grid {
-      @apply flex;
-
-    }
-
-    &__sidebar {
-      @apply flex-shrink-0;
-      width: 280px;
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-
-    &__sidebar-bg {
-      @apply mr-0 -mx-6;
-      width: calc(100% + 24px);
-    }
-
-    &__main {
-      @apply flex-grow;
-      padding: 40px 40px;
-    }
-
-  }
-
-  @screen lg {
-    &__quote {
-      font-size: 28px;
-    }
-  }
-
-  @screen lgxx {
-
-    &__sidebar {
-      width: 415px;
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    &__sidebar-bg {
-      @apply ml-0;
-      width: calc(415px + ((100vw - 1188px) / 2));
-      left: calc(-1 * ((100vw - 1188px) / 2));
-    }
-
-    &__main {
-      padding: 80px 90px;
-    }
-
-  }
-
 }

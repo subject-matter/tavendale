@@ -1,47 +1,70 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   5f1117aa-e658-4a24-8a65-3c166af4c045:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f32499a3-2400-4d32-87c9-1e7ff07947c0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4b788c09-7b62-4cc4-8d88-2fcd86623685 # Testimonial
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 10347d16-9eea-418a-a84d-513625367a9b
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: d8c57b7a-e27b-4e04-8aed-f793fcab32cc
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a7010a70-932b-42fe-8814-38ce49190b47
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 133dc8b7-c5dd-4a95-923e-2e02f6476934
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: testimonial
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Testimonial
 topLevel: true

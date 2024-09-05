@@ -1,47 +1,70 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   1b68e285-6c67-40b0-9616-f91b729906e8:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6aef3c23-77c4-40e3-9525-b2b56636355a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fbddf8cd-aec2-4c00-aea8-075e04dae8d8 # News Categories
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4d5429e6-cc21-46fd-b875-3f490e7da65a
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: b039ca64-ffc6-423e-871c-5d64dfd188e6
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ecef305a-693e-480f-bf1f-a6be81a51388
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: ca0280bf-b141-4418-80dc-04ea93f2f065
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: relatedInsights
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Related Insights'
 topLevel: true

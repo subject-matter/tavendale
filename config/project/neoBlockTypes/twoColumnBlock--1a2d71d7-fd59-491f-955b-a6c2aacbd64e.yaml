@@ -1,38 +1,58 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   9fd1dc03-edab-453d-b9e3-8be7b03ab068:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 05b459da-9fab-4378-a123-747efe30c184
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 902c3509-aaea-4f49-82e8-eb8afe6a97ff
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7ab8312d-199d-423f-9202-e57cdea847a4
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 79f80a4a-b446-4fb4-b614-88acca45b639
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: twoColumnBlock
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Two Column Block'
 topLevel: true

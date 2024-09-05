@@ -1,44 +1,39 @@
 <div class="content-block neo-block {{ bottomSpacing }}">
-    <div class="container-">
-        <div class="content-block__title">
-            <h2>{{ block.sectionTitle }}</h2>
-        </div>
-        {% if block.sectionExcerpt %}
-            <div class="content-block__excerpt">
-                {{ block.sectionExcerpt }}
-            </div>
-        {% endif %}
-        <div class="content-block__text">
-            {{ block.sectionBody }}
-        </div>
-
-        {% if block.children|length %}
-            <div class="content-block__links">
-                <ul>
-                    {% for link in block.children.all() %}
-                        {% if link.sectioncta.getUrl() %}
-                            <li>
-                                <a href="{{ link.sectioncta.getUrl() }}">
-                                    <span>
-                                        {{ link.sectioncta.getCustomText() }}
-                                    </span>
-                                    <span class="arrow">
-                                        {% include "_svg/arrowRight" %}
-                                    </span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        {% if block.sectioncta.getUrl() %}
-            <div class="content-block__action">
-                <a href="{{ block.sectioncta.getUrl() }}" class="btn btn--solid btn--yellow">
-                    {{ block.sectioncta.getCustomText() }}
-                </a>
-            </div>
-        {% endif %}
+  <div class="container-">
+    <div class="content-block__title">
+      <h2>{{ block.sectionTitle }}</h2>
     </div>
+    {% if block.sectionExcerpt %}
+    <div class="content-block__excerpt">
+      <h4>{{ block.sectionExcerpt }}</h4>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    {% if block.children|length %}
+    <div class="grid grid-cols-2 gap-4">
+      {% for link in block.children.all() %} {% if link.sectioncta.getUrl() %}
+      <a
+        class="col-span-1 content-block__item p-4 flex justify-between flex-col"
+        href="{{ link.sectioncta.getUrl() }}"
+      >
+        <div>
+          <h6>
+            <span>
+              {{ link.sectioncta.getCustomText() }}
+            </span>
+          </h6>
+
+          <p class="text-body-lg">
+            {{ link.ctaLinkDescription }}
+          </p>
+        </div>
+
+        <span class="action-btn">Learn More</span>
+      </a>
+      {% endif %} {% endfor %}
+    </div>
+    {% endif %}
+  </div>
 </div>

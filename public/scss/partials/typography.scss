@@ -1,7 +1,7 @@
 body {
   @apply font-body;
-  font-size: 16px;
-  line-height: 1.48;
+  font-size: 15px;
+  line-height: 16.5px;
   letter-spacing: 0.5px;
 }
 
@@ -9,66 +9,84 @@ p {
   @apply mb-6;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   @apply font-headings;
-  font-size: 32px;
-  line-height: 1.1;
+  font-size: 90px;
+  line-height: 99px;
 }
 
-h2, .h2 {
-  @apply font-headings mb-7;
+h2,
+.h2 {
   font-size: 28px;
   line-height: 1.24;
 }
 
-h3, .h3 {
-  @apply font-headings mb-6;
-  font-size: 24px;
-  line-height: 1.24;
+h3,
+.h3 {
+  font-size: 45px;
+  line-height: 49.5px;
 }
 
-h4, .h4 {
-  @apply font-headings mb-5;
-  font-size: 22px;
-  line-height: 1.24;
+h4,
+.h4 {
+  @apply mb-5;
+  font-size: 30px;
+  line-height: 31.5px;
 }
 
-
-h5, .h5,
-h6, .h6 {
-  @apply font-headings mb-4;
-  font-size: 16px;
-  line-height: 1.24;
+h5,
+.h5,
+h6,
+.h6 {
+  @apply font-headings;
+  font-size: 25px;
+  line-height: 27.5px;
 }
-
 
 @screen md {
-
   body {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 15.75px;
+    color: #73634c;
+    letter-spacing: -0.15px;
   }
 
-  h1, .h1 {
-    font-size: 56px;
+  h1,
+  .h1 {
+    font-size: 90px;
+    line-height: 99px;
+    letter-spacing: -0.15px;
   }
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 40px;
   }
 
-  h3, .h3 {
-    font-size: 32px;
+  h3,
+  .h3 {
+    font-size: 45px;
+    line-height: 47.25px;
   }
 
-  h4, .h4 {
-    font-size: 24px;
+  h4,
+  .h4 {
+    font-size: 30px;
+    line-height: 31.5px;
   }
 
-
-  h5, .h5,
-  h6, .h6 {
-    font-size: 20px;
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-size: 25px;
+    line-height: 27.5px;
   }
 
+  .text-body-lg {
+    font-size: 18px;
+    line-height: 19.8px;
+    letter-spacing: -0.1px;
+  }
 }

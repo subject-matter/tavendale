@@ -50,16 +50,39 @@
 {% extends "_layouts/layout.twig" %}
 
 {% block template %}
+    <div class="container">
 
-    <div class="our-people">
-        <div class="our-people__search">
-            <div class="container">
-                <form class="js-people-search-form">
+        <div class="grid grid-cols-12 mb-4">
+            <div class="col-span-2 flex items-end">
+                <div class="our-people__counter text-xs font-headings">
+                    {% if pageInfo.currentPage == 1 %}
+                        Showing {{ itemsShownEnd}} of {{ totalItems }} 
+                    {% else %}
+                    Showing {{ itemsShownStart }} - {{ itemsShownEnd }} of {{ totalItems }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-span-9 col-start-4">
+                <form class="js-people-search-form inline-block">
                     <div class="field">
-                        <label>Team</label>
                         <div class="inner">
-                            <select class="team js-people-dropdown" name="team">
-                                <option value="">Select</option>
+                            {% include "_svg/search" %}
+                            <input type="text" name="search" value="{{ keywords }}" placeholder="Quick search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <div class="our-people grid grid-cols-12">
+        <div class="our-people__search col-span-2 flex flex-col justify-between items-start">
+            <div>
+
+            <form class="js-people-filter">
+                <div class="field field--select mb-2">
+                        <select class="team js-people-dropdown" name="team">
+                            <option value="">Team</option>
 {#                                {% for teamItem in teamCategories.order('title ASC').all() %}#}
 {#                                    <option value="{{ teamItem.slug }}"#}
 {#                                            {% if teamItem.slug == team %} selected="selected"{% endif %}>#}
@@ -67,37 +90,48 @@
 {#                                    </option>#}
 {#                                {% endfor %}#}
 
-                                {% for teamItem in teamCategories.orderBy('title ASC').all() %}
-                                    <option value="{{ teamItem.slug }}"
-                                            {% if teamItem.slug == team %} selected="selected"{% endif %}>
-                                        {{ teamItem.title }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Quick search</label>
-                        <div class="inner">
-                            {% include "_svg/search" %}
-                            <input type="text" name="search" value="{{ keywords }}" placeholder="Search by name, position">
-                        </div>
-                    </div>
-                </form>
-            </div>
+                            {% for teamItem in teamCategories.orderBy('title ASC').all() %}
+                                <option value="{{ teamItem.slug }}"
+                                        {% if teamItem.slug == team %} selected="selected"{% endif %}>
+                                    {{ teamItem.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                </div>
+
+                <div class="field field--select mb-2">
+                        <select class="team js-people-dropdown" name="team">
+                            <option value="">Position</option>
+                            {% for teamItem in teamCategories.orderBy('title ASC').all() %}
+                                <option value="{{ teamItem.slug }}"
+                                        {% if teamItem.slug == team %} selected="selected"{% endif %}>
+                                    {{ teamItem.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                </div>
+
+                <div class="field field--select">
+                        <select class="team js-people-dropdown" name="team">
+                            <option value="">Location</option>
+                            {% for teamItem in teamCategories.orderBy('title ASC').all() %}
+                                <option value="{{ teamItem.slug }}"
+                                        {% if teamItem.slug == team %} selected="selected"{% endif %}>
+                                    {{ teamItem.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                </div>
+            </form>
         </div>
-        <div class="container" data-people-container="1">
 
-            <div class="our-people__counter">
-                {% if pageInfo.currentPage == 1 %}
-                    <p>Showing {{ itemsShownEnd}} of {{ totalItems }} </p>
-                {% else %}
-                    <p>Showing {{ itemsShownStart }} - {{ itemsShownEnd }} of {{ totalItems }} </p>
+            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                Load More
+            </a>
+        </div>
 
-                {% endif %}
-            </div>
-
-            <div class="our-people__list">
+        <div class="col-span-9 col-start-4" data-people-container="1">
+            <div class="our-people__list grid grid-cols-3 gap-3">
                 {% for person in pageEntries %}
                     <div class="our-people__person">
                         <div class="our-people__inner">
@@ -106,11 +140,12 @@
                                 >
                             </a>
                             <div class="our-people__desc">
-                                <h3>{{ person.title }}</h3>
-                                <h5>{{ person.position }}</h5>
+                                <span class="text-body-lg">{{ person.title }}</span>
+                                <p class="mb-0">
+                                    {{ person.position }}
+                                </p>
                                 {% if person.location|length %}
                                     <p class="our-people__location">
-                                        {% include "_svg/locationPin" %}
                                         <span>
                                             {% for location in person.location.orderBy('title ASC').all() %}
                                                 {{ location.title }}{% if not loop.last %}, {% endif %}
@@ -122,19 +157,18 @@
                                     <ul>
                                         {% if person.phone %}
                                             <li>
-                                                T: <a href="tel:{{ person.phone }}">{{ person.phone }}</a>
+                                                T: <a class="ml-5" href="tel:{{ person.phone }}">{{ person.phone }}</a>
                                             </li>
                                         {% endif %}
                                         {% if person.email %}
                                             <li>
-                                                E: <a href="mailto:{{ person.email }}" target="_blank"  >{{ person.email }}</a>
+                                                E: <a class="ml-5" href="mailto:{{ person.email }}" target="_blank"  >{{ person.email }}</a>
                                             </li>
                                         {% endif %}
                                     </ul>
                                 {% endif %}
                                 <div class="our-people__action">
-                                    <a href="{{ person.getUrl() }}" class="btn btn--solid btn--grey">
-                                        {% include "_svg/person" %}
+                                    <a href="{{ person.getUrl() }}" >
                                         View profile
                                     </a>
                                 </div>
@@ -143,12 +177,10 @@
                     </div>
                 {% endfor %}
             </div>
-
-            <div class="our-people__pagination">
-                {% include "_partials/pagination" %}
-            </div>
         </div>
     </div>
+</div>
+
 
     {% include "_partials/blocks" %}
 

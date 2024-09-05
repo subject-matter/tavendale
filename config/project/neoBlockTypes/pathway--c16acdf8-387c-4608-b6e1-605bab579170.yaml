@@ -1,52 +1,76 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   719ff3e2-9584-4219-8490-8cf22266c2dd:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 02b1eb8b-2ce7-414f-8066-9572a32adb76
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e0c4cdfd-1db3-498a-bd62-bc220e8a03ad # Size
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4784411d-ad2d-47a7-9421-f101404aad62
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0f384971-43df-4fd2-b092-cde416b42856
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1eb0cd4f-0c2e-4e81-a90d-aadc1a64aad0
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: ffc8c640-6ef1-4906-9676-2c3c287cc75f
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: pathway
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Pathway
 topLevel: false

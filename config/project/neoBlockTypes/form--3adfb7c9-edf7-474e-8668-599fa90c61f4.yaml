@@ -1,47 +1,70 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   674210b8-6e04-4fca-bfd1-a5139e4695dd:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3bc364d2-0ee2-4412-bece-339dc5edfa18
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 014acf7a-d72f-4190-85dd-56c80bcddef8 # Form
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2be90cb3-1aa4-4789-b72e-bb3910340fa9
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: 9b380a6b-b2de-4944-bd83-0bc6e08399d0
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cff826c9-e33d-4869-a85d-fb76862dda9b
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 38bbffc5-1edf-469b-9352-0e1c3685307d
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: form
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Form
 topLevel: true

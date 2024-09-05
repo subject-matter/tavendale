@@ -1,18 +1,8 @@
 @screen lg {
-
   .nav {
-
     .header--dark & {
       a.nav__anchor--level-1 {
-        @apply text-white;
-
-        &:hover {
-          @apply border-primary;
-        }
-
-        &.active {
-          @apply border-white;
-        }
+        @apply text-default font-headings;
       }
     }
 
@@ -21,21 +11,17 @@
     }
 
     &__li {
-      @apply ml-6;
+      @apply ml-6 relative;
 
       &:first-child {
         @apply ml-0;
       }
 
       > .nav__anchor {
-        @apply block py-1 border-b-2 border-transparent;
+        @apply block py-1;
 
-        &.active {
-          @apply border-black;
-        }
-
-        &:hover{
-          @apply border-primary;
+        &:hover {
+          opacity: 0.3;
         }
       }
     }
@@ -51,16 +37,14 @@
     }
 
     &__subnav {
-      @apply flex w-full invisible absolute right-0 opacity-0;
-      width: 70vw;
-      //height: calc(100vh - 60px);
-      padding-top: 25px;
+      @apply flex w-full invisible absolute left-0 opacity-0;
+      width: 300px;
       z-index: -50;
       @extend .transition;
 
       &--inner {
-        @apply bg-grey1 w-full overflow-y-scroll;
-        padding: 45px 60px;
+        @apply w-full;
+        padding-top: 40px;
       }
 
       &__back {
@@ -72,15 +56,15 @@
       }
     }
 
-
     &__subnav-list {
-      @apply -mx-5 mb-7 flex-wrap;
+      @apply mb-7 flex-wrap;
 
       > li {
-        @apply w-1/2 ml-0 px-5 mb-2;
+        @apply w-1/2 ml-0;
 
         a.nav__anchor {
-          @apply font-headings inline-block py-0 text-lead-lg;
+          @apply inline-block py-0;
+          text-wrap: nowrap;
         }
       }
     }
@@ -106,7 +90,7 @@
     &__subnav-text {
       @apply w-1/2 px-5 text-grey4 font-headings;
 
-      display:flex;
+      display: flex;
       flex-direction: column;
       align-content: center;
       justify-content: center;
@@ -123,26 +107,13 @@
         @apply underline;
       }
     }
-
   }
-
 }
 
-
 @screen lgx {
-
   .nav {
-
     &__li {
-      @apply ml-14;
+      @apply ml-13;
     }
-
-    &__subnav {
-      &--inner {
-        padding: 95px 112px;
-      }
-    }
-
   }
-
 }

@@ -1,66 +1,96 @@
 childBlocks:
+  - contentBlock
   - link
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
-  e6beb729-60e4-4f84-87ad-50b2e906a45a:
+  ee35ddd9-4889-4064-8f86-3d7b67898563:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 66223a42-4fea-4a72-b2a1-68471ad01ee8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ddc03f1b-ce2f-4e1e-9470-492bb69f785a # Excerpt
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f1af4fa5-1b04-4d3f-9121-ac02d0a1ea85
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bc45b907-cf21-4be7-8773-8dbe9e1bafcf # Body
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1c746783-37b6-4b74-a682-85df989f7ddb
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4095fa84-00a3-4d80-af89-4b51ebedf570 # CTA Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 796f3129-437f-487c-a169-b3f1d28eaad4
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: 787a935f-9797-4810-891b-846560ab9762
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4386dbfa-1914-4823-8e4c-7ce742fd0fb1
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 042c5378-d25b-4cd6-860c-f8fe2252b828
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: contentBlock
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Content
 topLevel: true

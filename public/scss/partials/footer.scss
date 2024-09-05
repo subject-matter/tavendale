@@ -1,74 +1,46 @@
 .footer {
-  @apply bg-black text-white py-8 text-small;
-
-  &__logo {
-    @apply mb-6;
-
-    svg {
-      @apply w-18 h-auto;
-    }
-  }
-
-  &__social {
-    @apply flex -mx-2 pt-6;
-
-    li {
-      @apply px-2;
-    }
-
-    svg {
-      @apply w-7 h-7;
-    }
-
-    a:hover svg path {
-      fill: theme('colors.primary');
-    }
-  }
+  @apply bg-primary py-8;
 
   &__nav {
-    @apply font-bold font-headings;
-
     li {
-      @apply mb-6;
+      @apply mb-4;
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
     }
 
     a {
       @extend .transition;
       &:hover {
-        @apply text-primary;
+        opacity: 0.3;
       }
     }
   }
 
   &__location {
-    @apply mb-6;
+    margin-bottom: 40px;
 
-    &__title {
-      @apply mb-6 font-headings;
+    p {
+      margin-bottom: 0px;
     }
 
     address {
       @apply not-italic;
     }
 
-    &__item {
-
-      &__phone {
-        @apply mb-0;
-      }
-
-      &__link {
-        @apply mb-0;
-      }
-
-    }
-
-    .locations__item__phone a:hover {
+    .locations__item__link {
+      margin-top: 20px;
       @apply underline;
     }
   }
 
   &__bottom {
+    @apply font-headings;
+
+    padding: 10px 0px;
+    font-size: 12px;
+
     li {
       @apply mb-4;
     }
@@ -78,17 +50,15 @@
     }
   }
 
-
   @screen md {
-
-    @apply pt-20 pb-10;
+    @apply pt-10 pb-0;
 
     .container {
       @apply flex flex-wrap;
     }
 
     &__main {
-      @apply w-full flex -mx-5 mb-16;
+      @apply w-full flex mb-16;
     }
 
     &__logo {
@@ -104,45 +74,68 @@
     }
 
     &__locations {
-      @apply w-full flex -mx-5;
+      @apply w-full flex flex-wrap;
     }
 
     &__location {
       @apply px-5 w-1/2;
 
       &__title {
-        @apply mb-6;
+        @apply mb-0;
       }
     }
 
     &__bottom {
-      @apply w-full flex justify-between;
+      @apply bg-black text-white;
 
-      ul {
-        @apply flex -mx-3;
+      .container {
+        @apply w-full flex justify-between;
 
-        li {
-          @apply relative px-3 mb-0;
-        }
-      }
+        ul {
+          @apply flex -mx-3;
 
-      &__right {
-        li:first-child {
-          &:after {
-            @apply block bg-white absolute right-0;
-            content: " ";
-            width: 1px;
-            height: 18px;
-            top: 3px;
+          li {
+            @apply relative px-3 mb-0;
           }
         }
       }
     }
 
+    &__subbottom {
+      @apply flex justify-end relative;
+
+      margin-top: 110px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      &__logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__social {
+    @apply flex;
+    z-index: 3;
+
+    li {
+      @apply px-2;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   @screen lg {
-
     &__main {
       @apply w-1/2;
     }
@@ -154,7 +147,5 @@
     &__locations {
       @apply w-1/2;
     }
-
   }
-
 }

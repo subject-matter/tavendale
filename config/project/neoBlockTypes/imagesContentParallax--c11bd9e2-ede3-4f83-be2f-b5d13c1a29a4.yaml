@@ -1,65 +1,94 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   6622ea1d-6948-46ed-9ec1-c93230578841:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8e5658f5-203b-4168-8710-c2525ccfcb6d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bc45b907-cf21-4be7-8773-8dbe9e1bafcf # Body
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9af38f77-8c2d-4c32-babf-abe562e4fc5c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a3c8bb83-4adf-4835-82db-a806831d245d # Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 99750019-8224-4e65-bf15-59670f1fb934
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1bc243aa-ed48-4317-85a6-96f6dc7aa9a5 # Secondary Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1c4dfb4a-a9f2-4bc1-9667-b081241d5fe8
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: 69c45a42-c28e-4354-aeca-a921b25d776f
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 477046a3-12f5-4a73-82c4-d7e4fc8f9958 # Bottom Spacing
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c55d1437-a7db-4885-8b86-522a3e7d7610
+            userCondition: null
             warning: null
             width: 100
         name: Spacing
-        sortOrder: 2
+        uid: 64764891-8189-470c-8c8f-701f57735b66
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: imagesContentParallax
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Images & Content (Parallax)'
 topLevel: true

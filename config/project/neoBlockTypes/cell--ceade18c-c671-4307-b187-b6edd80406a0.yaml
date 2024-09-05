@@ -1,34 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
   da34f41a-e923-494b-b1b5-2521ff7646b6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5c20a627-5111-454c-af25-51dd24681d70 # Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a812e3bc-c17b-45bf-af0b-3261e9e157f4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ddc03f1b-ce2f-4e1e-9470-492bb69f785a # Excerpt
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f9937b3a-a040-446c-8e89-436c69644982
+            userCondition: null
             warning: null
             width: 100
         name: Main
-        sortOrder: 1
+        uid: 7cfbdd73-631d-461b-959d-0847c50b99af
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: cell
+icon: null
+iconFilename: ''
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Cell
 topLevel: false
