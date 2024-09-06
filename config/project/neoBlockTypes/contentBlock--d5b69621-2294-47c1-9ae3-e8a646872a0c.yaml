@@ -6,7 +6,7 @@ description: ''
 enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
-  ee35ddd9-4889-4064-8f86-3d7b67898563:
+  7c73d294-bcc8-4b36-ac60-689c1048f372:
     tabs:
       -
         elementCondition: null
@@ -56,6 +56,30 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 796f3129-437f-487c-a169-b3f1d28eaad4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 77215f1c-8dcd-4525-8421-88e20614144e # Is Centered
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d890b0a2-9a64-4e37-8068-d5b7abc02b46
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 666486e2-00be-46de-952e-81ce32a91c8b # hasTopBorder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 089fa395-0815-474f-b535-29d32ef134da
             userCondition: null
             warning: null
             width: 100

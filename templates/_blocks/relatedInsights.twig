@@ -1,70 +1,73 @@
-{% set articles = craft.entries({
-    section: 'newsPage',
-    limit: 12
-}) %}
-{% set articleImage = {
-    mode: 'crop',
-    width: 215,
-    height: 215,
-    quality: 100,
-    position: 'center-center'
-} %}
-{% if block.newsCategories.count() %}
-    {% set articles = articles.relatedTo(block.newsCategories) %}
-{% endif %}
+{% set articles = craft.entries({ section: 'newsPage', limit: 12 }) %} {% set
+articleImage = { mode: 'crop', width: 215, height: 215, quality: 100, position:
+'center-center' } %} {% if block.newsCategories.count() %} {% set articles =
+articles.relatedTo(block.newsCategories) %} {% endif %}
 
-
-
-
-<div class="related-articles neo-block {{ bottomSpacing }}" data-insigts>
-    <div class="container">
-        <div class="related-articles__title">
-            <h2>{{ block.sectionTitle }} <span class="related-articles__blurb">{{ articles|length }}</span></h2>
-
-            <a href="/news" class="btn btn--solid btn--yellow">
-                See all Articles
-            </a>
-        </div>
-        <div class="related-articles__inner">
-            <div class="related-articles__arrows">
-                <a href="#" data-insigts-next>
-                    {% include "_svg/chervonRight" %}
-                </a>
-                <a href="#" data-insigts-prev>
-                    {% include "_svg/chervonLeft" %}
-                </a>
-            </div>
-            <div class="related-articles__slider" data-insigts-slider>
-                {% for article in articles.all() %}
-                    <div class="related-articles__article">
-                        <a href="{{ article.getUrl() }}" class="related-articles__article__inner">
-                            <div class="related-articles__text">
-                                <ul>
-                                    <li>
-                                        {% include "_svg/tag" %}
-                                    </li>
-                                    {% for cat in article.newsCategories.all() %}
-                                    <li>
-                                        <span>{{ cat.title }}{% if not loop.last %},{% endif %}</span>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <h5>{{ article.title }}</h5>
-                                {% if article.sectionPlainText %}
-                                    <p class="text-small">{{ article.sectionPlainText }}</p>
-                                {% endif %}
-                            </div>
-                            <div class="related-articles__img"
-                                {% if article.primaryImage.one() %}style="background-image: url({{ article.primaryImage.one().getUrl(articleImage) }})"{% endif %}
-                                >
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="related-articles__cta">
-            <a href="/news" class="btn btn--yellow btn--solid">See all articles</a>
-        </div>
+<div class="related-articles neo-block {{ bottomSpacing }}" data-insights>
+  <div class="container">
+    <div class="related-articles__title">
+      <h6>
+        {{ block.sectionTitle }}
+      </h6>
     </div>
+    <div class="related-articles__inner flickity__container">
+      <div class="flickity__nav">
+        <a href="#" data-insights-next class="flickity__nav--next">
+          {% include "_svg/chervonRight" %}
+        </a>
+        <a href="#" data-insights-prev class="flickity__nav--prev">
+          {% include "_svg/chervonLeft" %}
+        </a>
+      </div>
+
+      <div class="related-articles__slider" data-insights-slider>
+        {% for article in articles.all() %}
+        <div class="related-articles__item min-h-full">
+          <div class="news-page__item">
+            <div>
+              <a href="{{ article.getUrl() }}" class="news-page__item__inner">
+                <div
+                  class="news-page__item__image"
+                  {%
+                  if
+                  article.primaryImage.one()
+                  %}style="background-image: url({{
+                    article.primaryImage.one().getUrl(articleImage)
+                  }})"
+                  {%
+                  endif
+                  %}
+                ></div>
+
+                <div class="news-page__item__content">
+                  {% if article.newsCategories|length %}
+                  <div class="news-page__item__categories font-headings">
+                    <ul>
+                      {% for category in article.newsCategories.all() %}
+                      <li>
+                        {{ category.title }}
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+                  <span class="text-body-lg mb-4 md:mb-5 block font-headings">{{
+                    article.title
+                  }}</span>
+                  {% if article.sectionPlainText %}
+                  <p>{{ article.sectionPlainText }}</p>
+                  {% endif %}
+                </div>
+              </a>
+              <a href="{{ article.getUrl() }}" class="news-page__item__inner">
+                <span class="news-page__read-more">Read More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

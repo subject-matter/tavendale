@@ -1,36 +1,29 @@
-{% set primaryImage = {
-    mode: 'crop',
-    width: 400,
-    height: 300,
-    quality: 100,
-    position: 'center-center'
-} %}
+{% set primaryImage = { mode: 'crop', width: 400, height: 300, quality: 100,
+position: 'center-center' } %}
 
 <div class="three-cols neo-block {{ bottomSpacing }}">
-    <div class="container">
-        <div class="three-cols__title">
-            <h2>{{ block.sectionTitle }}</h2>
-        </div>
-        <div class="three-cols__grid">
-            {% for child in block.children.all() %}
-                <div class="three-cols__item">
-                    <div class="three-cols__img"
-                        {% if child.primaryImage.one() %}style="background-image: url({{ child.primaryImage.one().getUrl(primaryImage) }})"{% endif %}
-                        >
-                    </div>
-                    <h4>{{ child.sectionTitle }}</h4>
-                    <p>
-                        {{ child.sectionPlainText|nl2br }}
-                    </p>
-                    {% if child.sectioncta.getUrl() %}
-                        <p class="three-cols__link">
-                            <a href="{{ child.sectioncta.getUrl() }}">
-                                {{ child.sectioncta.getCustomText() }}
-                            </a>
-                        </p>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </div>
+  <div class="container grid grid-cols-12">
+    <div class="three-cols__title col-span-12 md:col-span-3 mb-3 md:mb-0">
+      <span class="text-body-lg">{{ block.sectionTitle }}</span>
     </div>
+    <div class="three-cols__grid col-span-12 md:col-span-9">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        {% for child in block.children.all() %}
+        <div class="three-cols__item">
+          <p class="font-headings">{{ child.sectionTitle }}</p>
+          <div class="flex justify-between items-end">
+            <p class="mb-0 pr-5">
+              {{ child.sectionPlainText | nl2br }}
+            </p>
+            {% if child.sectioncta.getUrl() %}
+            <a href="{{ child.sectioncta.getUrl() }}" class="btn btn--solid">
+              {{ child.sectioncta.getCustomText() }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

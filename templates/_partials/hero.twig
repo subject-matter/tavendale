@@ -18,7 +18,7 @@
 <div class="hero hero--person">
   <div class="container">
     <div class="hero--person__title text-center">
-      <div class="flex justify-center">
+      <div class="flex justify-center flex-col md:flex-row gap-2 mb-2 md:mb-0">
         <h1>
           {{ entry.title }}
         </h1>
@@ -28,29 +28,34 @@
       </div>
       <h6>{{ entry.position }}</h6>
     </div>
-
-    {#
-    <div class="hero__person-img-holder">
-      {% if entry.primaryImage.one() %}
-      <div
-        class="hero__person-img"
-        style="background-image: url('{{
-          entry.primaryImage.one().getUrl(personImg)
-        }}')"
-      ></div>
-      {% endif %}
-    </div>
-    <div class="hero__person-details">
-      {% if entry.team|length %}
-      <p>
-        {% for expertise in entry.team.all() %}
-        {{ expertise.title }}{% if not loop.last %}, {% endif %} {% endfor %}
-      </p>
-      {% endif %}
-    </div>
-    #}
   </div>
-  <div class="hero__pattern"></div>
+</div>
+{% elseif entry.section == 'News Page' %}
+<div class="hero hero--article">
+  <div class="container">
+    <div class="hero__content">
+      <h1>
+        {% if entry.heroTitle %}
+        {{ entry.heroTitle }}
+        {% else %}
+        {{ entry.title }}
+        {% endif %}
+      </h1>
+
+      <div class="news-page__item__categories font-headings">
+        <ul>
+          {% for category in entry.newsCategories.all() %}
+          <li>
+            {{ category.title }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container hidden md:block">
+    <button class="btn btn--solid btn--white">News + Insights</button>
+  </div>
 </div>
 {% elseif entry.heroImage and entry.heroImage.one() %}
 <div class="hero hero--image">
@@ -69,7 +74,6 @@
       style="background-image: url('{{ entry.heroImage.one().getUrl() }}')"
     ></div>
   </div>
-  <div class="hero__pattern"></div>
 </div>
 {% elseif entry %}
 <div class="hero hero--generic">
@@ -84,6 +88,5 @@
       </h1>
     </div>
   </div>
-  <div class="hero__pattern"></div>
 </div>
 {% endif %}

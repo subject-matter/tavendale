@@ -3,7 +3,7 @@ body {
 }
 
 body.homePage {
-  padding-top: 89px;
+  padding-top: 49px;
 }
 
 .app {
@@ -20,6 +20,15 @@ body.homePage {
   @apply px-6 mx-auto;
   // max-width: 863px;
   max-width: unset !important;
+}
+
+.container--small {
+  @apply px-6 mx-auto;
+  max-width: unset !important;
+
+  @screen md {
+    max-width: 863px !important;
+  }
 }
 
 .md\:container {
@@ -59,6 +68,10 @@ body.homePage {
 }
 
 @screen md {
+  body.homePage {
+    padding-top: 89px;
+  }
+
   .md\:py-md {
     @apply py-14;
   }
@@ -68,12 +81,60 @@ body.homePage {
 .sb-none {
   @apply mb-0;
 }
+
 .sb-sml {
   @apply mb-8;
 }
+
 .sb-med {
+  @apply mb-10;
+}
+
+.sb-lg {
   @apply mb-16;
 }
-.sb-lg {
-  @apply mb-24;
+
+@screen md {
+  .sb-med {
+    @apply mb-15;
+  }
+
+  .sb-lg {
+    @apply mb-24;
+  }
+}
+
+.flickity-viewport {
+  border-radius: 5px !important;
+}
+
+.flickity__container {
+  position: relative;
+}
+
+.flickity__nav {
+  &--prev,
+  &--next {
+    background: #f2f2f1;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &--prev {
+    @apply absolute;
+    left: 25px;
+  }
+
+  &--next {
+    @apply absolute right-0;
+    right: 25px;
+  }
 }

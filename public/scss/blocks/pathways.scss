@@ -2,7 +2,7 @@
   @apply overflow-hidden;
 
   .container {
-    @apply relative pb-24;
+    @apply relative pb-5;
   }
 
   &__slide-image img {
@@ -11,8 +11,6 @@
   }
 
   &__title {
-    @apply mb-5;
-
     h4 {
       @apply flex items-center mb-0;
     }
@@ -66,7 +64,7 @@
 
   @screen md {
     .container {
-      @apply pb-0;
+      @apply pt-0;
     }
 
     &__slider-container {

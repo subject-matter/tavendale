@@ -1,16 +1,40 @@
 .form {
+  border-top: 1px solid #c8c8c8;
+  padding-top: 15px;
 
   @apply relative;
 
   &__title {
-    @apply mb-8;
+    @apply mb-3;
     h2 {
       @apply mb-0;
     }
   }
 
+  @screen md {
+    &__title {
+      @apply mb-14;
+    }
+  }
+
+  &__image {
+    @apply justify-end;
+  }
+
+  &__image-wrapper {
+    @apply bg-cover bg-no-repeat bg-center;
+    background-image: url("../../img/contact-image.png");
+    border-radius: 5px;
+
+    &:before {
+      @apply block;
+      content: " ";
+      height: 715px;
+    }
+  }
+
   .this-field-has-errors {
-    border-color: #FF0000;
+    border-color: #ff0000;
   }
 
   div.field {
@@ -20,13 +44,14 @@
       @apply block mb-3;
     }
 
-    input, select {
+    input,
+    select {
       @apply m-0;
     }
 
     .error.text-error {
       @apply block font-headings text-errors mb-0;
-      background: #FF0000;
+      background: #ff0000;
       color: white;
       font-size: 16px;
       padding: 8px 20px;
@@ -35,9 +60,9 @@
 
   .ff-form-success {
     padding: 10px 20px;
-    background: #BCF5D3;
+    background: #bcf5d3;
     margin-bottom: 1.5rem;
-    border: 1px solid #68AF85;
+    border: 1px solid #68af85;
 
     p {
       @apply mb-0;
@@ -50,75 +75,6 @@
 
     p {
       @apply m-0;
-    }
-  }
-
-  &__fields {
-    @apply -mx-2 flex flex-wrap;
-
-    .field {
-      @apply w-full px-2 mb-4;
-    }
-
-    .form-label {
-      @apply block;
-      font-size: 18px;
-    }
-
-    .field--checkbox {
-      @apply flex justify-end flex-row-reverse flex-wrap items-center;
-
-      input {
-        @apply mr-3 mt-0;
-      }
-    }
-
-    .field--radio_group {
-      .form-label {
-        @apply mb-4;
-      }
-
-      label {
-
-        @apply flex mb-4;
-
-        input {
-          @apply mr-3;
-        }
-      }
-    }
-  }
-
-  &__actions {
-    @apply px-2;
-  }
-
-  @screen md {
-
-    &__inner {
-      width: 60%;
-      max-width: 740px;
-    }
-
-    &__pattern {
-      @apply block absolute top-0 right-0 h-full;
-      width: 35%;
-
-      &__inner {
-        @apply absolute top-0 left-0 right-0 bottom-0;
-        background-image: url('../../img/pattern.svg');
-      }
-    }
-  }
-
-  @screen lg {
-    &__pattern {
-      width: 40%;
-      padding-left: 100px;
-
-      &__inner {
-        left: 100px;
-      }
     }
   }
 }

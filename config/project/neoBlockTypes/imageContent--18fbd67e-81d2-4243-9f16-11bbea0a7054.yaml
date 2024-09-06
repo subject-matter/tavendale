@@ -4,7 +4,7 @@ description: ''
 enabled: true
 field: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
 fieldLayouts:
-  27f3b47c-8649-416b-85c7-d56f61183e24:
+  e5100e4a-e734-48d8-806b-dc394857f3b0:
     tabs:
       -
         elementCondition: null
@@ -78,6 +78,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9fdbbd99-2ed7-47c5-b8b8-c721a7926ffa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 666486e2-00be-46de-952e-81ce32a91c8b # hasTopBorder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a9149e7-e184-4a3e-bd1c-7a78b68c740e
             userCondition: null
             warning: null
             width: 100

@@ -7,13 +7,15 @@ height: 485, quality: 100, position: 'center-center' } %}
       <h4>{{ block.sectionTitle }}</h4>
     </div>
   </div>
-  <div class="pathways__slider-container">
-    {#
-    <div class="pathways__nav">
-      <a href="#" data-pathways-next> {% include "_svg/chervonRight" %} </a>
-      <a href="#" data-pathways-prev> {% include "_svg/chervonLeft" %} </a>
+  <div class="pathways__slider-container flickity__container">
+    <div class="flickity__nav">
+      <a href="#" data-pathways-next class="flickity__nav--next">
+        {% include "_svg/chervonRight" %}
+      </a>
+      <a href="#" data-pathways-prev class="flickity__nav--prev">
+        {% include "_svg/chervonLeft" %}
+      </a>
     </div>
-    #}
     <div class="pathways__slider">
       <div class="pathways__slider__inner" data-pathwayslider>
         {% for child in block.children.all() %} {% if child.sectioncta.getUrl()
@@ -26,7 +28,7 @@ height: 485, quality: 100, position: 'center-center' } %}
             <img src="{{ child.primaryImage.one().getUrl(defaultImage) }}" />
             {% endif %} {% endif %}
           </div>
-          <div class="pathways__slide-title">
+          <div class="pathways__slide-title text-body-lg">
             {{ child.sectionTitle }}
           </div>
         </a>
@@ -39,7 +41,7 @@ height: 485, quality: 100, position: 'center-center' } %}
             <img src="{{ child.primaryImage.one().getUrl(defaultImage) }}" />
             {% endif %} {% endif %}
           </div>
-          <div class="pathways__slide-title">
+          <div class="pathways__slide-title text-body-lg">
             {{ child.sectionTitle }}
           </div>
         </div>
@@ -49,6 +51,6 @@ height: 485, quality: 100, position: 'center-center' } %}
   </div>
 
   <div class="container mt-7">
-    <button class="btn btn--solid btn--white">Learn More</button>
+    <a href="/our-expertise" class="btn btn--solid btn--white">Learn More</a>
   </div>
 </div>

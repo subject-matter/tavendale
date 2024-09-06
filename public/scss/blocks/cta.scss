@@ -1,32 +1,41 @@
 .cta {
-  @apply relative text-center;
+  @apply relative;
   padding-top: 30px;
-  margin-top: 140px;
   border-top: 1px solid #c8c8c8;
 
   .container {
     @apply relative z-20;
   }
 
+  &__left {
+    margin-bottom: 24px;
+    margin-right: 55px;
+  }
+
   &__inner {
+    @apply flex;
     @apply mx-auto pb-7;
-    max-width: 264px;
   }
 
   &__text {
-    margin-bottom: 120px;
+    margin-bottom: 50px;
   }
 
   @screen md {
     @apply text-left;
 
+    &__text {
+      margin-bottom: 120px;
+    }
+
     &__inner {
-      @apply flex;
       max-width: none;
     }
 
     &__left {
       @apply w-1/2;
+      margin-bottom: 0px;
+      margin-right: 0px;
     }
 
     &__right {

@@ -1,4 +1,4 @@
-dateModified: 1725521427
+dateModified: 1725664489
 elementSources:
   craft\elements\Asset:
     -
@@ -101,9 +101,11 @@ meta:
     48539df8-1a5c-4798-ac79-aaa892721dac: 'CTA Link Description' # CTA Link Description
     063917aa-0ac7-42be-85b3-ab29d6fc6494: Position # Position
     73974e20-4ecc-4d4b-8bd6-5c173a53e245: 'Home Page' # Home Page
+    77215f1c-8dcd-4525-8421-88e20614144e: 'Is Centered' # Is Centered
     194610ea-abfc-4b5e-b586-8039e83fffb2: 'Three Column Block' # Three Column Block
     477046a3-12f5-4a73-82c4-d7e4fc8f9958: 'Bottom Spacing' # Bottom Spacing
     479865f5-a696-401e-a2d5-59e13cfc028d: Quote # Quote
+    666486e2-00be-46de-952e-81ce32a91c8b: hasTopBorder # hasTopBorder
     02478477-f7ca-4a5a-811a-bfe36d39612c: 'Alternate Contact Position' # Alternate Contact Position
     82672301-0fdb-4253-88ce-c0b1fdecb7c6: CTA # CTA
     a3c8bb83-4adf-4835-82db-a806831d245d: Image # Image

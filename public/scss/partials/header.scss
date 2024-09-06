@@ -20,6 +20,10 @@
     }
   }
 
+  &--active-nav {
+    @apply bg-white;
+  }
+
   &__mobile-actions {
     ul {
       @apply flex;

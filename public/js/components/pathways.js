@@ -12,25 +12,25 @@ export default () => {
         const sliderCarousel = new Flickity(slider, {
           wrapAround: true,
           imagesLoaded: true,
-          cellAlign: "center", // Align cells in the center to allow preview of left and right items
+          cellAlign: window.innerWidth <= 768 ? "left" : "center", // Align cells in the center to allow preview of left and right items
           pageDots: false,
           prevNextButtons: false,
           percentPosition: true,
-          initialIndex: 2,
+          initialIndex: window.innerWidth <= 768 ? 0 : 2,
           freeScroll: true,
         });
 
-        // nextBtn.addEventListener("click", (e) => {
-        //   e.preventDefault();
-        //   sliderCarousel.next();
-        //   return false;
-        // });
+        nextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          sliderCarousel.next();
+          return false;
+        });
 
-        // prevBtn.addEventListener("click", (e) => {
-        //   e.preventDefault();
-        //   sliderCarousel.previous();
-        //   return false;
-        // });
+        prevBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          sliderCarousel.previous();
+          return false;
+        });
       }
     });
   }

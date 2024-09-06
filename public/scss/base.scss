@@ -23,8 +23,9 @@ body {
 }
 
 html {
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
 }
 
 input,

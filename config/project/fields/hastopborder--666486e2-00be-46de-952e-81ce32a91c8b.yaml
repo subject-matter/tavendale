@@ -1,0 +1,14 @@
+columnSuffix: mpbvsyms
+contentColumnType: boolean
+fieldGroup: 119b767b-7327-4978-8a4b-d81bcecb92b3 # Blocks
+handle: hastopborder
+instructions: null
+name: hasTopBorder
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

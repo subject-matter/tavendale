@@ -8,28 +8,40 @@ mode: 'fill', width: 572, height: 740, quality: 100, position: 'center-center' }
       class="two-col-images__row two-col-images__row--{{ block.positioning }}"
     >
       <div class="two-col-images__second-img">
-        {% if block.sectionTitle %}
-        <h4>{{ block.sectionTitle }}</h4>
-        {% endif %}
-        <div class="text-body-lg">
-          {{ block.sectionBody }}
+        <div class="md:w-3/4">
+          {% if block.sectionTitle %}
+          <h4 class="font-headings">{{ block.sectionTitle }}</h4>
+          {% endif %} {% if block.sectionBody %}
+          <div class="text-body-lg">
+            {{ block.sectionBody }}
+          </div>
+          {% endif %}
         </div>
-
         {% if block.sectioncta.getUrl() %}
-        <div class="two-col-images__cta">
+        <div class="two-col-images__cta desktop">
           <a
             href="{{ block.sectioncta.getUrl() }}"
-            class="btn btn--solid btn--yellow"
+            class="btn btn--solid btn--white"
           >
             {{ block.sectioncta.getCustomText() }}
           </a>
         </div>
         {% endif %}
       </div>
+
       <div class="two-col-images__primary">
         {% if block.primaryImage.one() %}
         <div class="two-col-images__primary-img">
           <img src="{{ block.primaryImage.one().getUrl(primaryImage) }}" />
+        </div>
+        {% endif %} {% if block.sectioncta.getUrl() %}
+        <div class="two-col-images__cta mobile">
+          <a
+            href="{{ block.sectioncta.getUrl() }}"
+            class="btn btn--solid btn--white"
+          >
+            {{ block.sectioncta.getCustomText() }}
+          </a>
         </div>
         {% endif %}
       </div>

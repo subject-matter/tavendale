@@ -1,18 +1,31 @@
-<div class="content-block neo-block {{ bottomSpacing }}">
-  <div class="container-">
+<div
+  class="content-block neo-block {{
+    bottomSpacing
+  }} {%if block.hastopborder%}has-top-border{%endif%}"
+>
+  <div class="container- {%if block.isCentered%}centered{%endif%}">
     <div class="content-block__title">
       <h2>{{ block.sectionTitle }}</h2>
     </div>
     {% if block.sectionExcerpt %}
     <div class="content-block__excerpt">
-      <h4>{{ block.sectionExcerpt }}</h4>
+      <h6>{{ block.sectionExcerpt }}</h6>
     </div>
     {% endif %}
   </div>
 
+  {% if block.sectionBody %}
+  <div class="container--small">
+    <div class="content-block__text text-body-lg">
+      {{ block.sectionBody }}
+    </div>
+  </div>
+
+  {% endif %}
+
   <div class="container">
     {% if block.children|length %}
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {% for link in block.children.all() %} {% if link.sectioncta.getUrl() %}
       <a
         class="col-span-1 content-block__item p-4 flex justify-between flex-col"

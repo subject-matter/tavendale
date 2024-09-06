@@ -1,9 +1,9 @@
 {% set testimonial = block.testimonial.one() %} {% set img =
 testimonial.primaryImage.one() %} {% set imgSize = { mode: 'crop', width: 480,
 height: 480, quality: 100, position: 'center-center' } %} {% if testimonial %}
-<div class="testimonial neo-block">
+<div class="testimonial neo-block hidden md:block {{ bottomSpacing }}">
   <div class="container">
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2">
       <div>
         <p class="text-body-lg">Client Testimonials</p>
       </div>

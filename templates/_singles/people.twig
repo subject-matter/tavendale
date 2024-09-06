@@ -2,6 +2,8 @@
     {% set entry = craft.entries().section('ourPeople').one() %}
 {% endif %}
 {% set teamCategories = craft.categories.group('teams') %}
+{% set teamPositions = craft.categories.group('position') %}
+{% set teamLocations = craft.categories.group('locations') %}
 {% set img = {
     mode: 'fill',
     width: 300,
@@ -16,18 +18,27 @@
 
 {% set keywords = craft.app.request.getParam('search') %}
 {% set team = craft.app.request.getParam('team') %}
-{% set positions = craft.app.request.getParam("search") ?? null %}
+{% set position = craft.app.request.getParam("position") ?? null %}
+{% set location = craft.app.request.getParam("location") ?? null %}
 
 {% if keywords %}
     {% set people = people.search(keywords) %}
 {% endif %}
-
 
 {% if team %}
     {% set selectedteam = craft.categories.group('teams').slug(team) %}
     {% set people = people.relatedTo(selectedteam) %}
 {% endif %}
 
+{% if position %}
+    {% set selectedPosition = craft.categories.group('positions').slug(team) %}
+    {% set position = position.relatedTo(selectedPosition) %}
+{% endif %}
+
+{% if location %}
+    {% set selectedLocation = craft.categories.group('locations').slug(team) %}
+    {% set location = location.relatedTo(selectedLocation) %}
+{% endif %}
 
 {% paginate people.limit(16) as pageInfo, pageEntries %}
 
@@ -53,7 +64,7 @@
     <div class="container">
 
         <div class="grid grid-cols-12 mb-4">
-            <div class="col-span-2 flex items-end">
+            <div class="col-span-12 md:col-span-2 mb-2 md:mb-0 flex items-end">
                 <div class="our-people__counter text-xs font-headings">
                     {% if pageInfo.currentPage == 1 %}
                         Showing {{ itemsShownEnd}} of {{ totalItems }} 
@@ -63,12 +74,12 @@
                 </div>
             </div>
 
-            <div class="col-span-9 col-start-4">
+            <div class="col-span-12 md:col-span-9 md:col-start-4">
                 <form class="js-people-search-form inline-block">
                     <div class="field">
                         <div class="inner">
                             {% include "_svg/search" %}
-                            <input type="text" name="search" value="{{ keywords }}" placeholder="Quick search">
+                            <input type="text" id="searchInput" name="search" value="{{ keywords }}" placeholder="Quick search">
                         </div>
                     </div>
                 </form>
@@ -76,20 +87,12 @@
         </div>
 
     <div class="our-people grid grid-cols-12">
-        <div class="our-people__search col-span-2 flex flex-col justify-between items-start">
-            <div>
+        <div class="our-people__search col-span-12 md:col-span-2 flex flex-col justify-between items-start">
 
-            <form class="js-people-filter">
+            <form class="js-people-search-form">
                 <div class="field field--select mb-2">
                         <select class="team js-people-dropdown" name="team">
                             <option value="">Team</option>
-{#                                {% for teamItem in teamCategories.order('title ASC').all() %}#}
-{#                                    <option value="{{ teamItem.slug }}"#}
-{#                                            {% if teamItem.slug == team %} selected="selected"{% endif %}>#}
-{#                                        {{ teamItem.title }}#}
-{#                                    </option>#}
-{#                                {% endfor %}#}
-
                             {% for teamItem in teamCategories.orderBy('title ASC').all() %}
                                 <option value="{{ teamItem.slug }}"
                                         {% if teamItem.slug == team %} selected="selected"{% endif %}>
@@ -99,12 +102,12 @@
                         </select>
                 </div>
 
-                <div class="field field--select mb-2">
-                        <select class="team js-people-dropdown" name="team">
+                {# <div class="field field--select mb-2">
+                        <select class="position js-people-dropdown" name="team">
                             <option value="">Position</option>
-                            {% for teamItem in teamCategories.orderBy('title ASC').all() %}
+                            {% for teamItem in teamPositions.orderBy('title ASC').all() %}
                                 <option value="{{ teamItem.slug }}"
-                                        {% if teamItem.slug == team %} selected="selected"{% endif %}>
+                                        {% if teamItem.slug == position %} selected="selected"{% endif %}>
                                     {{ teamItem.title }}
                                 </option>
                             {% endfor %}
@@ -112,26 +115,25 @@
                 </div>
 
                 <div class="field field--select">
-                        <select class="team js-people-dropdown" name="team">
+                        <select class="location js-people-dropdown" name="team">
                             <option value="">Location</option>
-                            {% for teamItem in teamCategories.orderBy('title ASC').all() %}
+                            {% for teamItem in teamLocations.orderBy('title ASC').all() %}
                                 <option value="{{ teamItem.slug }}"
-                                        {% if teamItem.slug == team %} selected="selected"{% endif %}>
+                                        {% if teamItem.slug == location %} selected="selected"{% endif %}>
                                     {{ teamItem.title }}
                                 </option>
                             {% endfor %}
                         </select>
-                </div>
+                </div> #}
             </form>
-        </div>
 
-            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white desktop">
                 Load More
             </a>
         </div>
 
-        <div class="col-span-9 col-start-4" data-people-container="1">
-            <div class="our-people__list grid grid-cols-3 gap-3">
+        <div class="col-span-12 md:col-span-9 md:col-start-4 mt-10 md:mt-0" data-people-container="1">
+            <div class="our-people__list grid grid-cols-2 md:grid-cols-3 gap-3">
                 {% for person in pageEntries %}
                     <div class="our-people__person">
                         <div class="our-people__inner">
@@ -176,6 +178,12 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+
+            <div class="mobile">
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                    Load More
+                </a>
             </div>
         </div>
     </div>

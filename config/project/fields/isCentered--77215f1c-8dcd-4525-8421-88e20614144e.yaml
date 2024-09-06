@@ -1,0 +1,14 @@
+columnSuffix: vjofizek
+contentColumnType: boolean
+fieldGroup: 119b767b-7327-4978-8a4b-d81bcecb92b3 # Blocks
+handle: isCentered
+instructions: null
+name: 'Is Centered'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

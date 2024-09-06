@@ -3,6 +3,7 @@ body {
   font-size: 15px;
   line-height: 16.5px;
   letter-spacing: 0.5px;
+  color: #73634c;
 }
 
 p {
@@ -12,8 +13,9 @@ p {
 h1,
 .h1 {
   @apply font-headings;
-  font-size: 90px;
-  line-height: 99px;
+  font-size: 30px;
+  line-height: 31.5px;
+  letter-spacing: -1.5px;
 }
 
 h2,
@@ -24,15 +26,17 @@ h2,
 
 h3,
 .h3 {
-  font-size: 45px;
-  line-height: 49.5px;
+  font-size: 20px;
+  line-height: 22.5px;
+  letter-spacing: -0.15px;
 }
 
 h4,
 .h4 {
   @apply mb-5;
-  font-size: 30px;
-  line-height: 31.5px;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.1px;
 }
 
 h5,
@@ -40,15 +44,21 @@ h5,
 h6,
 .h6 {
   @apply font-headings;
-  font-size: 25px;
-  line-height: 27.5px;
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: -0.1px;
+}
+
+.text-body-lg {
+  font-size: 12px;
+  line-height: 19px;
+  letter-spacing: -0.1px;
 }
 
 @screen md {
   body {
     font-size: 15px;
     line-height: 15.75px;
-    color: #73634c;
     letter-spacing: -0.15px;
   }
 

@@ -28,7 +28,7 @@
             <hr class="news-page__insight-split" />
 
             <div class="news-page__featured">
-                <div class="container grid grid-cols-2 gap-3">
+                <div class="container grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="news-page__featured__img-holder relative">
                         <div class="news-page__featured__img"
                             {% if featuredNews.primaryImage.one() %}
@@ -79,9 +79,9 @@
         </div>
 
         <div class="container grid grid-cols-12">
-            <div class="col-span-3 flex flex-col justify-between items-start">
+            <div class="col-span-12 md:col-span-3 flex flex-col justify-between items-start">
                 <form action="">
-                    <div class="field mb-2">
+                    <div class="field">
                         <div class="inner">
                             {% include "_svg/search" %}
                             <input type="text" name="search" placeholder="Quick Search">
@@ -103,11 +103,11 @@
                     </div>
                 </form>
 
-                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block desktop">
                     Load More
                 </a>
             </div>
-            <div class="col-span-9">
+            <div class="col-span-12 md:col-span-9">
 
                 <div class="news-page__list grid grid-cols-2 gap-3">
                     {% for page in pageEntries %}
@@ -126,7 +126,7 @@
                             {% if page.newsCategories|length %}
                                 <div class="news-page__item__categories font-headings">
                                     <ul>
-                                        {% for category in page.newsCategories.all() %}
+                                        {% for category in page.newsCategories.all() | slice(0,3) %}
                                             <li>
                                                 {{ category.title }}
                                             </li>
@@ -135,7 +135,7 @@
                                 </div>
                             {% endif %}
     
-                                <span class="text-body-lg mb-6 block font-headings">{{ page.title }}</span>
+                                <span class="text-body-lg mb-3 md:mb-6 block font-headings">{{ page.title }}</span>
                                 {% if page.sectionPlainText %}                                        
                                     <p>{{ page.sectionPlainText }}</p>
                                 {% endif %}
@@ -149,6 +149,13 @@
                         </div>
                     {% endfor %}
                 </div>
+
+                <div class="mobile">
+                    <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                        Load More
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>

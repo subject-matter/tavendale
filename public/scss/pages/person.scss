@@ -3,6 +3,7 @@
     background-color: #f8f8f8;
     border-radius: 5px;
     padding: 15px;
+    font-size: 10px;
   }
 
   &__image-container {
@@ -18,5 +19,13 @@
     padding-top: 100%;
     background-size: cover;
     border-radius: 5px;
+  }
+
+  @screen md {
+    padding-bottom: 150px;
+
+    &__contact {
+      font-size: 15px;
+    }
   }
 }

@@ -1,30 +1,35 @@
 .our-people {
+  margin-bottom: 60px;
+
   &__inner {
     @apply flex;
     flex-direction: column;
   }
 
-  @screen lg {
-    &__img {
-      height: 315px;
-    }
+  &__person {
+    margin-bottom: 20px;
   }
 
-  &__person {
-    margin-bottom: 80px;
+  @screen md {
+    &__person {
+      margin-bottom: 80px;
+    }
   }
 
   &__img {
     @apply overflow-hidden bg-cover bg-no-repeat bg-center flex-shrink-0;
     border-radius: 5px;
     margin-bottom: 15px;
+    padding-bottom: 100%;
   }
 
   &__desc {
+    font-size: 10px;
+
     .text-body-lg {
       @apply font-headings;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .our-people__location {
@@ -37,14 +42,56 @@
     }
   }
 
+  &__search .btn.desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .js-people-search-form input {
     width: 315px;
   }
 
-  .js-people-filter .field {
-  }
-
   a:hover {
     opacity: 0.3;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  @screen md {
+    .text-body-lg {
+      margin-bottom: 20px;
+    }
+
+    margin-bottom: 180px;
+
+    &__search .btn.desktop {
+      display: inline-flex !important;
+    }
+
+    .mobile {
+      display: none !important;
+    }
+
+    form {
+      width: auto;
+    }
+
+    &__desc {
+      font-size: 15px;
+    }
+  }
+
+  @screen lg {
+    &__img {
+      height: 315px;
+    }
   }
 }

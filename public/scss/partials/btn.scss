@@ -1,14 +1,21 @@
 .btn {
-  @apply inline-flex justify-center items-center;
+  @apply justify-center items-center;
+  display: inline-flex;
   @extend .transition--;
-  font-size: 15px;
-  line-height: 16.5px;
-  letter-spacing: 0.1px;
   border-radius: 70px;
   color: text-default;
   padding: 0px 17px;
-  height: 35px;
-  line-height: 35px;
+  height: 29px;
+  font-size: 12px;
+  line-height: 14.5px;
+  letter-spacing: 0.1px;
+
+  @screen md {
+    font-size: 15px;
+    line-height: 16.5px;
+
+    height: 35px;
+  }
 
   svg {
     @apply mr-2;

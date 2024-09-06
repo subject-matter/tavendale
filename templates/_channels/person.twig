@@ -8,8 +8,8 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
 
 <div class="person-page">
   <div class="container grid grid-cols-12">
-    <div class="col-span-4">
-      <div class="relative person-page__image-container">
+    <div class="col-span-12 md:col-span-4">
+      <div class="relative person-page__image-container mb-6 md:mb-0">
         {% if entry.primaryImage.one() %}
         <div
           class="person-page__image"
@@ -30,10 +30,10 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
       </div>
       {% endif %}
     </div>
-    <div class="col-span-6 col-start-7">
-      <div class="grid grid-cols-2 mb-16 person-page__contact">
+    <div class="col-span-12 md:col-span-6 md:col-start-7">
+      <div class="grid md:grid-cols-2 mb-8 md:mb-16 person-page__contact">
         <div>
-          <small class="block mb-7 font-headings">Contact</small>
+          <small class="block mb-3 md:mb-7 font-headings">Contact</small>
           <span class="block font-headings">{{ entry.title }}</span>
           <ul>
             {% if entry.phone %}
@@ -89,15 +89,17 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
 
         <div>
           {% if entry.expertiseSelection|length %}
-          <div class="person-page__sidebar-box person-page__sidebar-box--last">
-            <small class="block mb-7 font-headings">Teams</small>
+          <div
+            class="person-page__sidebar-box person-page__sidebar-box--last mt-5 md:mt-0"
+          >
+            <small class="block mb-3 md:mb-7 font-headings">Teams</small>
             <p class="mb-0">Property, Personal Law, Agribusiness</p>
           </div>
           {% endif %} {% if entry.expertiseSelection|length %}
           <div
             class="person-page__sidebar-box person-page__sidebar-box--last mt-5"
           >
-            <small class="block mb-7 font-headings">Expertise</small>
+            <small class="block mb-3 md:mb-7 font-headings">Expertise</small>
             <ul>
               {% for expertise in entry.expertiseSelection.all() %}
               <li>

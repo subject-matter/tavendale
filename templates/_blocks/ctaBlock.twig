@@ -7,17 +7,19 @@
         {% include "_svg/contactIcon" %}
       </div>
       <div class="cta__right">
-        <h3 class="cta__text">
-          {{ block.sectionTitle }}
-        </h3>
-        {% if block.sectioncta %}
-        <a
-          href="{{ block.sectioncta.getUrl() }}"
-          class="btn btn--solid btn--{{ buttonClass }}"
-        >
-          {{ block.sectioncta.getCustomText() }}
-        </a>
-        {% endif %}
+        <div class="md:w-3/4">
+          <h3 class="cta__text">
+            {{ block.sectionTitle }}
+          </h3>
+          {% if block.sectioncta %}
+          <a
+            href="{{ block.sectioncta.getUrl() }}"
+            class="btn btn--solid btn--{{ buttonClass }}"
+          >
+            {{ block.sectioncta.getCustomText() }}
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

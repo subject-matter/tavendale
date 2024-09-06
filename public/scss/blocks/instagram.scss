@@ -1,65 +1,46 @@
 .instagram {
+  border-top: 1px solid #c8c8c8;
+  padding-top: 15px;
 
-  @apply py-10;
-
-  &__row {
-    @apply -mx-2 flex flex-wrap;
+  &__inner {
+    @apply relative w-full mx-auto;
+    margin-bottom: 60px;
   }
 
-  &__item {
-    @apply p-2 w-1/2 relative;
+  &__container {
+    @apply mr-6;
+    width: calc(100vw);
+    max-width: calc(100vw);
+  }
 
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(5),
-    &:nth-child(6) {
-      display: none;
-    }
-
-    &__inner {
-      @apply block bg-cover bg-no-repeat bg-center;
-
-      &:before {
-        @apply block w-full;
-        content: " ";
-        padding-top: 100%;
-      }
-    }
-
-    &__content {
-       @apply absolute top-0 left-0 w-full h-full p-2 flex justify-center items-center text-center;
-
-      div {
-        max-width: 250px;
-      }
-
-      h3, h4 {
-        @apply mb-0;
-        max-width: 250px;
-        font-size: 28px;
-        line-height: 1.24;
-      }
-
-      h3 {
-        @apply mb-6;
-      }
-    }
+  &__img {
+    @apply block bg-cover bg-no-repeat bg-top;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    overflow: hidden;
   }
 
   @screen md {
+    padding-bottom: 120px;
 
-    &__item {
-      @apply w-1/4;
-
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(5),
-      &:nth-child(6) {
-        display: block;
-      }
+    &__title {
+      padding-bottom: 150px;
     }
 
+    &__inner {
+      @apply relative  mx-auto;
+      width: 875px;
+    }
+
+    &__container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__img {
+      height: 575px;
+    }
   }
-
-
 }

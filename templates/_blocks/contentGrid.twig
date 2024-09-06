@@ -1,14 +1,39 @@
+{% set animations = false %} {% set primaryImage = { mode: 'fill', width: 624,
+height: 449, quality: 100, position: 'center-center' } %} {% set secondImage = {
+mode: 'fill', width: 572, height: 740, quality: 100, position: 'center-center' }
+%} {% if block.animationPrimaryText %} {% set animations = true %} {% endif %}
 <div class="content-grid neo-block {{ bottomSpacing }}">
-    <div class="container">
-        <div class="content-grid__inner">
-            {% for child in block.children.all() %}
-                <div class="content-grid__cell">
-                    <h4>{{ child.sectionTitle }}</h4>
-                    <div class="content-grid__content">
-                        {{ child.sectionExcerpt }}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+  <div class="container grid grid-cols-12">
+    <div class="col-span-12 md:col-span-9">
+      <div class="md:w-3/4 sticky-heading">
+        {% if block.sectionTitle %}
+        <p class="font-headings">{{ block.sectionTitle }}</p>
+        {% endif %} {% if block.sectionBody %}
+        <h6>
+          {{ block.sectionBody }}
+        </h6>
+        {% endif %}
+      </div>
     </div>
+    <div class="col-span-12 md:col-span-3">
+      {% if block.primaryImage.one() %}
+      <div class="two-col-images__primary-img mb-3">
+        <img src="{{ block.primaryImage.one().getUrl(primaryImage) }}" />
+      </div>
+      {%endif %}
+
+      <div class="content-grid__inner">
+        {% for child in block.children.all() %}
+        <div class="content-grid__cell">
+          <span class="text-body-lg font-headings">{{
+            child.sectionTitle
+          }}</span>
+          <div class="content-grid__content">
+            {{ child.sectionExcerpt }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,36 +1,39 @@
 .two-col-images {
   @apply relative;
 
+  border-top: 1px solid #c8c8c8;
+  padding-top: 15px;
+
   .container {
     @apply relative z-10;
   }
 
-  &__animation {
-    @apply px-6 mb-4 flex flex-wrap items-center text-big font-headings;
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: 3px;
-
-    &__first {
-      @apply w-full;
-    }
-
-    &__plus {
-      @apply mr-3;
-      svg {
-        @apply h-auto;
-        width: 30px;
-      }
-    }
+  .text-body-lg p:last-child {
+    margin-bottom: 0px;
   }
 
-  &__second-img {
-    @apply hidden;
+  &__row--reverse {
+    .two-col-images__second-img {
+      margin-top: 40px;
+    }
   }
 
   &__primary-img {
     img {
       @apply w-full;
+      border-radius: 5px;
+    }
+  }
+
+  &__row {
+    @apply flex;
+  }
+
+  &__row {
+    @apply flex-col;
+
+    &--reverse {
+      @apply flex-col-reverse;
     }
   }
 
@@ -47,15 +50,21 @@
 
   &__cta {
     @apply pt-6;
+
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   @screen md {
-    &--with-animation {
-      padding-top: 160px;
-    }
-
     &__row {
-      @apply -mx-5 flex;
+      @apply -mx-5 flex flex-row;
 
       &--reverse {
         @apply flex-row-reverse;
@@ -67,30 +76,17 @@
     }
 
     &__second-img {
-      @apply block px-5 w-1/2;
+      margin-top: 0px;
+      @apply flex flex-col justify-between px-5 w-1/2;
     }
 
-    &__animation {
-      @apply flex flex-nowrap absolute top-0 px-0;
-
-      &__first {
-        @apply w-auto;
+    &__cta {
+      &.desktop {
+        display: block;
       }
-    }
-  }
 
-  @screen lg {
-    &--with-animation {
-      padding-top: 350px;
-    }
-
-    &__animation {
-      font-size: 166px;
-
-      &__plus {
-        svg {
-          width: 83px;
-        }
+      &.mobile {
+        display: none;
       }
     }
   }

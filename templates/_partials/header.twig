@@ -15,13 +15,7 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
     <div class="header__mobile-actions">
       <ul>
         <li>
-          <a href="tel:{{ contacts.phone }}"> {% include "_svg/phone" %} </a>
-        </li>
-        <li>
-          <a href="#" class="js-hamburger">
-            <span class="open"> {% include "_svg/hamburger" %} </span>
-            <span class="close"> {% include "_svg/close-nav" %} </span>
-          </a>
+          <a href="#" class="js-hamburger"> Menu </a>
         </li>
       </ul>
     </div>
@@ -36,17 +30,11 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
           >
             {{ item.title }}
           </a>
-          <div class="nav__subnav-arrow js-subnav">
-            {% include "_svg/navArrowRight" %}
-          </div>
           <div
             class="nav__subnav {% if loop.index == 1 %}active{% endif %} hidden js-subnavchild w-full"
             style="padding-top: 0"
           >
             <div class="nav__subnav--inner">
-              <div class="nav__subnav__back js-subnav-back">
-                {% include "_svg/navArrowLeft" %}
-              </div>
               <ul
                 class="nav__subnav-list lg:hidden"
                 style="overflow: scroll; height: 100vh; margin-bottom: 2rem"

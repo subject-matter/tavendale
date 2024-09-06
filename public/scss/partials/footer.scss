@@ -1,13 +1,24 @@
 .footer {
-  @apply bg-primary py-8;
+  @apply bg-primary pt-8;
+
+  .container {
+    @apply flex flex-wrap;
+  }
+
+  &__main {
+    @apply w-1/2;
+  }
+
+  &__locations {
+    @apply w-1/2;
+  }
 
   &__nav {
     li {
-      @apply mb-4;
-      font-size: 20px;
-      line-height: 22px;
+      @apply mb-2;
+      font-size: 12px;
+      line-height: 13.2px;
       font-weight: 500;
-      letter-spacing: -0.3px;
     }
 
     a {
@@ -19,27 +30,87 @@
   }
 
   &__location {
-    margin-bottom: 40px;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: -0.1px;
+  }
 
-    p {
-      margin-bottom: 0px;
-    }
+  &__subbottom {
+    @apply relative;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    margin-top: 20px;
 
-    address {
-      @apply not-italic;
-    }
+    &__logo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
 
-    .locations__item__link {
-      margin-top: 20px;
-      @apply underline;
+      svg {
+        height: 12px;
+      }
     }
   }
 
-  &__bottom {
-    @apply font-headings;
+  &__social {
+    @apply flex;
+    z-index: 3;
 
+    li {
+      @apply pr-2;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    position: absolute;
+    left: 1.5rem;
+    bottom: 60px;
+    margin-bottom: 12px;
+  }
+
+  &__bottom {
+    @apply font-headings text-primary;
+
+    background: #73634c;
     padding: 10px 0px;
-    font-size: 12px;
+    font-size: 8.5px;
+    line-height: 20px;
+    text-wrap: nowrap;
+
+    .container {
+      @apply w-full flex justify-between;
+
+      ul {
+        @apply flex justify-between  w-full;
+
+        li {
+          @apply px-1 mb-0;
+        }
+      }
+    }
+
+    @screen md {
+      font-size: 12px;
+
+      .container {
+        ul {
+          @apply -mx-3;
+
+          li {
+            @apply px-3 mb-0;
+          }
+        }
+      }
+    }
 
     li {
       @apply mb-4;
@@ -50,15 +121,52 @@
     }
   }
 
-  @screen md {
-    @apply pt-10 pb-0;
+  &__location {
+    margin-bottom: 20px;
 
-    .container {
-      @apply flex flex-wrap;
+    p {
+      margin-bottom: 0px;
     }
 
+    address {
+      @apply not-italic;
+    }
+
+    .locations__item__link {
+      margin-top: 10px;
+      @apply underline;
+    }
+  }
+
+  @screen md {
+    &__nav {
+      li {
+        @apply mb-4;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.3px;
+      }
+    }
+
+    &__location {
+      margin-bottom: 40px;
+      font-size: 15px;
+      line-height: 16.5px;
+      letter-spacing: 0.5px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      .locations__item__link {
+        margin-top: 20px;
+      }
+    }
+
+    @apply pt-10 pb-0;
+
     &__main {
-      @apply w-full flex mb-16;
+      @apply flex;
     }
 
     &__logo {
@@ -69,12 +177,24 @@
       }
     }
 
+    &__subbottom {
+      padding-top: 0px;
+      margin-top: 140px;
+      margin-bottom: 0px;
+      &__logo {
+        margin-bottom: 12px;
+        svg {
+          height: 18px;
+        }
+      }
+    }
+
     &__nav {
       @apply px-5 w-1/2;
     }
 
     &__locations {
-      @apply w-full flex flex-wrap;
+      @apply flex flex-wrap;
     }
 
     &__location {
@@ -85,66 +205,16 @@
       }
     }
 
-    &__bottom {
-      @apply bg-black text-white;
-
-      .container {
-        @apply w-full flex justify-between;
-
-        ul {
-          @apply flex -mx-3;
-
-          li {
-            @apply relative px-3 mb-0;
-          }
-        }
-      }
-    }
-
-    &__subbottom {
-      @apply flex justify-end relative;
-
-      margin-top: 110px;
-      padding-top: 30px;
-      padding-bottom: 30px;
-
-      &__logo {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: 0;
-      }
-    }
-  }
-
-  &__social {
-    @apply flex;
-    z-index: 3;
-
-    li {
-      @apply px-2;
-    }
-
-    svg {
-      width: 25px;
-      height: 25px;
+    &__social {
+      position: unset;
+      left: 0;
+      bottom: unset;
+      margin-bottom: 12px;
     }
   }
 
   @screen lg {
-    &__main {
-      @apply w-1/2;
-    }
-
     &__nav {
-      @apply w-1/2;
-    }
-
-    &__locations {
       @apply w-1/2;
     }
   }

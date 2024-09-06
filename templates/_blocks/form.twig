@@ -1,21 +1,18 @@
-{% set form = craft.freeform.form(block.form.handle, {
-    formAttributes: { "novalidate": true },
-    returnUrl: craft.app.request.url ~ "?success"
-}) %}
+{% set form = craft.freeform.form(block.form.handle, { formAttributes: {
+"novalidate": true }, returnUrl: craft.app.request.url ~ "?success" }) %}
 
 <div class="form {{ bottomSpacing }} neo-block">
-    <div class="container">
-        <div class="form__container">
-            <div class="form__title">
-                <h2>{{ block.sectionTitle }}</h2>
-                <p>*required</p>
-            </div>
-            <div class="form__inner">
-                {% include ("_partials/form.twig") with { form: form } %}
-            </div>
-        </div>
-        <div class="form__pattern">
-            <div class="form__pattern__inner"></div>
-        </div>
+  <div class="container grid grid-cols-12">
+    <div class="form__container col-span-12 md:col-span-6">
+      <div class="form__title">
+        <span class="text-body-lg">{{ block.sectionTitle }}</span>
+      </div>
+      <div class="form__inner">
+        {% include ("_partials/form.twig") with { form: form } %}
+      </div>
     </div>
+    <div class="hidden md:flex form__image col-span-12 md:col-span-6">
+      <div class="md:w-1/2 form__image-wrapper"></div>
+    </div>
+  </div>
 </div>

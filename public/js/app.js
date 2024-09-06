@@ -6,6 +6,7 @@ import fadein from "./components/fadein";
 import accordion from "./components/accordion";
 import news from "./components/news";
 import people from "./components/people";
+import instagram from "./components/instagram";
 import forms from "./components/forms";
 import parallaxImages from "./components/parallaxImages";
 import tabs from "./components/tabs";
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pathways();
   news();
   people();
+  instagram();
   forms();
   parallaxImages();
   tabs();

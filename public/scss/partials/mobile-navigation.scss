@@ -1,9 +1,8 @@
 @screen pc {
-
   .nav {
     @apply w-full px-6 py-10 block fixed bg-white right-0 z-10 overflow-x-hidden overflow-y-scroll;
     @extend .transition;
-    top: 89px;
+    top: 49px;
     max-width: 400px;
     height: calc(100vh);
     transform: translateX(110%);
@@ -12,7 +11,8 @@
     }
 
     &__anchor {
-      @apply flex px-3 py-5 border-b border-black justify-between relative;
+      @apply flex px-3 py-5 border-b justify-between relative;
+      border-color: #f4f4f4;
       @extend .transition;
       font-size: 20px;
       line-height: 1;
@@ -36,9 +36,7 @@
       transform: translateX(110%);
 
       .nav__li--subnav-active > & {
-
         transform: translateX(0);
-
       }
     }
 
@@ -67,6 +65,5 @@
         @apply underline;
       }
     }
-
   }
 }
