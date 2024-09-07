@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Yii Application Config
  *
@@ -23,6 +24,12 @@ return [
     'id' => App::env('APP_ID') ?: 'CraftCMS',
     'modules' => [
         'my-module' => \modules\Module::class,
+    ],
+    'aliases' => [
+        '@assetBaseUrl' => '/assets',
+        '@assetBasePath' => './assets',
+        '@siteUrl' => getenv("DEFAULT_SITE_URL"),
+        '@siteName' => getenv("DEFAULT_SITE_NAME"),
     ],
     //'bootstrap' => ['my-module'],
 ];
