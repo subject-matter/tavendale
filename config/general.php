@@ -1,4 +1,5 @@
 <?php
+
 /**
  * General Configuration
  *
@@ -50,8 +51,8 @@ return [
         'aliases' => [
             '@assetBaseUrl' => '/assets',
             '@assetBasePath' => './assets',
-            '@siteUrl' => getenv("DEFAULT_SITE_URL"),
-            '@siteName' => getenv("DEFAULT_SITE_NAME"),
+            '@siteUrl' => App::env("DEFAULT_SITE_URL"),
+            '@siteName' => App::env("DEFAULT_SITE_NAME"),
         ],
     ],
 
