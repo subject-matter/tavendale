@@ -12,12 +12,6 @@
     margin-bottom: 0px;
   }
 
-  &__row--reverse {
-    .two-col-images__second-img {
-      margin-top: 40px;
-    }
-  }
-
   &__primary-img {
     img {
       @apply w-full;

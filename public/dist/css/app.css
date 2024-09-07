@@ -1697,10 +1697,6 @@ h6,
   margin-bottom: 0;
 }
 
-.two-col-images__row--reverse .two-col-images__second-img {
-  margin-top: 2.5rem;
-}
-
 .two-col-images__primary-img img {
   width: 100%;
   border-radius: 0.3125rem;
