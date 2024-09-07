@@ -151,6 +151,16 @@ body.homePage {
   position: relative;
 }
 
+.flickity__nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .flickity__nav {
+    display: block;
+  }
+}
+
 .flickity__nav--prev, .flickity__nav--next {
   background: #f2f2f1;
   height: 2.1875rem;
@@ -1865,6 +1875,11 @@ h6,
   }
 }
 
+.content-block.has-top-border {
+  border-top: 0.0625rem solid #c8c8c8;
+  padding-top: 0.9375rem;
+}
+
 .content-block__excerpt {
   text-align: left;
   font-size: 1.125rem;
@@ -1882,50 +1897,9 @@ h6,
 }
 
 .content-block__text p {
-  font-size: 18px;
-  font-size: 0.75rem;
-  line-height: 1.1875rem;
+  font-size: 0.9375rem;
+  line-height: 1.03125rem;
   letter-spacing: -0.00625rem;
-}
-
-@media (min-width: 768px) {
-  .content-block__text p {
-    font-size: 1.125rem;
-    line-height: 1.2375rem;
-    letter-spacing: -0.00625rem;
-  }
-}
-
-.our-people__desc .content-block__text p {
-  font-family: ABC Diatype Medium;
-  display: block;
-  margin-bottom: 0.625rem;
-}
-
-@media (min-width: 768px) {
-  .our-people .content-block__text p {
-    margin-bottom: 1.25rem;
-  }
-}
-
-.two-col-images .content-block__text p p:last-child {
-  margin-bottom: 0;
-}
-
-.testimonial__personal .content-block__text p {
-  font-family: ABC Diatype Medium;
-  line-height: 1.2375rem;
-}
-
-.content-grid__cell .content-block__text p {
-  display: block;
-  margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  .content-grid__cell .content-block__text p {
-    margin-bottom: 1.25rem;
-  }
 }
 
 .content-block__text ul {
@@ -1958,6 +1932,12 @@ h6,
     font-size: 0.9375rem;
     line-height: 1.03125rem;
     letter-spacing: 0.00625rem;
+  }
+
+  .content-block__text p {
+    font-size: 1.125rem;
+    line-height: 1.2375rem;
+    letter-spacing: -0.00625rem;
   }
 }
 
@@ -1996,11 +1976,6 @@ h6,
 }
 
 @media (min-width: 768px) {
-  .content-block.has-top-border {
-    border-top: 0.0625rem solid #c8c8c8;
-    padding-top: 0.9375rem;
-  }
-
   .content-block__excerpt {
     font-size: 1.5625rem;
     line-height: 1.65625rem;

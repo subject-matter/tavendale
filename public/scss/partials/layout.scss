@@ -113,6 +113,12 @@ body.homePage {
 }
 
 .flickity__nav {
+  @apply hidden;
+
+  @screen md {
+    @apply block;
+  }
+
   &--prev,
   &--next {
     background: #f2f2f1;
