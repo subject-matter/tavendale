@@ -86,6 +86,10 @@
     line-height: 20px;
     text-wrap: nowrap;
 
+    &__left {
+      width: 100%;
+    }
+
     .container {
       @apply w-full flex justify-between;
 
@@ -100,6 +104,10 @@
 
     @screen md {
       font-size: 12px;
+
+      &__left {
+        width: auto;
+      }
 
       .container {
         ul {

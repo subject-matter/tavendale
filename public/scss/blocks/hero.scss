@@ -138,8 +138,8 @@
 
   &--article {
     h1 {
-      font-size: 60px;
-      line-height: 66px;
+      font-size: 30px;
+      line-height: 31.5px;
       margin-bottom: 20px !important;
     }
 
@@ -150,6 +150,13 @@
 
     button {
       margin-bottom: 15px;
+    }
+
+    @screen md {
+      h1 {
+        font-size: 60px;
+        line-height: 66px;
+      }
     }
   }
 

@@ -132,11 +132,15 @@
     @apply block;
 
     padding: 0px 15px 15px 15px;
-    margin-top: 60px;
     color: #c8c8c8;
+    margin-top: 12px;
 
     &:hover {
       opacity: 0.3;
+    }
+
+    @screen md {
+      margin-top: 60px;
     }
   }
 

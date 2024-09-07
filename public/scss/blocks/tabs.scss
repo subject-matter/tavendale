@@ -1,4 +1,7 @@
 .tabs {
+  border-top: 1px solid #c8c8c8;
+  padding-top: 15px;
+
   &__container {
     @apply grid grid-cols-1;
     grid-gap: 15px;

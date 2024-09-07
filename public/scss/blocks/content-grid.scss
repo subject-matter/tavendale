@@ -16,7 +16,13 @@
     border-radius: 5px;
     .text-body-lg {
       @apply block;
-      margin-bottom: 40px;
+      margin-bottom: 12px;
+    }
+
+    @screen md {
+      .text-body-lg {
+        margin-bottom: 40px;
+      }
     }
   }
 
