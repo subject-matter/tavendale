@@ -19,17 +19,19 @@ export default () => {
         freeScroll: true,
       });
 
-      nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        insightCarousel.next();
-        return false;
-      });
+      if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          insightCarousel.next();
+          return false;
+        });
 
-      prevBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        insightCarousel.previous();
-        return false;
-      });
+        prevBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          insightCarousel.previous();
+          return false;
+        });
+      }
     }
   }
 };

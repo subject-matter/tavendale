@@ -2255,6 +2255,14 @@ h6,
   padding-right: 1.5rem;
   width: calc(100vw - 7.5rem);
   max-width: 26.5625rem;
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.related-articles .news-page__item {
+  height: 100%;
 }
 
 .people {

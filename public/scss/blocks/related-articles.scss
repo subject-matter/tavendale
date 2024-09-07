@@ -10,5 +10,12 @@
     @apply pr-6;
     width: calc(100vw - 120px);
     max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .news-page__item {
+    height: 100%;
   }
 }
