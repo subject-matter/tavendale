@@ -1677,9 +1677,12 @@ h6,
   position: relative;
 }
 
-.pathways__slide-image img {
+.pathways__slide-image {
   border-radius: 0.3125rem;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .pathways__title h4 {

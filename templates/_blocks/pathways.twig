@@ -11,15 +11,18 @@ height: 485, quality: 100, position: 'center-center' } %}
     <div class="pathways__slider">
       <div class="pathways__slider__inner" data-pathwayslider>
         {% for child in block.children.all() %} {% if child.sectioncta.getUrl()
-        %}
+        %} {% set imageUrl = null %} {% if child.primaryImage.one() %} {% if
+        child.size == 'large' %} {% set imageUrl =
+        child.primaryImage.one().getUrl(largeImage) %} {% else %} {% set
+        imageUrl = child.primaryImage.one().getUrl(defaultImage) %} {% endif %}
+        {% endif %}
+
         <a href="{{ child.sectioncta.getUrl() }}" class="pathways__slide">
-          <div class="pathways__slide-image">
-            {% if child.primaryImage.one() %} {% if child.size == 'large' %}
-            <img src="{{ child.primaryImage.one().getUrl(largeImage) }}" />
-            {% else %}
-            <img src="{{ child.primaryImage.one().getUrl(defaultImage) }}" />
-            {% endif %} {% endif %}
-          </div>
+          <div
+            class="pathways__slide-image"
+            style="background-image: url({{ imageUrl }})"
+          ></div>
+
           <div class="pathways__slide-title text-body-lg">
             {{ child.sectionTitle }}
           </div>
