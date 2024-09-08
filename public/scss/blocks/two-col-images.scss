@@ -32,6 +32,12 @@
       .two-col-images__primary {
         margin-bottom: 40px;
       }
+
+      @screen md {
+        .two-col-images__primary {
+          margin-bottom: 0px;
+        }
+      }
     }
   }
 

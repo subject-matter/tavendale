@@ -1824,6 +1824,12 @@ h6,
   margin-bottom: 2.5rem;
 }
 
+@media (min-width: 768px) {
+  .two-col-images__row--reverse .two-col-images__primary {
+    margin-bottom: 0;
+  }
+}
+
 .two-col-images__primary h2 {
   margin-bottom: 0.5rem;
   line-height: 1;
