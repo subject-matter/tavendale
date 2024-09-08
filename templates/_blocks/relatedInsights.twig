@@ -11,17 +11,6 @@ articles.relatedTo(block.newsCategories) %} {% endif %}
       </h6>
     </div>
     <div class="related-articles__inner flickity__container">
-      {% if articles|length >= 5 %}
-      <div class="flickity__nav">
-        <a href="#" data-insights-next class="flickity__nav--next">
-          {% include "_svg/chervonRight" %}
-        </a>
-        <a href="#" data-insights-prev class="flickity__nav--prev">
-          {% include "_svg/chervonLeft" %}
-        </a>
-      </div>
-      {% endif %}
-
       <div class="related-articles__slider" data-insights-slider>
         {% for article in articles.all() %}
         <div class="related-articles__item min-h-full">

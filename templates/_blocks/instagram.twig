@@ -7,15 +7,6 @@ position: 'center-center' } %}
   </div>
 
   <div class="container flickity__container">
-    <div class="flickity__nav">
-      <a href="#" data-instagram-next class="flickity__nav--next">
-        {% include "_svg/chervonRight" %}
-      </a>
-      <a href="#" data-instagram-prev class="flickity__nav--prev">
-        {% include "_svg/chervonLeft" %}
-      </a>
-    </div>
-
     <div class="instagram__inner">
       <div class="instagram__slider" data-instagram-slider>
         {% for post in block.children.all() %}

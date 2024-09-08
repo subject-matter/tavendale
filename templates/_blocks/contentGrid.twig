@@ -4,8 +4,8 @@ mode: 'fill', width: 572, height: 740, quality: 100, position: 'center-center' }
 %} {% if block.animationPrimaryText %} {% set animations = true %} {% endif %}
 <div class="content-grid neo-block {{ bottomSpacing }}">
   <div class="container grid grid-cols-12">
-    <div class="col-span-12 md:col-span-9">
-      <div class="md:w-3/4 sticky-heading">
+    <div class="col-span-12 md:col-span-8">
+      <div class="md:pr-16 sticky-heading">
         {% if block.sectionTitle %}
         <p class="font-headings">{{ block.sectionTitle }}</p>
         {% endif %} {% if block.sectionBody %}
@@ -15,7 +15,7 @@ mode: 'fill', width: 572, height: 740, quality: 100, position: 'center-center' }
         {% endif %}
       </div>
     </div>
-    <div class="col-span-12 md:col-span-3">
+    <div class="col-span-12 md:col-span-4">
       {% if block.primaryImage.one() %}
       <div class="two-col-images__primary-img mb-3">
         <img src="{{ block.primaryImage.one().getUrl(primaryImage) }}" />

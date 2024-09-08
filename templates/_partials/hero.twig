@@ -1,16 +1,8 @@
 {% if isHome %}
 <div class="hero hero--home">
-  <div class="container-fluid md:container">
+  <div class="container">
     <h3>
-      Tavendale + Partners isn’t just a leading law firm; we’re pioneering legal
-      excellence. We work with individuals, families, and businesses across
-      Aotearoa and beyond, expertly navigating challenges, uncovering
-      opportunities, and delivering success. Our deep expertise and refreshingly
-      personal approach set us apart. Promises are easy to make, but our ability
-      to deliver is what distinguishes us. Our exceptional team combines
-      knowledge and innovation, with a profound understanding of each of our
-      clients. This trust and commitment to our craft make us the perfect
-      partner.
+      {{ entry.sectionPlainText }}
     </h3>
   </div>
 </div>
@@ -59,7 +51,7 @@
 </div>
 {% elseif entry.heroImage and entry.heroImage.one() %}
 <div class="hero hero--image">
-  <div class="container">
+  <div class="container--tight">
     <div class="hero__content">
       <h1>
         {% if entry.heroTitle %}

@@ -3,12 +3,12 @@ height: 449, quality: 100, position: 'center-center' } %} {% set secondImage = {
 mode: 'fill', width: 572, height: 740, quality: 100, position: 'center-center' }
 %} {% if block.animationPrimaryText %} {% set animations = true %} {% endif %}
 <div class="two-col-images neo-block {{ bottomSpacing }}">
-  <div class="container">
+  <div class="container--tight">
     <div
       class="two-col-images__row two-col-images__row--{{ block.positioning }}"
     >
       <div class="two-col-images__second-img">
-        <div class="md:w-3/4">
+        <div>
           {% if block.sectionTitle %}
           <h4 class="font-headings">{{ block.sectionTitle }}</h4>
           {% endif %} {% if block.sectionBody %}

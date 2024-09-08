@@ -127,11 +127,21 @@
 .hero {
   @apply relative w-full overflow-hidden;
 
+  &__content {
+    text-transform: capitalize;
+  }
+
   &--home {
     @apply text-default flex items-center;
-    min-height: calc(100vh - 89px);
+    margin-top: 275px;
+    margin-bottom: 230px;
 
-    .container-fluid {
+    @screen md {
+      margin-top: 300px;
+      margin-bottom: 300px;
+    }
+
+    .container {
       @apply w-full;
     }
   }
@@ -247,7 +257,7 @@
 
   h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   @screen md {
@@ -258,7 +268,7 @@
       }
 
       h1 {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
       }
     }
   }

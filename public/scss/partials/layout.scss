@@ -1,25 +1,35 @@
 body {
-  padding-top: 49px;
+  padding-top: 48px;
 }
 
 body.homePage {
-  padding-top: 49px;
+  padding-top: 48px;
 }
 
 .app {
   @apply relative z-10;
 }
 
-.container {
-  @apply px-6 mx-auto;
-  // max-width: 1410px;
+.container,
+.container-,
+.container-fluid {
+  @apply mx-auto;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
   max-width: unset !important;
 }
 
-.container- {
-  @apply px-6 mx-auto;
-  // max-width: 863px;
-  max-width: unset !important;
+@screen md {
+  .container,
+  .container- {
+    padding-left: 68px !important;
+    padding-right: 68px !important;
+  }
+
+  .container-fluid {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
 }
 
 .container--small {
@@ -31,16 +41,17 @@ body.homePage {
   }
 }
 
+.container--tight {
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
 .md\:container {
   @screen md {
     @apply px-6;
     // max-width: 1400px;
     max-width: unset !important;
   }
-}
-
-.container-fluid {
-  @apply px-6;
 }
 
 .neo-block {
@@ -68,10 +79,6 @@ body.homePage {
 }
 
 @screen md {
-  body.homePage {
-    padding-top: 89px;
-  }
-
   .md\:py-md {
     @apply py-14;
   }
@@ -110,37 +117,4 @@ body.homePage {
 
 .flickity__container {
   position: relative;
-}
-
-.flickity__nav {
-  @apply hidden;
-
-  @screen md {
-    @apply block;
-  }
-
-  &--prev,
-  &--next {
-    background: #f2f2f1;
-    height: 35px;
-    width: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    z-index: 99;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-
-  &--prev {
-    @apply absolute;
-    left: 25px;
-  }
-
-  &--next {
-    @apply absolute right-0;
-    right: 25px;
-  }
 }

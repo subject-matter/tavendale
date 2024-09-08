@@ -31,29 +31,47 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
       {% endif %}
     </div>
     <div class="col-span-12 md:col-span-6 md:col-start-7">
-      <div class="grid md:grid-cols-2 mb-8 md:mb-16 person-page__contact">
-        <div>
-          <small class="block mb-3 md:mb-7 font-headings">Contact</small>
-          <span class="block font-headings">{{ entry.title }}</span>
-          <ul>
-            {% if entry.phone %}
-            <li>
-              T:
-              <a class="ml-5" href="tel:{{ entry.phone }}">{{ entry.phone }}</a>
-            </li>
-            {% endif %} {% if entry.email %}
-            <li>
-              E:
-              <a class="ml-5" href="mailto:{{ entry.email }}">{{
-                entry.email
-              }}</a>
-            </li>
-            {% endif %}
-          </ul>
+      <div class="mb-8 md:mb-16 person-page__contact">
+        <div class="flex flex-wrap">
+          <div class="w-1/2">
+            <small class="block mb-3 md:mb-7 font-headings">Contact</small>
+            <span class="block font-headings">{{ entry.title }}</span>
+            <ul>
+              {% if entry.phone %}
+              <li>
+                T:
+                <a class="ml-2 md:ml-5" href="tel:{{ entry.phone }}">{{
+                  entry.phone
+                }}</a>
+              </li>
+              {% endif %} {% if entry.email %}
+              <li>
+                E:
+                <a class="ml-2 md:ml-5" href="mailto:{{ entry.email }}">{{
+                  entry.email
+                }}</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          {% if entry.teamSelection|length %}
+          <div class="w-1/2 mt-0 md:mt-5">
+            <small class="block mb-3 md:mb-7 font-headings">Teams</small>
+            <ul>
+              {% for team in entry.teamSelection.all() %}
+              <li>
+                {{ team.team.one() ? team.team.one().title : "" }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
 
+        <div class="flex flex-wrap">
           {% if entry.alternateContactName or entry.alternateContactPhone or
           entry.alternateContactPosition or entry.alternateContactEmail %}
-          <div class="person-page__alternate mt-5">
+          <div class="person-page__alternate w-1/2 mt-5">
             <ul>
               {% if entry.alternateContactName %}
               <li>
@@ -66,15 +84,17 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
               {% endif %} {% if entry.alternateContactPhone %}
               <li>
                 T:
-                <a class="ml-5" href="tel:{{ entry.alternateContactPhone }}">{{
-                  entry.alternateContactPhone
-                }}</a>
+                <a
+                  class="ml-2 md:ml-5"
+                  href="tel:{{ entry.alternateContactPhone }}"
+                  >{{ entry.alternateContactPhone }}</a
+                >
               </li>
               {% endif %} {% if entry.alternateContactEmail %}
               <li>
                 E:
                 <a
-                  class="ml-5"
+                  class="ml-2 md:ml-5"
                   href="mailto:{{ entry.alternateContactEmail }}"
                   target="_blank"
                 >
@@ -84,21 +104,8 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
               {% endif %}
             </ul>
           </div>
-        </div>
-        {% endif %}
-
-        <div>
-          {% if entry.expertiseSelection|length %}
-          <div
-            class="person-page__sidebar-box person-page__sidebar-box--last mt-5 md:mt-0"
-          >
-            <small class="block mb-3 md:mb-7 font-headings">Teams</small>
-            <p class="mb-0">Property, Personal Law, Agribusiness</p>
-          </div>
           {% endif %} {% if entry.expertiseSelection|length %}
-          <div
-            class="person-page__sidebar-box person-page__sidebar-box--last mt-5"
-          >
+          <div class="w-1/2 mt-5">
             <small class="block mb-3 md:mb-7 font-headings">Expertise</small>
             <ul>
               {% for expertise in entry.expertiseSelection.all() %}
@@ -121,13 +128,13 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
         {{ entry.sectionExcerpt }}
       </div>
       {% endif %}
-      <div class="person-page__text font-headings text-body-lg">
+      <div class="person-page__text text-body-lg">
         {{ entry.sectionBody }}
       </div>
 
       {% if entry.sectionQuote %}
-      <div class="person-page__quote font-headings text-body-lg">
-        <p class="mb-0">{{ entry.sectionQuote }}</p>
+      <div class="person-page__quote text-body-lg">
+        <i class="mb-0">{{ entry.sectionQuote }}</i>
       </div>
       {% endif %}
     </div>

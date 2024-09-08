@@ -28,6 +28,10 @@
 
     &--reverse {
       @apply flex-col-reverse;
+
+      .two-col-images__primary {
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -58,7 +62,7 @@
 
   @screen md {
     &__row {
-      @apply -mx-5 flex flex-row;
+      @apply flex flex-row;
 
       &--reverse {
         @apply flex-row-reverse;
@@ -66,12 +70,27 @@
     }
 
     &__primary {
-      @apply px-5 w-1/2;
+      @apply w-1/2;
+      margin-bottom: 0px;
     }
 
     &__second-img {
       margin-top: 0px;
-      @apply flex flex-col justify-between px-5 w-1/2;
+      @apply flex flex-col justify-between w-1/2;
+    }
+
+    &__row--reverse {
+      .two-col-images__second-img {
+        padding-left: 15px;
+        padding-right: 68px;
+      }
+    }
+
+    &__row--default {
+      .two-col-images__second-img {
+        padding-right: 15px;
+        padding-left: 68px;
+      }
     }
 
     &__cta {

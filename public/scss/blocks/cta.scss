@@ -8,8 +8,16 @@
   }
 
   &__left {
-    margin-bottom: 24px;
-    margin-right: 55px;
+    @apply w-2/6;
+    padding-right: 55px;
+  }
+
+  svg {
+    height: 64.5px;
+  }
+
+  &__right {
+    @apply w-4/6;
   }
 
   &__inner {
@@ -23,6 +31,10 @@
 
   @screen md {
     @apply text-left;
+
+    svg {
+      height: 94.5px;
+    }
 
     &__text {
       margin-bottom: 120px;

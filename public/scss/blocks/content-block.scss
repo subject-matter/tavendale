@@ -4,6 +4,10 @@
     padding-top: 15px;
   }
 
+  h6 {
+    @apply font-body;
+  }
+
   &__excerpt {
     @apply text-left;
     font-size: 18px;
@@ -82,7 +86,7 @@
       }
 
       p {
-        margin-bottom: 98px;
+        margin-bottom: 68px;
       }
     }
 

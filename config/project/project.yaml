@@ -1,4 +1,4 @@
-dateModified: 1725664489
+dateModified: 1725767234
 elementSources:
   craft\elements\Asset:
     -
@@ -50,6 +50,7 @@ meta:
     1c6912d4-2124-4ec1-84fa-b650eefa60d0: Pathways # Pathways
     1daac8ae-48ce-4136-8e38-11d6885fdf55: People # People
     1deb9945-3522-4d09-be51-2a18c2bc86e4: LinkedIn # LinkedIn
+    2a7df5a9-4cf0-4708-a8b3-9169c3f6a577: Team # Team
     2dcc4b80-8460-4f24-88fd-ac342ca9253a: 'Related Insights' # Related Insights
     2ec68185-9783-4e5d-a1eb-70dc93f81993: Background # Background
     3adfb7c9-edf7-474e-8668-599fa90c61f4: Form # Form
@@ -67,6 +68,7 @@ meta:
     6ef74d87-bf43-4cb6-9901-6e15a1efad4b: 'Tavendale & Partners' # Tavendale & Partners
     8bb3e7d2-ee0f-4d05-9e13-7757071a83af: 'Terms & Privacy' # Terms & Privacy
     8c404b2f-ffe2-4bb4-9ef7-2625c4347e7c: 'New & Insights' # New & Insights
+    8f2039da-58a0-4f96-b77e-795ecc732916: Team # Team
     9ccf8330-1271-4701-bc01-9a443ccc1d86: People # People
     9cd35503-4f7f-4be7-9f26-edc29b3dd328: 'Full Name' # Full Name
     12c77a35-7a1b-4ae4-8ddb-d9b81eda22f7: 'Animation Secondary Text' # Animation Secondary Text
@@ -115,6 +117,7 @@ meta:
     aebeca5b-5196-44a5-b8fb-d551dbb79d3c: Phone # Phone
     b1c58047-0135-4f25-9c8f-337f7c72fa38: 'Expiry Date' # Expiry Date
     b4c0f8da-526c-431b-8cd3-87efc0dc78e0: Team # Team
+    b9651db9-dc32-4478-a8e3-658100737b54: Categories # Categories
     b63792c2-cd6a-47ad-a826-0c3f069ee190: Footer # Footer
     b435198f-89d2-4c06-b0e1-e3d2dc874d2c: 'Tavendale & Partners' # Tavendale & Partners
     bb2402c2-9c50-4496-a6a4-4c99b44baad5: 'Our People' # Our People

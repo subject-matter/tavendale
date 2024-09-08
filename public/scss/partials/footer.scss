@@ -72,9 +72,8 @@
     }
 
     position: absolute;
-    left: 1.5rem;
-    bottom: 60px;
-    margin-bottom: 12px;
+    left: 15px;
+    top: -47px;
   }
 
   &__bottom {
@@ -84,6 +83,7 @@
     padding: 10px 0px;
     font-size: 8.5px;
     line-height: 20px;
+    letter-spacing: -0.1px;
     text-wrap: nowrap;
 
     &__left {
@@ -143,6 +143,11 @@
     .locations__item__link {
       margin-top: 10px;
       @apply underline;
+      text-transform: capitalize;
+    }
+
+    &:last-child {
+      margin-bottom: 0px !important;
     }
   }
 
@@ -206,7 +211,7 @@
     }
 
     &__location {
-      @apply px-5 w-1/2;
+      @apply pr-5 w-1/2;
 
       &__title {
         @apply mb-0;

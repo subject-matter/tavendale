@@ -11,8 +11,24 @@
     border-radius: 5px;
     padding: 15px;
 
+    .font-headings {
+      margin-bottom: 12px;
+    }
+
     p:last-child {
       margin-bottom: 0px !important;
+    }
+  }
+
+  &__item-content {
+    gap: 10px;
+
+    p {
+      @apply w-full;
+
+      @screen md {
+        width: auto;
+      }
     }
   }
 

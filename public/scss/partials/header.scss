@@ -1,5 +1,7 @@
 .header {
   @apply absolute top-0 left-0 w-full z-50;
+  padding-top: 12px;
+  padding-bottom: 12px;
 
   &--fixed {
     @apply fixed;
@@ -15,8 +17,13 @@
     @apply m-0;
 
     svg {
-      width: 194px;
-      height: 49px;
+      width: 157px;
+    }
+
+    @screen md {
+      svg {
+        width: 194px;
+      }
     }
   }
 
@@ -38,7 +45,8 @@
     }
 
     a {
-      @apply flex w-6 h-6 justify-center items-center;
+      @apply flex items-end;
+      height: 18px;
     }
 
     .close {

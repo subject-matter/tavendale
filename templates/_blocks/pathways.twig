@@ -1,21 +1,13 @@
 {% set defaultImage = { mode: 'crop', width: 360, height: 420, quality: 100,
 position: 'center-center' } %} {% set largeImage = { mode: 'crop', width: 415,
 height: 485, quality: 100, position: 'center-center' } %}
-<div class="pathways neo-block {{ bottomSpacing }}" data-pathways>
+<div class="pathways neo-block" data-pathways>
   <div class="container">
     <div class="pathways__title">
       <h4>{{ block.sectionTitle }}</h4>
     </div>
   </div>
-  <div class="pathways__slider-container flickity__container">
-    <div class="flickity__nav">
-      <a href="#" data-pathways-next class="flickity__nav--next">
-        {% include "_svg/chervonRight" %}
-      </a>
-      <a href="#" data-pathways-prev class="flickity__nav--prev">
-        {% include "_svg/chervonLeft" %}
-      </a>
-    </div>
+  <div class="container pathways__slider-container flickity__container">
     <div class="pathways__slider">
       <div class="pathways__slider__inner" data-pathwayslider>
         {% for child in block.children.all() %} {% if child.sectioncta.getUrl()

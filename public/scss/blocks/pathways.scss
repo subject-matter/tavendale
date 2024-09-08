@@ -1,8 +1,9 @@
 .pathways {
   @apply overflow-hidden;
+  margin-bottom: 60px !important;
 
   .container {
-    @apply relative pb-5;
+    @apply relative;
   }
 
   &__slide-image img {
@@ -12,7 +13,8 @@
 
   &__title {
     h4 {
-      @apply flex items-center mb-0;
+      @apply flex items-center;
+      margin-bottom: 20px;
     }
   }
 
@@ -23,15 +25,16 @@
   }
 
   &__slide {
-    @apply block relative pr-6;
-    width: calc(100vw - 120px);
-    max-width: 476px;
+    @apply block relative mr-6;
+    width: 100%;
+    max-width: 215px;
   }
 
   &__slide-title {
     @apply absolute left-2 bottom-0 pb-2 m-0 text-white font-headings;
     @extend .transition;
     z-index: 6;
+    text-transform: capitalize;
   }
 
   &__nav {
@@ -57,12 +60,22 @@
       border-radius: 5px;
     }
 
+    width: 100%; /* or a specific width, e.g., 452px */
+    padding-top: calc((4 / 2.85) * 100%); /* Height based on the 2.85:4 ratio */
+    position: relative;
+
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
     }
   }
 
   @screen md {
+    margin-bottom: 240px !important;
+
     .container {
       @apply pt-0;
     }
@@ -79,9 +92,8 @@
       }
     }
 
-    // &__slider {
-    //   @apply pl-26;
-    //   width: calc(100vw - (100vw - 1236px) / 2);
-    // }
+    &__slide {
+      max-width: 425px;
+    }
   }
 }

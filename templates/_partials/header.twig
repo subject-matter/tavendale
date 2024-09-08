@@ -30,6 +30,7 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
           >
             {{ item.title }}
           </a>
+          {#
           <div
             class="nav__subnav {% if loop.index == 1 %}active{% endif %} hidden js-subnavchild w-full"
             style="padding-top: 0"
@@ -96,6 +97,7 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
               {% endif %}
             </div>
           </div>
+          #}
         </li>
         {% else %}
         <li class="nav__li">

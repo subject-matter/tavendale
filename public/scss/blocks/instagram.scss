@@ -1,10 +1,10 @@
 .instagram {
   border-top: 1px solid #c8c8c8;
   padding-top: 15px;
+  padding-bottom: 60px;
 
   &__inner {
     @apply relative w-full mx-auto;
-    margin-bottom: 60px;
   }
 
   &__container {
@@ -23,7 +23,7 @@
   }
 
   @screen md {
-    padding-bottom: 120px;
+    padding-bottom: 180px;
 
     &__title {
       padding-bottom: 150px;

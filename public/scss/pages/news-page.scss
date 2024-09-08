@@ -21,7 +21,8 @@
   }
 
   form {
-    @apply grid grid-cols-2 gap-3;
+    width: 100%;
+    @apply grid gap-3;
     margin-bottom: 60px;
   }
 
@@ -79,6 +80,13 @@
     background: #f8f8f8;
     border-radius: 5px;
 
+    &:hover {
+      .news-page__read-more {
+        @apply text-default;
+        opacity: 1;
+      }
+    }
+
     &__content {
       padding: 15px 15px 0px 15px;
       font-size: 10px;
@@ -117,13 +125,21 @@
       }
 
       li {
+        @apply font-headings;
         background: #f8f8f8;
+        opacity: 0.9;
         border-radius: 4px;
         padding: 0px 8px;
-        font-size: 12px;
+        height: 19px;
+        line-height: 19px;
+        font-size: 8.5px;
         letter-spacing: -0.1px;
-        height: 25px;
-        line-height: 25px;
+
+        @screen md {
+          font-size: 12px;
+          height: 25px;
+          line-height: 25px;
+        }
       }
     }
   }
@@ -167,6 +183,10 @@
     &__item {
       &__content {
         font-size: 15px;
+      }
+
+      &__summary {
+        padding-right: 68px;
       }
     }
 

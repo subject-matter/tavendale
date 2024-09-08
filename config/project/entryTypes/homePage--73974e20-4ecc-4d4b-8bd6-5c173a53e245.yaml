@@ -2,6 +2,7 @@ fieldLayouts:
   16df9470-d693-4020-b411-e58639f6ff56:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,7 +10,9 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
+            inputType: null
             instructions: null
             label: null
             max: null
@@ -24,36 +27,62 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 35e617cf-7d3b-4c0e-b802-b3cc0e21853d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
+            fieldUid: 5c00c8db-d5d5-423e-88ad-929a70b96513 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7562f389-ee00-4948-a78a-2012af35b7b7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
             fieldUid: 33e21064-b628-40c7-b468-ea1796d59834 # Blocks
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1df44de4-d041-430d-874c-83985df55b17
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: c6e78596-fb24-45cb-99e3-4b2cf1a7c1c2
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: f83ca24c-2b75-4662-bf70-e596fb2a6143 # SEO
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4d3cee09-c315-48df-b6c3-c70454be356c
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: 945ca97f-b28d-40e5-b6c3-4a16f72fa0c6
+        userCondition: null
 handle: homePage
 hasTitleField: true
 name: 'Home Page'
 section: 3fca6d08-57a9-4c24-a05c-32aba81d3ace # Home Page
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

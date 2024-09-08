@@ -27,7 +27,6 @@
   }
 
   &__content {
-    @apply text-body-lg;
     margin-bottom: 0px !important;
 
     p:last-child {
@@ -43,7 +42,7 @@
 
     &__cell {
       .text-body-lg {
-        margin-bottom: 20px;
+        margin-bottom: 45px;
       }
     }
   }

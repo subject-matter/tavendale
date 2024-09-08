@@ -9,11 +9,12 @@
   font-size: 12px;
   line-height: 14.5px;
   letter-spacing: 0.1px;
+  text-transform: capitalize;
+  text-wrap: nowrap;
 
   @screen md {
     font-size: 15px;
     line-height: 16.5px;
-
     height: 35px;
   }
 
@@ -24,7 +25,6 @@
   &--solid {
     &.btn--yellow {
       @apply bg-primary;
-
       &:hover {
         @apply bg-black text-primary;
       }
@@ -35,14 +35,6 @@
 
       &:hover {
         @apply bg-primary;
-      }
-    }
-
-    &.btn--grey {
-      @apply bg-grey1;
-
-      &:hover {
-        @apply bg-primary text-black;
       }
     }
   }

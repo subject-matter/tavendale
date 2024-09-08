@@ -58,7 +58,7 @@ https://flickity.metafizzy.co
 
 .flickity-button:focus {
   outline: none;
-  box-shadow: 0 0 0 0.3125rem #19F;
+  box-shadow: 0 0 0 0.3125rem #19f;
 }
 
 .flickity-button:active {
@@ -145,6 +145,46 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
+}
+
+.flickity-button {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .flickity-button {
+    display: block;
+  }
+}
+
+.flickity-button {
+  background: #f2f2f1;
+  height: 2.1875rem;
+  width: 2.1875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.flickity-button-icon {
+  position: relative !important;
+  left: unset !important;
+  top: unset !important;
+  width: auto !important;
+  height: 0.5rem !important;
+}
+
+.flickity-prev-next-button.next {
+  right: -3.125rem;
+}
+
+.flickity-prev-next-button.previous {
+  left: -3.125rem;
 }
 
 /* purgecss end ignore */

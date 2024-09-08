@@ -1,6 +1,12 @@
 {% set footerNav = craft.navigation.nodes().handle('footer').level(1).all() %}
 {% set termsNav = craft.navigation.nodes().handle('termsPrivacy').level(1).all()
-%} {% set locations = craft.entries({ section : 'location' }).all() %}
+%} {% set locations = craft.entries({ section : 'location' }).all() %} {% set
+orderedLocations = [ 'Christchurch', 'Auckland', 'Nelson', 'Ashburton',
+'Darfield' ] %} {% set sortedLocations = [] %} {% for location in
+orderedLocations %} {% for entry in locations %} {% if entry.title == location
+%} {% set sortedLocations = sortedLocations | merge([entry]) %} {% endif %} {%
+endfor %} {% endfor %}
+
 <footer class="footer">
   <div class="container">
     <div class="footer__main">
@@ -15,18 +21,17 @@
       </div>
     </div>
     <div class="footer__locations">
-      {% for location in locations %}
+      {% for location in sortedLocations %}
       <div class="footer__location">
-        <p class="footer__location__title">
-          {{ location.title }}
-        </p>
-        {% if location.address %}
-        <address>{{ location.address | nl2br }}</address>
-        {% endif %} {% if location.phone %}
-        <p class="locations__item__phone">
+        <p class="foooter__location__details">
+          {{ location.title }}<br />
+          {% if location.address %}
+          {{ location.address | nl2br }}<br />
+          {% endif %} {% if location.phone %}
           <a href="tel:{{ location.phone }}">{{ location.phone }}</a>
+          {% endif %}
         </p>
-        {% endif %} {% if location.getDirectionsLink.getUrl() %}
+        {% if location.getDirectionsLink.getUrl() %}
         <p class="locations__item__link">
           <a href="{{ location.getDirectionsLink.getUrl() }}">
             {{ location.getDirectionsLink.getCustomText() }}

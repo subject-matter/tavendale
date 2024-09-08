@@ -7,7 +7,7 @@
 
   &__pattern {
     @apply absolute bg-center bg-repeat w-full left-0 top-0;
-    background-image: url('../../img/pattern.svg');
+    background-image: url("../../img/pattern.svg");
     height: 242px;
   }
 
@@ -41,13 +41,10 @@
   }
 
   &__text {
-
     h3 {
-      @apply text-lead mb-6;
+      @apply mb-6;
     }
-
   }
-
 
   @screen md {
     .container {
@@ -80,33 +77,23 @@
 
     &__text {
       @apply w-1/2;
-
-      h3 {
-        font-size: 24px;
-        line-height: 1.4;
-      }
     }
   }
 
   @screen lg {
-
     &__secondary {
       margin-top: -170px;
       left: 96px;
       width: calc(100% - 182px);
       max-width: 340px;
     }
-
   }
   @screen xxxl {
-
     &__secondary {
       margin-top: -170px;
       left: 96px;
       width: calc(100% - 90px);
       max-width: 540px;
     }
-
   }
-
 }

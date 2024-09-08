@@ -9,14 +9,6 @@ position: 'center-center' } %}
       </h6>
     </div>
     <div class="people__inner flickity__container">
-      <div class="flickity__nav">
-        <a href="#" data-people-next class="flickity__nav--next">
-          {% include "_svg/chervonRight" %}
-        </a>
-        <a href="#" data-people-prev class="flickity__nav--prev">
-          {% include "_svg/chervonLeft" %}
-        </a>
-      </div>
       <div class="people__slider" data-people-slider>
         {% for person in block.people.all() %}
         <div class="flex flex-col min-h-full person__container">
