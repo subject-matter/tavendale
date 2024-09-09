@@ -12,20 +12,13 @@
     	RewriteEngine On
 
         RewriteCond %{HTTP_HOST} ^payments\.tp\.co\.nz$ [NC]
-        RewriteRule ^(.*) https://www.tp.co.nz/payments [L,R]
+        RewriteRule ^(.*) https://tp.co.nz/payments [L,R]
 
-    	# To redirect all users to HTTPS uncomment the following.
-    	RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    	# Redirects all www to non-www
-    	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-
-    	# Redirects all non-www to www
-       #RewriteCond %{HTTP_HOST} !^www. [NC]
-       #RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
-
+		RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+		RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+		
+		RewriteCond %{ENV:HTTPS} !on
+		RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
         RewriteRule ^contact/?$ /contact-us [R=301,NE,L]
         RewriteRule ^news/30/9/2021/2021-resident-visa-am-i-eligible/?$ /news/2021-resident-visa [R=301,NE,L]
