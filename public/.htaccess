@@ -11,16 +11,16 @@
     <IfModule mod_rewrite.c>
     	RewriteEngine On
 
-        #RewriteCond %{HTTP_HOST} ^payments\.tp\.co\.nz$ [NC]
-        #RewriteRule ^(.*) https://www.tp.co.nz/payments [L,R]
+        RewriteCond %{HTTP_HOST} ^payments\.tp\.co\.nz$ [NC]
+        RewriteRule ^(.*) https://www.tp.co.nz/payments [L,R]
 
     	# To redirect all users to HTTPS uncomment the following.
-    	#RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    	#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     	# Redirects all www to non-www
-    #	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    #	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
     	# Redirects all non-www to www
        #RewriteCond %{HTTP_HOST} !^www. [NC]
