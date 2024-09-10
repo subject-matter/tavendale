@@ -2,16 +2,19 @@ export default () => {
   const fadein = document.querySelector(".js-fadein");
 
   const dom = document.querySelector(".hero--home h3");
-  window.addEventListener("scroll", () => {
-    const rect = dom.getBoundingClientRect();
 
-    console.log(rect.top);
-    if (rect.top + rect.height < 0) {
-      fadein.style.opacity = 0;
-    } else {
-      fadein.style.opacity = 1;
-    }
-  });
+  if (home) {
+    window.addEventListener("scroll", () => {
+      const rect = dom.getBoundingClientRect();
+
+      console.log(rect.top);
+      if (rect.top + rect.height < 0) {
+        fadein.style.opacity = 0;
+      } else {
+        fadein.style.opacity = 1;
+      }
+    });
+  }
 
   //   function fadeIntrigger() {
   //     const scroll = window.scrollY;
