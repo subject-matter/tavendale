@@ -3,7 +3,7 @@ export default () => {
 
   const dom = document.querySelector(".hero--home h3");
 
-  if (home) {
+  if (fadein && dom) {
     window.addEventListener("scroll", () => {
       const rect = dom.getBoundingClientRect();
 
