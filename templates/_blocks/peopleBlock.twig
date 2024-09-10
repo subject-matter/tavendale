@@ -13,7 +13,8 @@ position: 'center-center' } %}
         {% for person in block.people.all() %}
         <div class="flex flex-col min-h-full person__container">
           <div class="people__person">
-            <div
+            <a
+              href="{{ person.getUrl() }}"
               class="people__img"
               {%
               if
@@ -24,7 +25,7 @@ position: 'center-center' } %}
               {%
               endif
               %}
-            ></div>
+            ></a>
             <div class="people__details">
               <span class="block text-body-lg font-headings mb-4 md:mb-5">{{
                 person.title

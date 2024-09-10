@@ -153,6 +153,7 @@ https://flickity.metafizzy.co
 }
 
 .flickity-button {
+  transition: all 0.2s ease-in-out;
   background: #f2f2f1;
   height: 35px;
   width: 35px;
@@ -164,6 +165,10 @@ https://flickity.metafizzy.co
   top: 0;
   bottom: 0;
   margin: auto;
+
+  &:hover {
+    @apply bg-primary;
+  }
 }
 
 .flickity-button-icon {

@@ -8,8 +8,8 @@
   }
 
   .person__container {
-    @apply mr-6 w-2/3;
-    max-width: 315px;
+    @apply mr-6;
+    width: 100%;
   }
 
   &__blurb {
@@ -27,6 +27,11 @@
     &__inner {
       padding-bottom: 240px;
     }
+
+    .person__container {
+      @apply pr-6 mr-0;
+      width: calc((100% / 4));
+    }
   }
 
   &__img {
@@ -35,6 +40,10 @@
     width: 100%;
     border-radius: 5px;
     padding-bottom: 100%;
+    @extend .transition--;
+    &:hover {
+      opacity: 0.9 !important;
+    }
   }
 
   &__details,
@@ -64,6 +73,12 @@
 
   &__action {
     @apply pt-3;
+    a {
+      @extend .transition;
+      &:hover {
+        opacity: 0.3;
+      }
+    }
   }
 
   &__nav {

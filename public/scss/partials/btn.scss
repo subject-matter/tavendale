@@ -18,6 +18,17 @@
     height: 35px;
   }
 
+  &:hover {
+    padding-right: 33px;
+    position: relative;
+
+    &::after {
+      content: "+";
+      position: absolute;
+      right: 15px;
+    }
+  }
+
   svg {
     @apply mr-2;
   }

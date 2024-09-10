@@ -13,7 +13,7 @@
     &__anchor {
       @apply flex px-3 py-5 border-b justify-between relative;
       border-color: #f4f4f4;
-      @extend .transition;
+      @extend .transition--;
       font-size: 20px;
       line-height: 1;
 

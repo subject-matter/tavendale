@@ -84,7 +84,7 @@ module.exports = {
         lgxx: "1236px",
         // xl: '1280px',
         // xxl: '1440px',
-        xxxl: "1600px",
+        xxxl: "1700",
       },
     },
 

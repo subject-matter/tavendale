@@ -34,10 +34,12 @@
   }
 
   &__slide-title {
-    @apply absolute left-2 bottom-0 pb-2 m-0 text-white font-headings;
+    @apply absolute m-0 text-white font-headings;
     @extend .transition;
     z-index: 6;
     text-transform: capitalize;
+    left: 15px;
+    bottom: 15px;
   }
 
   &__nav {

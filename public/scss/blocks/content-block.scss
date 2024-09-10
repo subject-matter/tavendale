@@ -42,11 +42,13 @@
   .centered &__excerpt {
     text-align: center !important;
     margin: auto;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .action-btn {
-    color: #c8c8c8;
+    .centered &__excerpt {
+      margin-bottom: 90px;
+    }
     font-size: 10px;
     line-height: 11px;
     letter-spacing: 0.1px;
@@ -96,8 +98,16 @@
       @apply bg-primary;
 
       .action-btn {
+        padding-right: 33px;
+        position: relative;
+
         @apply text-default;
-        opacity: 1;
+
+        &::after {
+          content: "+";
+          position: absolute;
+          right: 15px;
+        }
       }
     }
   }

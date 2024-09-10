@@ -158,7 +158,7 @@
       padding-bottom: 35px;
     }
 
-    button {
+    a {
       margin-bottom: 15px;
     }
 
@@ -271,5 +271,24 @@
         margin-bottom: 60px;
       }
     }
+  }
+}
+
+.hero--article + .content-block {
+  .container- {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .content-block__excerpt {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .content-block__text {
+    width: 100%;
   }
 }

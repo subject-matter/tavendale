@@ -9,8 +9,7 @@
   &__featured {
     &__img {
       @apply bg-cover bg-no-repeat bg-center;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-radius: 5px;
 
       &:after {
         @apply block;

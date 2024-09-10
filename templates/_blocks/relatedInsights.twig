@@ -15,7 +15,7 @@ articles.relatedTo(block.newsCategories) %} {% endif %}
         {% for article in articles.all() %}
         <div class="related-articles__item min-h-full">
           <div class="news-page__item">
-            <div class="flex flex-col justify-between h-full">
+            <div class="flex flex-col justify-between h-full flex-grow">
               <a href="{{ article.getUrl() }}" class="news-page__item__inner">
                 <div
                   class="news-page__item__image"
