@@ -21,6 +21,7 @@
   &:hover {
     padding-right: 33px;
     position: relative;
+    opacity: 1 !important;
 
     &::after {
       content: "+";

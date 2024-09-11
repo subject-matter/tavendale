@@ -150,10 +150,6 @@
                         </select>
                 </div>
             </form>
-
-            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white desktop mt-5 load-more-people">
-                Load More
-            </a>
         </div>
 
         <div class="col-span-12 md:col-span-9 md:col-start-4 mt-10 md:mt-0" data-people-container="1">
@@ -204,10 +200,13 @@
                 {% endfor %}
             </div>
 
-            <div class="mobile">
-                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block load-more-people">
+            <div class="grid grid-cols-1 md:grid-cols-3 ">
+                <div class="text-center md:text-left md:col-start-2">
+
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-flex load-more-people">
                     Load More
                 </a>
+                </div>
             </div>
         </div>
     </div>

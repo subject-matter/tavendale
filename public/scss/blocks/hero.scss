@@ -137,8 +137,11 @@
     margin-bottom: 230px;
 
     @screen md {
-      margin-top: 300px;
+      margin-top: 0px;
+      min-height: 100vh;
+      @apply items-end;
       margin-bottom: 300px;
+      padding-bottom: 0px;
     }
 
     .container {
