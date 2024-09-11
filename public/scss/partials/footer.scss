@@ -142,8 +142,13 @@
 
     .locations__item__link {
       margin-top: 10px;
-      @apply underline;
       text-transform: capitalize;
+      text-decoration: none !important;
+
+      a {
+        text-decoration: none !important;
+        border-bottom: 0.5px solid rgb(115, 99, 76);
+      }
     }
 
     &:last-child {
@@ -154,7 +159,7 @@
   @screen md {
     &__nav {
       li {
-        @apply mb-4;
+        margin-bottom: 10px;
         font-size: 20px;
         line-height: 22px;
         letter-spacing: -0.3px;
@@ -165,7 +170,7 @@
       margin-bottom: 40px;
       font-size: 15px;
       line-height: 16.5px;
-      letter-spacing: 0.5px;
+      letter-spacing: -0.15px;
 
       &:last-child {
         margin-bottom: 0px;

@@ -24,13 +24,15 @@
   }
 
   @screen md {
+    padding-top: 30px;
+
     &__inner {
       padding-bottom: 240px;
     }
 
     .person__container {
       @apply pr-6 mr-0;
-      width: calc((100% / 4));
+      width: calc(100% / 4.25);
     }
   }
 

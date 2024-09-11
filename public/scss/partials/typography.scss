@@ -78,9 +78,9 @@ h6,
 
   h3,
   .h3 {
-    font-size: 49.5px;
+    font-size: 45px;
     line-height: 47.25px;
-    letter-spacing: -0.49px;
+    letter-spacing: -0.45px;
   }
 
   h4,
@@ -107,10 +107,12 @@ h6,
 }
 
 @screen xxxl {
-  h3,
-  .h3 {
-    font-size: 64.5px;
-    line-height: 61.425px;
-    letter-spacing: -0.64px;
+  .hero .hero--home {
+    h3,
+    .h3 {
+      font-size: 64.5px;
+      line-height: 61.425px;
+      letter-spacing: -0.64px;
+    }
   }
 }

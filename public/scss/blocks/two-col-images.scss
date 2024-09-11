@@ -8,6 +8,12 @@
     @apply relative z-10;
   }
 
+  @screen md {
+    .container--tight {
+      margin-left: 0px !important;
+    }
+  }
+
   .text-body-lg p:last-child {
     margin-bottom: 0px;
   }

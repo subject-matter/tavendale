@@ -2,8 +2,6 @@
     {% set entry = craft.entries().section('ourPeople').one() %}
 {% endif %}
 {% set teamCategories = craft.categories.group('teams') %}
-{% set teamPositions = craft.categories.group('position') %}
-{% set teamLocations = craft.categories.group('locations') %}
 {% set img = {
     mode: 'fill',
     width: 300,
@@ -12,32 +10,59 @@
     position: 'center-center'
 } %}
 
-{% set people = craft.entries()
-                .section('people')
-                .orderBy('title') %}
+{% set entries = craft.entries()
+    .section('people')
+    .all() %}
+
+{% set teamLocations = [] %} 
+
+{% for entry in entries %}
+{% if entry.location is not null %}
+    {% set locations = entry.location.all() %}
+    {% for location in locations %}
+        {% set teamLocations = teamLocations | merge([location]) %}
+    {% endfor %}
+{% endif %}
+{% endfor %}
+
+{% set teamPositions = [] %}
+{% for entry in entries %}
+    {% set teamPositions = teamPositions | merge([entry.position]) %}
+{% endfor %}
+{% set teamPositions = teamPositions | unique | sort %}
 
 {% set keywords = craft.app.request.getParam('search') %}
 {% set team = craft.app.request.getParam('team') %}
 {% set position = craft.app.request.getParam("position") ?? null %}
 {% set location = craft.app.request.getParam("location") ?? null %}
 
+{% set people = craft.entries()
+    .section('people')
+    .orderBy('title') %}
+
 {% if keywords %}
     {% set people = people.search(keywords) %}
 {% endif %}
 
 {% if team %}
-    {% set selectedteam = craft.categories.group('teams').slug(team) %}
-    {% set people = people.relatedTo(selectedteam) %}
+    {% set selectedTeam = craft.categories.group('teams').slug(team) %}
+    {% set people = people.relatedTo(selectedTeam) %}
 {% endif %}
 
 {% if position %}
-    {% set selectedPosition = craft.categories.group('positions').slug(team) %}
-    {% set position = position.relatedTo(selectedPosition) %}
+    {% set people = people.position(position) %}
 {% endif %}
 
 {% if location %}
-    {% set selectedLocation = craft.categories.group('locations').slug(team) %}
-    {% set location = location.relatedTo(selectedLocation) %}
+    {% set locationEntry = craft.entries()
+        .section('location')
+        .title(location)
+        .one() %}
+
+    {% set people = people.relatedTo({
+        targetElement: locationEntry.id,
+        field: 'location'
+    }) %}
 {% endif %}
 
 {% paginate people.limit(12) as pageInfo, pageEntries %}
@@ -88,7 +113,6 @@
 
     <div class="our-people grid grid-cols-12">
         <div class="our-people__search col-span-12 md:col-span-2 flex flex-col justify-between items-start">
-
             <form class="js-people-search-form">
                 <div class="field field--select mb-2">
                         <select class="team js-people-dropdown" name="team">
@@ -102,13 +126,13 @@
                         </select>
                 </div>
 
-                {# <div class="field field--select mb-2">
+                <div class="field field--select mb-2">
                         <select class="position js-people-dropdown" name="team">
                             <option value="">Position</option>
-                            {% for teamItem in teamPositions.orderBy('title ASC').all() %}
-                                <option value="{{ teamItem.slug }}"
-                                        {% if teamItem.slug == position %} selected="selected"{% endif %}>
-                                    {{ teamItem.title }}
+                            {% for teamItem in teamPositions %}
+                                <option value="{{ teamItem }}"
+                                        {% if teamItem == position %} selected="selected"{% endif %}>
+                                    {{ teamItem }}
                                 </option>
                             {% endfor %}
                         </select>
@@ -117,17 +141,17 @@
                 <div class="field field--select">
                         <select class="location js-people-dropdown" name="team">
                             <option value="">Location</option>
-                            {% for teamItem in teamLocations.orderBy('title ASC').all() %}
-                                <option value="{{ teamItem.slug }}"
-                                        {% if teamItem.slug == location %} selected="selected"{% endif %}>
-                                    {{ teamItem.title }}
+                            {% for teamItem in teamLocations| unique %}
+                                <option value="{{ teamItem }}"
+                                        {% if teamItem == location %} selected="selected"{% endif %}>
+                                    {{ teamItem }}
                                 </option>
                             {% endfor %}
                         </select>
-                </div> #}
+                </div>
             </form>
 
-            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white desktop">
+            <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white desktop mt-5 load-more-people">
                 Load More
             </a>
         </div>
@@ -181,7 +205,7 @@
             </div>
 
             <div class="mobile">
-                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block load-more-people">
                     Load More
                 </a>
             </div>

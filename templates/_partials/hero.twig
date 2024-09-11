@@ -10,13 +10,18 @@
 <div class="hero hero--person">
   <div class="container">
     <div class="hero--person__title text-center">
-      <div class="flex justify-center flex-col md:flex-row gap-2 mb-2 md:mb-0">
-        <h1>
-          {{ entry.title }}
-        </h1>
-        {% if entry.qualifications %}
-        {{ entry.qualifications | replace({'\n': ', '}) }}
-        {% endif %}
+      <div class="flex justify-center items-center flex-col gap-2 mb-2 md:mb-0">
+        <span class="relative flex">
+          <h1>
+            {{ entry.title }}
+          </h1>
+
+          {% if entry.qualifications %}
+          <span class="qualifications">
+            {{ entry.qualifications | replace({'\n': ', '}) }}
+          </span>
+          {% endif %}
+        </span>
       </div>
       <h6>{{ entry.position }}</h6>
     </div>

@@ -237,6 +237,13 @@
       margin-top: 130px;
       margin-bottom: 150px;
     }
+
+    .qualifications {
+      @apply absolute;
+      left: 100%;
+      top: 0;
+      white-space: nowrap;
+    }
   }
 
   &__person-img-holder {

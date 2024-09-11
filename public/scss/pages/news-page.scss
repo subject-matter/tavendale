@@ -61,7 +61,13 @@
       padding-left: 17px;
       padding-right: 17px;
       border-radius: 50px;
+      line-height: 16.5px;
       cursor: pointer;
+
+      &:hover,
+      &.active {
+        @apply bg-primary;
+      }
     }
   }
 
@@ -81,8 +87,18 @@
 
     &:hover {
       .news-page__read-more {
+        @extend .transition--;
         @apply text-default;
         opacity: 1;
+
+        padding-left: 33px;
+        position: relative;
+
+        &::after {
+          content: "+";
+          position: absolute;
+          left: 15px;
+        }
       }
     }
 

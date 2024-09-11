@@ -16,6 +16,47 @@ import scrollArrow from "./components/scrollArrow";
 import peoplePage from "./components/peoplePage";
 import repositionAnimatedText from "./components/repositionAnimatedText";
 
+var PrevNextButton = Flickity.PrevNextButton;
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function areBothElementsInView(element1, element2) {
+  return isElementInViewport(element1) && isElementInViewport(element2);
+}
+
+const original = PrevNextButton.prototype.update;
+
+PrevNextButton.prototype.update = function () {
+  // index of first or last cell, if previous or next
+  var cells = this.parent.cells;
+  var lastIndex = cells.length ? cells.length - 1 : 0;
+  var boundIndex = this.isPrevious ? 0 : lastIndex;
+
+  var isEnabling;
+  if (this.parent.options.contain) {
+    var boundCell = cells[boundIndex];
+    var selectedCell = cells[this.parent.selectedIndex];
+    isEnabling = selectedCell.target != boundCell.target;
+
+    if (areBothElementsInView(selectedCell.element, boundCell.element)) {
+      isEnabling = false;
+    }
+    var method = isEnabling ? "enable" : "disable";
+    this[method]();
+  } else {
+    original.call(this);
+  }
+};
+
 // Scripts to fire once dom has loaded
 document.addEventListener("DOMContentLoaded", () => {
   navigation();
@@ -33,4 +74,5 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollArrow();
   peoplePage();
   repositionAnimatedText();
+  people();
 });

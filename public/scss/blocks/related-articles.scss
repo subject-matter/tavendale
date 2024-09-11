@@ -8,8 +8,6 @@
 
   .related-articles__item {
     @apply mr-6;
-    @apply mr-6 w-2/3;
-    max-width: 425px;
     display: flex;
     flex-direction: column;
     height: max-content;
@@ -18,5 +16,12 @@
   .news-page__item {
     height: 100%;
     flex-grow: 1;
+  }
+
+  @screen md {
+    padding-top: 30px;
+    .related-articles__item {
+      @apply pr-6 mr-0 w-1/3;
+    }
   }
 }

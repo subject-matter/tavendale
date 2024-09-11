@@ -28,9 +28,8 @@
   }
 
   &__slide {
-    @apply block relative mr-6;
+    @apply block relative pr-0 mr-6;
     width: 100%;
-    max-width: 215px;
   }
 
   &__slide-title {
@@ -81,7 +80,8 @@
     }
 
     &__slide {
-      max-width: 425px;
+      @apply pr-6 mr-0;
+      width: calc(100% / 3.25);
     }
   }
 }

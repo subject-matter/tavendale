@@ -10,8 +10,7 @@ export default () => {
           cellAlign: "left",
           pageDots: false,
           prevNextButtons: true,
-          percentPosition: true,
-          initialIndex: 0,
+          contain: true,
         });
       }
     });

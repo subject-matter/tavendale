@@ -21,7 +21,7 @@
   transition: all 0.6s ease-in-out;
 }
 
-.transition--, .people__img, .our-people__img, .nav__anchor, .btn {
+.transition--, .people__img, .content-block__item:hover .action-btn, .news-page__item:hover .news-page__read-more, .our-people__img, .nav__anchor, .btn {
   transition: all 0.2s ease-in-out;
 }
 
@@ -254,9 +254,9 @@ h6,
 
   h3,
 .h3 {
-    font-size: 3.09375rem;
+    font-size: 2.8125rem;
     line-height: 2.95313rem;
-    letter-spacing: -0.03063rem;
+    letter-spacing: -0.02813rem;
   }
 
   h4,
@@ -283,8 +283,8 @@ h6,
 }
 
 @media (min-width: 1700) {
-  h3,
-.h3 {
+  .hero .hero--home h3,
+.hero .hero--home .h3 {
     font-size: 4.03125rem;
     line-height: 3.83906rem;
     letter-spacing: -0.04rem;
@@ -300,7 +300,7 @@ h6,
   --tw-bg-opacity: 1;
   background-color: rgba(255, 203, 5, var(--tw-bg-opacity));
   height: 100vh;
-  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
 }
 
 .btn {
@@ -921,8 +921,13 @@ h6,
 
 .footer__location .locations__item__link {
   margin-top: 0.625rem;
-  text-decoration: underline;
   text-transform: capitalize;
+  text-decoration: none !important;
+}
+
+.footer__location .locations__item__link a {
+  text-decoration: none !important;
+  border-bottom: 0.03125rem solid #73634c;
 }
 
 .footer__location:last-child {
@@ -936,7 +941,7 @@ h6,
   }
 
   .footer__nav li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.625rem;
     font-size: 1.25rem;
     line-height: 1.375rem;
     letter-spacing: -0.01875rem;
@@ -946,7 +951,7 @@ h6,
     margin-bottom: 2.5rem;
     font-size: 0.9375rem;
     line-height: 1.03125rem;
-    letter-spacing: 0.03125rem;
+    letter-spacing: -0.00938rem;
   }
 
   .footer__location:last-child {
@@ -1251,7 +1256,13 @@ h6,
   padding-left: 1.0625rem;
   padding-right: 1.0625rem;
   border-radius: 3.125rem;
+  line-height: 1.03125rem;
   cursor: pointer;
+}
+
+.news-page__switcher-wrapper li:hover, .news-page__switcher-wrapper li.active {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 203, 5, var(--tw-bg-opacity));
 }
 
 .news-page__featured-split {
@@ -1275,6 +1286,14 @@ h6,
   --tw-text-opacity: 1;
   color: rgba(115, 99, 76, var(--tw-text-opacity));
   opacity: 1;
+  padding-left: 2.0625rem;
+  position: relative;
+}
+
+.news-page__item:hover .news-page__read-more::after {
+  content: "+";
+  position: absolute;
+  left: 0.9375rem;
 }
 
 .news-page__item__content {
@@ -1653,6 +1672,13 @@ h6,
   margin-bottom: 9.375rem;
 }
 
+.hero--person .qualifications {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  white-space: nowrap;
+}
+
 .hero__person-img-holder {
   margin-bottom: 1.5rem;
   display: block;
@@ -1748,8 +1774,8 @@ h6,
   position: relative;
   margin-right: 1.5rem;
   display: block;
+  padding-right: 0;
   width: 100%;
-  max-width: 13.4375rem;
 }
 
 .pathways__slide-title {
@@ -1822,7 +1848,9 @@ h6,
   }
 
   .pathways__slide {
-    max-width: 26.5625rem;
+    margin-right: 0;
+    padding-right: 1.5rem;
+    width: calc(100% / 3.25);
   }
 }
 
@@ -1835,6 +1863,12 @@ h6,
 .two-col-images .container {
   position: relative;
   z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .two-col-images .container--tight {
+    margin-left: 0 !important;
+  }
 }
 
 .two-col-images .text-body-lg p:last-child {
@@ -2145,7 +2179,7 @@ h6,
 }
 
 .content-block__item:hover .action-btn {
-  padding-right: 2.0625rem;
+  padding-left: 0.875rem;
   position: relative;
   --tw-text-opacity: 1;
   color: rgba(115, 99, 76, var(--tw-text-opacity));
@@ -2154,7 +2188,7 @@ h6,
 .content-block__item:hover .action-btn::after {
   content: "+";
   position: absolute;
-  right: 0.9375rem;
+  left: 0;
 }
 
 @media (min-width: 768px) {
@@ -2426,9 +2460,6 @@ h6,
 
 .related-articles .related-articles__item {
   margin-right: 1.5rem;
-  margin-right: 1.5rem;
-  width: 66.666667%;
-  max-width: 26.5625rem;
   display: flex;
   flex-direction: column;
   height: -moz-max-content;
@@ -2438,6 +2469,18 @@ h6,
 .related-articles .news-page__item {
   height: 100%;
   flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .related-articles {
+    padding-top: 1.875rem;
+  }
+
+  .related-articles .related-articles__item {
+    margin-right: 0;
+    width: 33.333333%;
+    padding-right: 1.5rem;
+  }
 }
 
 .people {
@@ -2475,6 +2518,10 @@ h6,
 }
 
 @media (min-width: 768px) {
+  .people {
+    padding-top: 1.875rem;
+  }
+
   .people__inner {
     padding-bottom: 15rem;
   }
@@ -2482,7 +2529,7 @@ h6,
   .people .person__container {
     margin-right: 0;
     padding-right: 1.5rem;
-    width: calc((100% / 4));
+    width: calc(100% / 4.25);
   }
 }
 

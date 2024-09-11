@@ -54,18 +54,16 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
               {% endif %}
             </ul>
           </div>
-          {% if entry.teamSelection|length %}
-          <div class="w-1/2 mt-0 md:mt-5">
+          <div class="w-1/2">
             <small class="block mb-3 md:mb-7 font-headings">Teams</small>
             <ul>
-              {% for team in entry.teamSelection.all() %}
+              {% for team in entry.team.all() %}
               <li>
-                {{ team.team.one() ? team.team.one().title : "" }}
+                {{ team.title }}
               </li>
               {% endfor %}
             </ul>
           </div>
-          {% endif %}
         </div>
 
         <div class="flex flex-wrap">

@@ -9,7 +9,6 @@ export default () => {
         cellAlign: "left",
         pageDots: false,
         prevNextButtons: true,
-        initialIndex: 0,
         contain: true,
       });
     }

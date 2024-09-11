@@ -6,14 +6,20 @@
     {% set entry = craft.entries({section: 'newInsights'}).one() %}
 {% endif %}
 
+{% set keywords = craft.app.request.getParam('search') %}
+
 {% if category is not defined %}
     {% set featuredNews = newsList.one() %}
     {% set newsList = newsList.id('and, not ' ~ featuredNews.id) %}
 {% else %}
     {% set newsList = newsList.relatedTo(category) %}
 {% endif %}
-{% paginate newsList.limit(6) as pageInfo, pageEntries %}
 
+{% if keywords %}
+    {% set newsList = newsList.search(keywords) %}
+{% endif %}
+
+{% paginate newsList.limit(6) as pageInfo, pageEntries %}
 
 {% block template %}
 
@@ -67,24 +73,22 @@
 
         <div class="news-page__switcher">
             <ul class="news-page__switcher-wrapper">
-
-            <li>
-                News
-            </li>
-            <li>
-                Insights
-            </li>
-        </ul>
-
+                <li class="active">
+                    News
+                </li>
+                <li>
+                    Insights
+                </li>
+            </ul>
         </div>
 
         <div class="container grid grid-cols-12">
-            <div class="col-span-12 md:col-span-3 flex flex-col justify-between items-start">
-                <form action="">
+            <div class="col-span-12 md:col-span-4 flex flex-col justify-between items-start">
+                <form class="js-people-search-form" action="">
                     <div class="field md:w-2/3">
                         <div class="inner">
                             {% include "_svg/search" %}
-                            <input type="text" name="search" placeholder="Quick Search">
+                            <input type="text" id="searchInput" name="search" placeholder="Quick Search">
                         </div>
                     </div>
 
@@ -103,11 +107,11 @@
                     </div>
                 </form>
 
-                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block desktop">
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block desktop load-more-news">
                     Load More
                 </a>
             </div>
-            <div class="col-span-12 md:col-span-9">
+            <div class="col-span-12 md:col-span-8">
 
                 <div class="news-page__list grid grid-cols-2 gap-3">
                     {% for page in pageEntries %}
@@ -151,7 +155,7 @@
                 </div>
 
                 <div class="mobile">
-                    <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block">
+                    <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-block load-more-news">
                         Load More
                     </a>
                 </div>
