@@ -42,7 +42,7 @@ PrevNextButton.prototype.update = function () {
   var boundIndex = this.isPrevious ? 0 : lastIndex;
 
   var isEnabling;
-  if (this.parent.options.contain) {
+  if (this.parent.options.contain && !this.parent.options.wrapAround) {
     var boundCell = cells[boundIndex];
     var selectedCell = cells[this.parent.selectedIndex];
     isEnabling = selectedCell.target != boundCell.target;

@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 export default () => {
-  const loadMorePeopleBtns = document.querySelectorAll(".load-more-people");
+  const loadMorePeopleBtn = document.querySelector(".load-more-people");
 
   const teamFilter = document.querySelector("select.team");
   const locationFilter = document.querySelector("select.location");
@@ -10,50 +10,55 @@ export default () => {
 
   let currentPage = 1;
 
-  if (loadMorePeopleBtns) {
-    loadMorePeopleBtns.forEach((loadMorePeopleBtn) => {
-      loadMorePeopleBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+  if (loadMorePeopleBtn) {
+    loadMorePeopleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
 
-        currentPage += 1;
+      currentPage += 1;
 
-        axios
-          .get(`/our-people/page/${currentPage}`, {
-            params: {
-              team: teamFilter.value,
-              location: locationFilter.value,
-              position: positionFilter.value,
-              search: search.value,
-            },
-          })
-          .then((response) => {
-            const previousScrollTop = window.pageYOffset;
+      axios
+        .get(`/our-people/page/${currentPage}`, {
+          params: {
+            team: teamFilter.value,
+            location: locationFilter.value,
+            position: positionFilter.value,
+            search: search.value,
+          },
+        })
+        .then((response) => {
+          const previousScrollTop = window.pageYOffset;
 
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(response.data, "text/html");
-            const container = doc.querySelector(
-              "[data-people-container] .our-people__list"
-            );
-            const localContainer = document.querySelector(
-              "[data-people-container] .our-people__list"
-            );
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(response.data, "text/html");
+          const container = doc.querySelector(
+            "[data-people-container] .our-people__list"
+          );
+          const localContainer = document.querySelector(
+            "[data-people-container] .our-people__list"
+          );
 
-            if (
-              container.querySelectorAll(".our-people__person").length !== 12
-            ) {
-              loadMorePeopleBtn.style.opacity = "0";
-            } else {
-              loadMorePeopleBtn.style.opacity = "1";
-            }
+          const numberOfPeople = container.querySelectorAll(
+            ".our-people__person"
+          ).length;
 
-            localContainer.insertAdjacentHTML("beforeend", container.innerHTML);
+          if (numberOfPeople !== 12 || numberOfPeople === 0) {
+            loadMorePeopleBtn.style.opacity = "0";
+          } else {
+            loadMorePeopleBtn.style.opacity = "1";
+          }
 
-            window.scrollTo({
-              top: previousScrollTop,
-              behavior: "instant",
-            });
+          localContainer.insertAdjacentHTML("beforeend", container.innerHTML);
+
+          window.scrollTo({
+            top: previousScrollTop,
+            behavior: "instant",
           });
-      });
+
+          const startItemsCount = document.querySelector(".start-items");
+          startItemsCount.innerText = document.querySelectorAll(
+            ".our-people__person"
+          ).length;
+        });
     });
   }
 
@@ -78,6 +83,24 @@ export default () => {
             "[data-people-container]"
           );
           localContainer.innerHTML = container.innerHTML;
+
+          const startItemsCount = document.querySelector(".start-items");
+          startItemsCount.innerText = document.querySelectorAll(
+            ".our-people__person"
+          ).length;
+
+          const numberOfPeople = container.querySelectorAll(
+            ".our-people__person"
+          ).length;
+
+          const loadMorePeopleBtnNext =
+            document.querySelector(".load-more-people");
+
+          if (numberOfPeople !== 12 || numberOfPeople === 0) {
+            loadMorePeopleBtnNext.style.opacity = "0";
+          } else {
+            loadMorePeopleBtnNext.style.opacity = "1";
+          }
         });
     }
 

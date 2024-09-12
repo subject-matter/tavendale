@@ -1045,6 +1045,10 @@ select::placeholder {
   cursor: pointer;
 }
 
+#searchInput {
+  font-size: 1rem !important;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

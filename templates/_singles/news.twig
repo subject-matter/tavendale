@@ -35,7 +35,7 @@
 
             <div class="news-page__featured">
                 <div class="container--tight grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div class="news-page__featured__img-holder relative">
+                    <a href="{{ featuredNews.getUrl() }}" class="news-page__featured__img-holder relative">
                         <div class="news-page__featured__img"
                             {% if featuredNews.primaryImage.one() %}
                                 style="background-image: url('{{ featuredNews.primaryImage.one().getUrl() }}');"
@@ -53,18 +53,18 @@
                                 </ul>
                             </div>
                         {% endif %}
-                    </div>
-                    <div class="news-page__featured__content">
+                        </a>
+                    <a href="{{ featuredNews.getUrl() }}" class="news-page__featured__content">
                         <h6 class="mb-3 md:mb-6">{{ featuredNews.title }}</h6>
                         {% if featuredNews.sectionPlainText %}
                             <div class="news-page__item__summary text-body-lg">
                                 <p>{{ featuredNews.sectionPlainText }}</p>
                             </div>
                         {% endif %}
-                        <a href="{{ featuredNews.getUrl() }}" class="btn btn--solid btn--white">
+                        <span class="btn btn--solid btn--white">
                             Read more
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
 
         <div class="container grid grid-cols-12">
             <div class="col-span-12 md:col-span-4 flex flex-col justify-between items-start">
-                <form class="js-people-search-form" action="">
+                <form class="js-news-search-form" action="">
                     <div class="field md:w-2/3">
                         <div class="inner">
                             {% include "_svg/search" %}

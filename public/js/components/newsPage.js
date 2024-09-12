@@ -54,7 +54,7 @@ export default () => {
     });
   }
 
-  const searchForm = document.querySelectorAll(".js-people-search-form");
+  const searchForm = document.querySelectorAll(".js-news-search-form");
 
   searchForm.forEach((form) => {
     function loadResults() {

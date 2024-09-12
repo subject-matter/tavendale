@@ -91,13 +91,15 @@
         @apply text-default;
         opacity: 1;
 
-        padding-left: 33px;
-        position: relative;
+        @screen md {
+          padding-left: 33px;
+          position: relative;
 
-        &::after {
-          content: "+";
-          position: absolute;
-          left: 15px;
+          &::after {
+            content: "+";
+            position: absolute;
+            left: 15px;
+          }
         }
       }
     }

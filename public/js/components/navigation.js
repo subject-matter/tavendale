@@ -39,11 +39,13 @@ export default () => {
       body.classList.remove("fixed");
       body.classList.remove("w-full");
       body.classList.remove("overflow-hidden");
+      hamburger.innerHTML = "Menu";
     } else {
       body.classList.add("fixed");
       body.classList.add("w-full");
       body.classList.add("overflow-hidden");
       header.classList.add("header--active-nav");
+      hamburger.innerHTML = "Close";
     }
     return false;
   });

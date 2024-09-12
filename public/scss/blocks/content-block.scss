@@ -107,15 +107,17 @@
 
       .action-btn {
         @extend .transition--;
-        padding-left: 14px;
-        position: relative;
 
         @apply text-default;
 
-        &::after {
-          content: "+";
-          position: absolute;
-          left: 0px;
+        @screen md {
+          padding-left: 14px;
+          position: relative;
+          &::after {
+            content: "+";
+            position: absolute;
+            left: 0px;
+          }
         }
       }
     }

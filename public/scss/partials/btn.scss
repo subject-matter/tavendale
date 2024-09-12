@@ -19,14 +19,17 @@
   }
 
   &:hover {
-    padding-right: 33px;
-    position: relative;
     opacity: 1 !important;
 
-    &::after {
-      content: "+";
-      position: absolute;
-      right: 15px;
+    @screen md {
+      padding-right: 33px;
+      position: relative;
+
+      &::after {
+        content: "+";
+        position: absolute;
+        right: 15px;
+      }
     }
   }
 

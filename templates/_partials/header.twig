@@ -30,74 +30,6 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
           >
             {{ item.title }}
           </a>
-          {#
-          <div
-            class="nav__subnav {% if loop.index == 1 %}active{% endif %} hidden js-subnavchild w-full"
-            style="padding-top: 0"
-          >
-            <div class="nav__subnav--inner">
-              <ul
-                class="nav__subnav-list lg:hidden"
-                style="overflow: scroll; height: 100vh; margin-bottom: 2rem"
-              >
-                {% for child in item.children.orderBy('title').all() %}
-                <li class="nav__li {% if child.active %}active{% endif %}">
-                  <a
-                    href="{{ child.url }}"
-                    target="{{ child.target }}"
-                    class="nav__anchor {% if child.active %}active{% endif %}"
-                  >
-                    {{ child.title }}
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-              <ul
-                class="nav__subnav-list hidden lg:flex"
-                style="margin-bottom: 0"
-              >
-                {% for child in item.children.all() %}
-                <li class="nav__li {% if child.active %}active{% endif %}">
-                  <a
-                    href="{{ child.url }}"
-                    target="{{ child.target }}"
-                    class="nav__anchor {% if child.active %}active{% endif %}"
-                  >
-                    {{ child.title }}
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-              {% if item.primaryImage.one() or item.sectionPlainText %}
-              <div class="nav__subnav-blurb" style="margin-top: 1.75rem">
-                {% if item.primaryImage.one() %}
-                <div class="nav__subnav-img-holder">
-                  <div
-                    class="nav__subnav-image"
-                    style="background-image: url({{
-                      item.primaryImage.one().getUrl(subNavImage)
-                    }});"
-                  ></div>
-                </div>
-                {% endif %} {% if item.sectionPlainText %}
-                <div class="nav__subnav-text">
-                  <p>
-                    {{ item.sectionPlainText }}
-                  </p>
-                  {% if item.sectioncta.getUrl() %}
-                  <div class="nav__subnav-link">
-                    <a href="{{ item.sectioncta.getUrl() }}">
-                      {{ item.sectioncta.getCustomText }}
-                    </a>
-                  </div>
-                  {% endif %}
-                </div>
-                {% endif %}
-              </div>
-              {% endif %}
-            </div>
-          </div>
-          #}
         </li>
         {% else %}
         <li class="nav__li">
@@ -111,6 +43,28 @@ subNavImage = { mode: 'crop', width: 400, height: 300, quality: 75, position:
         </li>
         {% endif %} {% endfor %}
       </ul>
+
+      <div class="nav__social flex md:hidden">
+        {% if contacts.facebook %}
+        <div class="nav__social-item">
+          <a href="{{ contacts.facebook }}" target="_blank">
+            {% include "_svg/facebook" %}
+          </a>
+        </div>
+        {% endif %} {% if contacts.linkedin %}
+        <div class="nav__social-item">
+          <a href="{{ contacts.linkedin }}" target="_blank">
+            {% include "_svg/linkedin" %}
+          </a>
+        </div>
+        {% endif %} {% if contacts.instagram %}
+        <div class="nav__social-item">
+          <a href="{{ contacts.instagram }}" target="_blank">
+            {% include "_svg/instagram" %}
+          </a>
+        </div>
+        {% endif %}
+      </div>
     </nav>
   </div>
 </header>

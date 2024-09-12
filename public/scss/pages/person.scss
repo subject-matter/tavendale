@@ -6,11 +6,10 @@
     font-size: 10px;
   }
 
-  &__image-container {
-    a {
-      bottom: 10px;
-      left: 10px;
-    }
+  .btn-container {
+    @apply absolute;
+    bottom: 10px;
+    left: 10px;
   }
 
   &__image {

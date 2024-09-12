@@ -9,7 +9,7 @@
 
   .person__container {
     @apply mr-6;
-    width: 100%;
+    width: 75%;
   }
 
   &__blurb {
@@ -64,8 +64,16 @@
       @apply flex;
     }
 
+    li {
+      margin-bottom: 3px;
+
+      @screen md {
+        margin-bottom: 0px;
+      }
+    }
+
     li a {
-      @apply inline-block pl-5 break-all;
+      @apply inline-block break-all;
 
       &:hover {
         opacity: 0.5;

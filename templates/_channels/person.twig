@@ -19,13 +19,16 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
         ></div>
 
         {% if entry.linkedin %}
-        <a
-          href="{{ entry.linkedin }}"
-          target="_blank"
-          class="btn btn--solid btn--white absolute"
-        >
-          Connect on LinkedIn
-        </a>
+        <div class="btn-container">
+          <a
+            href="{{ entry.linkedin }}"
+            target="_blank"
+            class="btn btn--solid btn--white"
+          >
+            Connect on LinkedIn
+          </a>
+        </div>
+
         {% endif %}
       </div>
       {% endif %}
@@ -34,20 +37,20 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
       <div class="mb-8 md:mb-16 person-page__contact">
         <div class="flex flex-wrap">
           <div class="w-1/2">
-            <small class="block mb-3 md:mb-7 font-headings">Contact</small>
+            <small class="block mb-3 md:mb-4 font-headings">Contact</small>
             <span class="block font-headings">{{ entry.title }}</span>
             <ul>
               {% if entry.phone %}
               <li>
                 T:
-                <a class="ml-2 md:ml-5" href="tel:{{ entry.phone }}">{{
+                <a class="ml-3 md:ml-5" href="tel:{{ entry.phone }}">{{
                   entry.phone
                 }}</a>
               </li>
               {% endif %} {% if entry.email %}
               <li>
                 E:
-                <a class="ml-2 md:ml-5" href="mailto:{{ entry.email }}">{{
+                <a class="ml-3 md:ml-5" href="mailto:{{ entry.email }}">{{
                   entry.email
                 }}</a>
               </li>
@@ -55,7 +58,7 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
             </ul>
           </div>
           <div class="w-1/2">
-            <small class="block mb-3 md:mb-7 font-headings">Teams</small>
+            <small class="block mb-3 md:mb-4 font-headings">Teams</small>
             <ul>
               {% for team in entry.team.all() %}
               <li>
@@ -83,7 +86,7 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
               <li>
                 T:
                 <a
-                  class="ml-2 md:ml-5"
+                  class="ml-1 md:ml-5"
                   href="tel:{{ entry.alternateContactPhone }}"
                   >{{ entry.alternateContactPhone }}</a
                 >
@@ -92,7 +95,7 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
               <li>
                 E:
                 <a
-                  class="ml-2 md:ml-5"
+                  class="ml-1 md:ml-5"
                   href="mailto:{{ entry.alternateContactEmail }}"
                   target="_blank"
                 >
@@ -103,8 +106,8 @@ height: 700, quality: 85, position: 'center-center' } %} {% block template %}
             </ul>
           </div>
           {% endif %} {% if entry.expertiseSelection|length %}
-          <div class="w-1/2 mt-5">
-            <small class="block mb-3 md:mb-7 font-headings">Expertise</small>
+          <div class="w-1/2 mt-12">
+            <small class="block mb-3 md:mb-4 font-headings">Expertise</small>
             <ul>
               {% for expertise in entry.expertiseSelection.all() %}
               <li>
