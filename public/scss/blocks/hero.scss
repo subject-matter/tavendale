@@ -137,11 +137,8 @@
     margin-bottom: 230px;
 
     @screen md {
-      margin-top: 0px;
-      min-height: 100vh;
-      @apply items-end;
+      margin-top: 300px;
       margin-bottom: 300px;
-      padding-bottom: 0px;
     }
 
     .container {
@@ -204,7 +201,7 @@
       padding-top: 250px;
 
       .hero__image {
-        margin-bottom: 90px;
+        margin-bottom: 80px;
       }
     }
   }

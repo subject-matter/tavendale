@@ -1563,11 +1563,8 @@ h6,
 
 @media (min-width: 768px) {
   .hero--home {
-    margin-top: 0;
-    min-height: 100vh;
-    align-items: flex-end;
+    margin-top: 18.75rem;
     margin-bottom: 18.75rem;
-    padding-bottom: 0;
   }
 }
 
@@ -1641,7 +1638,7 @@ h6,
   }
 
   .hero--image .hero__image {
-    margin-bottom: 5.625rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -2145,6 +2142,14 @@ h6,
     font-size: 0.9375rem;
     line-height: 1.03125rem;
     letter-spacing: 0.00625rem;
+  }
+
+  .centered .content-block .action-btn__excerpt {
+    margin-bottom: 5.625rem;
+  }
+
+  .centered .content-block__excerpt {
+    margin-bottom: 5rem;
   }
 
   .content-block__text p {
