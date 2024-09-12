@@ -137,8 +137,14 @@
     margin-bottom: 230px;
 
     @screen md {
-      margin-top: 300px;
-      margin-bottom: 300px;
+      margin-top: auto;
+      min-height: calc(100vh - 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: 0px;
+      padding-bottom: 80px;
+      margin-bottom: 220px;
     }
 
     .container {
@@ -234,8 +240,8 @@
     }
 
     &__title {
-      margin-top: 130px;
-      margin-bottom: 150px;
+      margin-top: 108px !important;
+      margin-bottom: 108px !important;
     }
 
     .qualifications {
@@ -249,6 +255,13 @@
         left: 100%;
         right: unset;
         top: 0;
+      }
+    }
+
+    @screen md {
+      &__title {
+        margin-bottom: 180px !important;
+        margin-top: 130px !important;
       }
     }
   }
