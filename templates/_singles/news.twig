@@ -149,16 +149,14 @@
                         </div>
                     {% endfor %}
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 mt-5 md:mt-20">
-                    <div class="text-center md:text-left md:col-start-2">
-    
-                    <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-flex load-more-people">
-                        Load More
-                    </a>
-                    </div>
-                </div>
             </div>
+
+                <div class="text-center md:text-left col-span-12 md:col-span-1 md:col-start-7 mt-5 md:mt-20">
+
+                <a href="{{ pageInfo.nextUrl }}" class="btn btn--solid btn--white inline-flex load-more-people">
+                    Load More
+                </a>
+                </div>
         </div>
     </div>
     {% include "_partials/blocks" %}
