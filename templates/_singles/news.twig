@@ -1,7 +1,15 @@
 {% extends "_layouts/layout.twig" %}
 {% set newsCategories = craft.categories.group('news') %}
 {% set featuredNews = null %}
+{% set type = craft.app.request.getQueryParam('type') %}
 {% set newsList = craft.entries().section('newsPage').orderBy('dateUpdated desc') %}
+
+{% if type == 'insights' %}
+    {% set newsList = newsList.isInsightArticle(true) %}
+{% else %}
+    {% set newsList = newsList.isNewsArticle(true) %}
+{% endif %}
+
 {% if entry is not defined %}
     {% set entry = craft.entries({section: 'newInsights'}).one() %}
 {% endif %}
@@ -73,11 +81,19 @@
 
         <div class="news-page__switcher">
             <ul class="news-page__switcher-wrapper">
-                <li class="active">
-                    News
+                <li >
+                    <a href="/news?type=news" class="{% if type != 'insights' %}
+                               active
+                            {% endif %}">
+                        News
+                    </a>
                 </li>
                 <li>
-                    Insights
+                    <a href="/news?type=insights" class="{% if type == 'insights' %}
+                    active
+                 {% endif %}">
+                        Insights
+                    </a>
                 </li>
             </ul>
         </div>

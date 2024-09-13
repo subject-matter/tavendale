@@ -1,4 +1,4 @@
-dateModified: 1725767234
+dateModified: 1726209120
 elementSources:
   craft\elements\Asset:
     -
@@ -66,6 +66,7 @@ meta:
     6c60f362-9ffc-4acd-80e9-92cd16c65c3d: Expertise # Expertise
     6e3cb37f-af90-47f2-8e82-7b4ab852e8be: 'Accordion block' # Accordion block
     6ef74d87-bf43-4cb6-9901-6e15a1efad4b: 'Tavendale & Partners' # Tavendale & Partners
+    07cabf3d-4ebf-4c33-b3c7-2f97e9ce789b: 'Is Insight Article?' # Is Insight Article?
     8bb3e7d2-ee0f-4d05-9e13-7757071a83af: 'Terms & Privacy' # Terms & Privacy
     8c404b2f-ffe2-4bb4-9ef7-2625c4347e7c: 'New & Insights' # New & Insights
     8f2039da-58a0-4f96-b77e-795ecc732916: Team # Team
@@ -124,6 +125,7 @@ meta:
     bc45b907-cf21-4be7-8773-8dbe9e1bafcf: Body # Body
     bdb75bbe-5e35-4832-9243-828dfddcedff: Contacts # Contacts
     bdda9a00-f9cc-41c0-bf21-44a4cfa8927d: 'News Page' # News Page
+    c2ab5aa8-a1e0-423f-8bdf-b5a2cdddc0d7: 'Is News Article' # Is News Article
     c2f54b5f-94a3-406e-a144-e4e8a906ff48: Tab # Tab
     c5f09236-bd06-4f83-9ae4-a0c7282738e8: 'Instagram Image' # Instagram Image
     c7f976f9-1ec4-4c02-84e8-ef8682c9a899: 'Career Opportunities' # Career Opportunities

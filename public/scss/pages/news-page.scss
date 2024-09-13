@@ -47,12 +47,14 @@
   &__switcher-wrapper {
     display: flex;
     align-items: center;
+    gap: 6px;
     background: #f2f2f1;
     border-radius: 50px;
     height: 45px;
     padding: 5px;
 
-    li {
+    a {
+      @extend .transition--;
       @apply text-default font-headings;
 
       display: flex;

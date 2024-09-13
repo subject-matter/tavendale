@@ -21,7 +21,7 @@
   transition: all 0.6s ease-in-out;
 }
 
-.transition--, .people__img, .content-block__item:hover .action-btn, .news-page__item:hover .news-page__read-more, .our-people__img, .nav__anchor, .btn {
+.transition--, .people__img, .content-block__item:hover .action-btn, .news-page__item:hover .news-page__read-more, .news-page__switcher-wrapper a, .our-people__img, .nav__anchor, .btn {
   transition: all 0.2s ease-in-out;
 }
 
@@ -1241,23 +1241,24 @@ h6,
 .news-page__switcher-wrapper {
   display: flex;
   align-items: center;
+  gap: 0.375rem;
   background: #f2f2f1;
   border-radius: 3.125rem;
   height: 2.8125rem;
   padding: 0.3125rem;
 }
 
-.news-page__switcher-wrapper li {
+.news-page__switcher-wrapper a {
   font-family: ABC Diatype Medium;
   --tw-text-opacity: 1;
   color: rgba(115, 99, 76, var(--tw-text-opacity));
 }
 
-.three-cols__item .news-page__switcher-wrapper li {
+.three-cols__item .news-page__switcher-wrapper a {
   margin-bottom: 0.75rem;
 }
 
-.news-page__switcher-wrapper li {
+.news-page__switcher-wrapper a {
   display: flex;
   align-items: center;
   height: 2.1875rem;
@@ -1268,7 +1269,7 @@ h6,
   cursor: pointer;
 }
 
-.news-page__switcher-wrapper li:hover, .news-page__switcher-wrapper li.active {
+.news-page__switcher-wrapper a:hover, .news-page__switcher-wrapper a.active {
   --tw-bg-opacity: 1;
   background-color: rgba(255, 203, 5, var(--tw-bg-opacity));
 }
