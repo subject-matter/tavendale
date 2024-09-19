@@ -63,8 +63,10 @@
             WHEN content.field_position_hhzxoggh = 'Trust Manager' THEN 17
             WHEN content.field_position_hhzxoggh = 'Trust Account Manager' THEN 18
             ELSE 19
-            END
-")) %}
+         END, content.title ASC
+    "))
+%}
+
 
 {% if keywords %}
     {% set people = people.search(keywords) %}
