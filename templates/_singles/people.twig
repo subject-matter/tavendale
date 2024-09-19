@@ -4,9 +4,9 @@
 {% set teamCategories = craft.categories.group('teams') %}
 {% set img = {
     mode: 'fill',
-    width: 300,
-    height: 300,
-    quality: 75,
+    width: 400,
+    height: 400,
+    quality: 100,
     position: 'center-center'
 } %}
 
@@ -43,6 +43,7 @@
     .section('people')
     .orderBy(expression("
          CASE
+            WHEN content.title = 'Mark Tavendale' THEN 0
             WHEN content.field_position_hhzxoggh = 'Partner' THEN 1
             WHEN content.field_position_hhzxoggh = 'Senior Associate' THEN 2
             WHEN content.field_position_hhzxoggh = 'Senior Associate (on parental leave)' THEN 3

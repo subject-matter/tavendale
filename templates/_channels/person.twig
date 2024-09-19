@@ -2,9 +2,8 @@
 craft.entries.section('ourPeople').one() %} {% set team = entry.team.one() %} {%
 set otherMembers = null %} {% if team %} {% set otherMembers = craft.entries({
 section : 'people', relatedTo: team }).id('and, not ' ~ entry.id) %} {% endif %}
-{% set otherPrimaryImage = { mode: 'crop', width: 300, height: 300, quality: 75,
-position: 'center-center' } %} {% set personImg = { mode: 'crop', width: 700,
-height: 700, quality: 85, position: 'center-center' } %} {% block template %}
+{% set personImg = { mode: 'crop', width: 700, height: 700, quality: 100,
+position: 'center-center' } %} {% block template %}
 
 <div class="person-page">
   <div class="container grid grid-cols-12">
