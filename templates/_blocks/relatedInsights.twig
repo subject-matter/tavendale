@@ -1,6 +1,6 @@
 {% set articles = craft.entries({ section: 'newsPage', limit: 12 }) %} {% set
-articleImage = { mode: 'crop', width: 215, height: 215, quality: 100, position:
-'center-center' } %} {% if block.newsCategories.count() %} {% set articles =
+articleImage = { mode: 'crop', quality: 100, position: 'center-center' } %} {%
+if block.newsCategories.count() %} {% set articles =
 articles.relatedTo(block.newsCategories) %} {% endif %}
 
 <div class="related-articles neo-block {{ bottomSpacing }}" data-insights>

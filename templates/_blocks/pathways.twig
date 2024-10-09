@@ -1,6 +1,5 @@
-{% set defaultImage = { mode: 'crop', width: 360, height: 420, quality: 100,
-position: 'center-center' } %} {% set largeImage = { mode: 'crop', width: 415,
-height: 485, quality: 100, position: 'center-center' } %}
+{% set defaultImage = { mode: 'crop', quality: 100, position: 'center-center' }
+%}
 <div class="pathways neo-block" data-pathways>
   <div class="container">
     <div class="pathways__title">
@@ -13,7 +12,7 @@ height: 485, quality: 100, position: 'center-center' } %}
         {% for child in block.children.all() %} {% if child.sectioncta.getUrl()
         %} {% set imageUrl = null %} {% if child.primaryImage.one() %} {% if
         child.size == 'large' %} {% set imageUrl =
-        child.primaryImage.one().getUrl(largeImage) %} {% else %} {% set
+        child.primaryImage.one().getUrl(defaultImage) %} {% else %} {% set
         imageUrl = child.primaryImage.one().getUrl(defaultImage) %} {% endif %}
         {% endif %}
 
@@ -33,7 +32,7 @@ height: 485, quality: 100, position: 'center-center' } %}
         <div class="pathways__slide">
           <div class="pathways__slide-image">
             {% if child.primaryImage.one() %} {% if child.size == 'large' %}
-            <img src="{{ child.primaryImage.one().getUrl(largeImage) }}" />
+            <img src="{{ child.primaryImage.one().getUrl(defaultImage) }}" />
             {% else %}
             <img src="{{ child.primaryImage.one().getUrl(defaultImage) }}" />
             {% endif %} {% endif %}

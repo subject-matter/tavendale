@@ -18,7 +18,7 @@
         {# <script> will be inject into head and <nosript> will be left here) #}
         {% include "_partials/googleAnalytics.twig" %}
 
-        {% if isHome %}
+        {% if isHome or craft.app.response.isNotFound %}
             <div class="black-fadein js-fadein"></div>
         {% endif %}
         {% include "_partials/header.twig" %}

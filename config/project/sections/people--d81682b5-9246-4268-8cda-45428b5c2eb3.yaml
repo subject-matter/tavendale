@@ -9,4 +9,7 @@ siteSettings:
     hasUrls: true
     template: _channels/person
     uriFormat: 'our-people/{slug}'
-type: channel
+structure:
+  maxLevels: null
+  uid: b2d9249f-e9c4-49f0-b3bf-deefe10a00d8
+type: structure
